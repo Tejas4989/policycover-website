@@ -1,0 +1,22 @@
+{
+  "name": "policycover-website",
+  "version": "1.0.0",
+  "description": "Professional insurance services website - PolicyCover",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "start": "python3 -m http.server 8000"
+  },
+  "keywords": [
+    "insurance",
+    "website",
+    "static-site"
+  ],
+  "author": "PolicyCover",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_USERNAME/policycover-website.git"
+  }
+}
+

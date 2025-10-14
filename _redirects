@@ -1,0 +1,11 @@
+# Cloudflare Pages Redirects and Headers
+
+# Redirect HTTP to HTTPS (automatic with Cloudflare)
+# Redirect www to non-www or vice versa (configure in Cloudflare dashboard)
+
+# SPA fallback (if needed in the future)
+# /* /index.html 200
+
+# Custom 404 page (optional - create 404.html if needed)
+# /404 /404.html 404
+

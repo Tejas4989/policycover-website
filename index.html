@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprehensive insurance solutions for auto, home, life, and business. Get personalized quotes and excellent customer support.">
+    <title>PolicyCover - Protect What Matters Most</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="40" height="40" rx="10" fill="url(#logo-gradient)"/>
+                    <path d="M20 10L12 16V26C12 27.1 12.9 28 14 28H26C27.1 28 28 27.1 28 26V16L20 10ZM20 21C18.9 21 18 20.1 18 19C18 17.9 18.9 17 20 17C21.1 17 22 17.9 22 19C22 20.1 21.1 21 20 21Z" fill="white"/>
+                    <defs>
+                        <linearGradient id="logo-gradient" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="#62D84E"/>
+                            <stop offset="100%" stop-color="#00C7B7"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="logo-text">PolicyCover</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#why-us" class="nav-link">Why Us</a></li>
+                <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="cta-button-nav" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Get a Quote</button>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="hero-gradient"></div>
+        </div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Protect What Matters Most</h1>
+                <p class="hero-subtitle">Comprehensive insurance solutions tailored to your unique needs. From auto and home to life and business coverage, we're here to safeguard your future.</p>
+                <div class="hero-buttons">
+                    <button class="cta-button primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Get Your Free Quote</button>
+                    <button class="cta-button secondary" onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})">Explore Services</button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>5000+</h3>
+                        <p>Happy Clients</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>15+</h3>
+                        <p>Years Experience</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>98%</h3>
+                        <p>Satisfaction Rate</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-placeholder">
+                    <svg width="500" height="400" viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="250" cy="200" r="150" fill="url(#hero-gradient-1)" opacity="0.15"/>
+                        <circle cx="280" cy="180" r="120" fill="url(#hero-gradient-2)" opacity="0.12"/>
+                        <circle cx="250" cy="200" r="100" fill="url(#hero-gradient-3)" opacity="0.2"/>
+                        <path d="M250 130L200 160V240C200 247 206 253 213 253H287C294 253 300 247 300 240V160L250 130Z" fill="#151515"/>
+                        <circle cx="220" cy="180" r="15" fill="#62D84E"/>
+                        <circle cx="280" cy="180" r="15" fill="#62D84E"/>
+                        <path d="M230 210H270V220H230V210Z" fill="#62D84E"/>
+                        <defs>
+                            <linearGradient id="hero-gradient-1" x1="100" y1="50" x2="400" y2="350" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#62D84E"/>
+                                <stop offset="100%" stop-color="#00C7B7"/>
+                            </linearGradient>
+                            <linearGradient id="hero-gradient-2" x1="160" y1="60" x2="400" y2="300" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#5B1CD2"/>
+                                <stop offset="100%" stop-color="#00A1E0"/>
+                            </linearGradient>
+                            <linearGradient id="hero-gradient-3" x1="150" y1="100" x2="350" y2="300" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#00A1E0"/>
+                                <stop offset="100%" stop-color="#62D84E"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Us</h2>
+                <p class="section-subtitle">Your Trusted Insurance Partner</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Committed to Your Peace of Mind</h3>
+                    <p>At PolicyCover, we understand that insurance is more than just a policy—it's about protecting your dreams, your family, and your future. With over 15 years of experience in the insurance industry, we've built our reputation on trust, transparency, and personalized service.</p>
+                    <p>Our team of licensed insurance professionals works with leading providers to offer you comprehensive coverage options at competitive rates. We believe in taking the time to understand your unique situation and finding the perfect insurance solution that fits your needs and budget.</p>
+                    <div class="mission-values">
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                    <circle cx="24" cy="24" r="24" fill="url(#value-gradient-1)"/>
+                                    <path d="M24 12L16 17.5V27C16 30.5 19 33.5 24 35C29 33.5 32 30.5 32 27V17.5L24 12Z" fill="white"/>
+                                    <defs>
+                                        <linearGradient id="value-gradient-1" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                                            <stop offset="0%" stop-color="#62D84E" stop-opacity="0.15"/>
+                                            <stop offset="100%" stop-color="#00C7B7" stop-opacity="0.15"/>
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <h4>Trust & Integrity</h4>
+                            <p>Building lasting relationships through honest advice and transparent processes.</p>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                    <circle cx="24" cy="24" r="24" fill="url(#value-gradient-2)"/>
+                                    <path d="M24 14C18.5 14 14 18.5 14 24C14 29.5 18.5 34 24 34C29.5 34 34 29.5 34 24C34 18.5 29.5 14 24 14ZM22 30L17 25L18.8 23.2L22 26.4L29.2 19.2L31 21L22 30Z" fill="white"/>
+                                    <defs>
+                                        <linearGradient id="value-gradient-2" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                                            <stop offset="0%" stop-color="#5B1CD2" stop-opacity="0.15"/>
+                                            <stop offset="100%" stop-color="#00A1E0" stop-opacity="0.15"/>
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <h4>Customer First</h4>
+                            <p>Your satisfaction and security are at the heart of everything we do.</p>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                    <circle cx="24" cy="24" r="24" fill="url(#value-gradient-3)"/>
+                                    <path d="M24 12L14 17V23C14 29 18 34 24 36C30 34 34 29 34 23V17L24 12ZM22 30L17 25L18.8 23.2L22 26.4L29.2 19.2L31 21L22 30Z" fill="white"/>
+                                    <defs>
+                                        <linearGradient id="value-gradient-3" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                                            <stop offset="0%" stop-color="#00A1E0" stop-opacity="0.15"/>
+                                            <stop offset="100%" stop-color="#62D84E" stop-opacity="0.15"/>
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <h4>Expert Guidance</h4>
+                            <p>Leveraging years of industry expertise to find the best coverage for you.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Comprehensive Coverage for Every Aspect of Your Life</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                            <circle cx="32" cy="32" r="32" fill="url(#service-gradient-1)"/>
+                            <path d="M32 16C22.6 16 15 23.6 15 33C15 42.4 22.6 50 32 50C41.4 50 49 42.4 49 33C49 23.6 41.4 16 32 16ZM38 38H32C31.2 38 30.5 37.3 30.5 36.5V25C30.5 24.2 31.2 23.5 32 23.5C32.8 23.5 33.5 24.2 33.5 25V35.5H38C38.8 35.5 39.5 36.2 39.5 37C39.5 37.8 38.8 38 38 38Z" fill="white"/>
+                            <defs>
+                                <linearGradient id="service-gradient-1" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#62D84E" stop-opacity="0.2"/>
+                                    <stop offset="100%" stop-color="#00C7B7" stop-opacity="0.2"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h3>Auto Insurance</h3>
+                    <p>Comprehensive protection for your vehicle with coverage options including collision, liability, and comprehensive insurance. Get competitive rates and flexible payment plans tailored to your driving needs.</p>
+                    <ul class="service-features">
+                        <li>Collision & Comprehensive Coverage</li>
+                        <li>Liability Protection</li>
+                        <li>Multi-Vehicle Discounts</li>
+                        <li>24/7 Claims Support</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                            <circle cx="32" cy="32" r="32" fill="url(#service-gradient-2)"/>
+                            <path d="M32 16L18 25V40C18 42.8 20.2 45 23 45H41C43.8 45 46 42.8 46 40V25L32 16ZM32 34C29.8 34 28 32.2 28 30C28 27.8 29.8 26 32 26C34.2 26 36 27.8 36 30C36 32.2 34.2 34 32 34Z" fill="white"/>
+                            <defs>
+                                <linearGradient id="service-gradient-2" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#5B1CD2" stop-opacity="0.2"/>
+                                    <stop offset="100%" stop-color="#00A1E0" stop-opacity="0.2"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h3>Home Insurance</h3>
+                    <p>Safeguard your most valuable asset with comprehensive home insurance. Protection against fire, theft, natural disasters, and liability coverage for accidents on your property.</p>
+                    <ul class="service-features">
+                        <li>Property Damage Coverage</li>
+                        <li>Contents Insurance</li>
+                        <li>Liability Protection</li>
+                        <li>Additional Living Expenses</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                            <circle cx="32" cy="32" r="32" fill="url(#service-gradient-3)"/>
+                            <path d="M32 19C24.3 19 18 25.3 18 33C18 40.7 24.3 47 32 47C39.7 47 46 40.7 46 33C46 25.3 39.7 19 32 19ZM37 37L30 33V24C30 23.2 30.7 22.5 31.5 22.5H32.5C33.3 22.5 34 23.2 34 24V31L39.5 34C40.2 34.4 40.4 35.3 40 36L39 37.5C38.6 38.2 37.7 38.4 37 38L37 37Z" fill="white"/>
+                            <defs>
+                                <linearGradient id="service-gradient-3" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#00A1E0" stop-opacity="0.2"/>
+                                    <stop offset="100%" stop-color="#62D84E" stop-opacity="0.2"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h3>Life Insurance</h3>
+                    <p>Ensure your loved ones are financially protected with our life insurance policies. Choose from term life, whole life, or universal life insurance to match your long-term financial goals.</p>
+                    <ul class="service-features">
+                        <li>Term & Whole Life Options</li>
+                        <li>Customizable Coverage Amounts</li>
+                        <li>Affordable Premium Rates</li>
+                        <li>Family Protection Plans</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                            <circle cx="32" cy="32" r="32" fill="url(#service-gradient-4)"/>
+                            <path d="M41 21H23C20.2 21 18 23.2 18 26V40C18 42.8 20.2 45 23 45H41C43.8 45 46 42.8 46 40V26C46 23.2 43.8 21 41 21ZM32 36C28.7 36 26 33.3 26 30C26 26.7 28.7 24 32 24C35.3 24 38 26.7 38 30C38 33.3 35.3 36 32 36Z" fill="white"/>
+                            <defs>
+                                <linearGradient id="service-gradient-4" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#62D84E" stop-opacity="0.2"/>
+                                    <stop offset="100%" stop-color="#00C7B7" stop-opacity="0.2"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h3>Business Insurance</h3>
+                    <p>Protect your business with customized commercial insurance solutions. Coverage for property, liability, workers' compensation, and professional indemnity to keep your business secure.</p>
+                    <ul class="service-features">
+                        <li>Commercial Property Coverage</li>
+                        <li>General Liability Insurance</li>
+                        <li>Workers' Compensation</li>
+                        <li>Business Interruption Protection</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                            <circle cx="32" cy="32" r="32" fill="url(#service-gradient-5)"/>
+                            <path d="M43 23H41V21C41 19.3 39.7 18 38 18H26C24.3 18 23 19.3 23 21V23H21C19.3 23 18 24.3 18 26V42C18 43.7 19.3 45 21 45H43C44.7 45 46 43.7 46 42V26C46 24.3 44.7 23 43 23ZM32 39C28.1 39 25 35.9 25 32C25 28.1 28.1 25 32 25C35.9 25 39 28.1 39 32C39 35.9 35.9 39 32 39Z" fill="white"/>
+                            <defs>
+                                <linearGradient id="service-gradient-5" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#5B1CD2" stop-opacity="0.2"/>
+                                    <stop offset="100%" stop-color="#00A1E0" stop-opacity="0.2"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h3>Travel Insurance</h3>
+                    <p>Travel with confidence knowing you're covered for medical emergencies, trip cancellations, lost luggage, and more. Perfect for business travelers and vacation enthusiasts alike.</p>
+                    <ul class="service-features">
+                        <li>Medical Emergency Coverage</li>
+                        <li>Trip Cancellation Protection</li>
+                        <li>Lost Baggage Coverage</li>
+                        <li>24/7 Travel Assistance</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                            <circle cx="32" cy="32" r="32" fill="url(#service-gradient-6)"/>
+                            <path d="M32 16C22.6 16 15 23.6 15 33C15 42.4 22.6 50 32 50C41.4 50 49 42.4 49 33C49 23.6 41.4 16 32 16ZM35 38H29V35H35V38ZM35 32H29V20H35V32Z" fill="white"/>
+                            <defs>
+                                <linearGradient id="service-gradient-6" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#00A1E0" stop-opacity="0.2"/>
+                                    <stop offset="100%" stop-color="#62D84E" stop-opacity="0.2"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h3>Health & Dental</h3>
+                    <p>Comprehensive health and dental coverage to ensure you and your family have access to quality healthcare. From routine check-ups to emergency care, we've got you covered.</p>
+                    <ul class="service-features">
+                        <li>Medical & Dental Coverage</li>
+                        <li>Prescription Drug Benefits</li>
+                        <li>Vision Care</li>
+                        <li>Preventive Care Services</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-us" id="why-us">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose PolicyCover?</h2>
+                <p class="section-subtitle">Experience the Difference of Personalized Insurance Solutions</p>
+            </div>
+            <div class="why-us-grid">
+                <div class="why-item">
+                    <div class="why-number">01</div>
+                    <h3>Personalized Quotes</h3>
+                    <p>We take the time to understand your unique needs and provide customized insurance quotes that fit your budget and lifestyle, not one-size-fits-all solutions.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-number">02</div>
+                    <h3>Quick Claims Processing</h3>
+                    <p>When you need us most, we're there. Our streamlined claims process ensures fast approvals and settlements, so you can get back to normal life quickly.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-number">03</div>
+                    <h3>Expert Guidance</h3>
+                    <p>Our licensed insurance advisors bring years of industry expertise to help you navigate complex coverage options and make informed decisions.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-number">04</div>
+                    <h3>Competitive Rates</h3>
+                    <p>We work with multiple top-rated insurance providers to compare rates and find you the best coverage at the most competitive prices available.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-number">05</div>
+                    <h3>24/7 Customer Support</h3>
+                    <p>Questions or emergencies don't wait for business hours. That's why our dedicated support team is available around the clock to assist you.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-number">06</div>
+                    <h3>Trusted Partnerships</h3>
+                    <p>We partner with only the most reputable insurance companies, ensuring your coverage is backed by financially stable and reliable providers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Our Clients Say</h2>
+                <p class="section-subtitle">Real Stories from Real People</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="testimonial-text">"PolicyCover made finding the right home insurance so easy! Their team took the time to explain all my options and found me a policy that was both comprehensive and affordable. Highly recommend!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <span>SK</span>
+                        </div>
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Home Insurance Client</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="testimonial-text">"After shopping around for auto insurance, I found PolicyCover offered the best rates without compromising on coverage. The claims process was smooth and hassle-free. Couldn't be happier!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <span>MP</span>
+                        </div>
+                        <div class="author-info">
+                            <h4>Michael Patel</h4>
+                            <p>Auto Insurance Client</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="testimonial-text">"As a small business owner, finding the right insurance was overwhelming. PolicyCover's team simplified everything and put together a perfect package for my business. Their ongoing support has been invaluable."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <span>EC</span>
+                        </div>
+                        <div class="author-info">
+                            <h4>Emily Chen</h4>
+                            <p>Business Insurance Client</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get Your Free Quote Today</h2>
+                <p class="section-subtitle">Ready to protect what matters most? Contact us now!</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p>Have questions or ready to get started? Reach out to us and we'll be happy to help you find the perfect insurance solution.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 10.999H22C22 5.869 18.127 2 12.99 2V4C17.052 4 20 6.943 20 10.999Z" fill="#62D84E"/>
+                                    <path d="M13 7.99999C15.103 7.99999 16 8.89699 16 11H18C18 7.77499 16.225 5.99999 13 5.99999V7.99999ZM16.422 13.443C16.2299 13.2683 15.9774 13.1752 15.7178 13.1832C15.4583 13.1912 15.212 13.2998 15.031 13.486L12.638 15.947C12.062 15.837 10.904 15.476 9.71204 14.287C8.52004 13.094 8.15904 11.933 8.05204 11.361L10.511 8.96699C10.6975 8.78612 10.8062 8.53982 10.8142 8.2802C10.8222 8.02059 10.7289 7.76804 10.554 7.57599L6.85904 3.51299C6.68408 3.32035 6.44092 3.2035 6.18119 3.18725C5.92146 3.17101 5.66564 3.25665 5.46804 3.42599L3.29804 5.28699C3.12515 5.46051 3.0222 5.69145 3.00804 5.93599C2.99304 6.18599 2.70704 12.108 7.29904 16.702C11.305 20.707 16.323 21 17.705 21C17.907 21 18.031 20.994 18.064 20.992C18.3085 20.9783 18.5394 20.8747 18.712 20.701L20.572 18.53C20.7414 18.3325 20.8273 18.0768 20.8113 17.817C20.7952 17.5573 20.6785 17.3141 20.486 17.139L16.422 13.443Z" fill="#62D84E"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z" fill="#62D84E"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <p><a href="mailto:info@policycover.com">info@policycover.com</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="#62D84E"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Office Hours</h4>
+                                <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+                                <p>Sat: 10:00 AM - 4:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required placeholder="john@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="+1 (555) 123-4567">
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Insurance Type</label>
+                        <select id="service" name="service">
+                            <option value="">Select a service...</option>
+                            <option value="auto">Auto Insurance</option>
+                            <option value="home">Home Insurance</option>
+                            <option value="life">Life Insurance</option>
+                            <option value="business">Business Insurance</option>
+                            <option value="travel">Travel Insurance</option>
+                            <option value="health">Health & Dental</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Tell us about your insurance needs..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Send Message</button>
+                    <div class="form-message" id="formMessage"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="10" fill="url(#footer-logo-gradient)"/>
+                            <path d="M20 10L12 16V26C12 27.1 12.9 28 14 28H26C27.1 28 28 27.1 28 26V16L20 10ZM20 21C18.9 21 18 20.1 18 19C18 17.9 18.9 17 20 17C21.1 17 22 17.9 22 19C22 20.1 21.1 21 20 21Z" fill="white"/>
+                            <defs>
+                                <linearGradient id="footer-logo-gradient" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#62D84E"/>
+                                    <stop offset="100%" stop-color="#00C7B7"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span>PolicyCover</span>
+                    </div>
+                    <p>Your trusted partner in comprehensive insurance solutions. Protecting what matters most since 2008.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Auto Insurance</a></li>
+                        <li><a href="#services">Home Insurance</a></li>
+                        <li><a href="#services">Life Insurance</a></li>
+                        <li><a href="#services">Business Insurance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>+1 (555) 123-4567</li>
+                        <li>info@policycover.com</li>
+                        <li>Mon - Fri: 9AM - 6PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 PolicyCover. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
