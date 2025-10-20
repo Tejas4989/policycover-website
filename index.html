@@ -575,6 +575,14 @@
     </footer>
 
     <script src="script.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+    <script type="module">
+        import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+        createChat({
+            webhookUrl: 'https://n8n.01genius.io/webhook/d7fe44a5-fefb-4f57-ae1b-dbd34216f070/chat'
+        });
+    </script>
 </body>
 </html>
 
