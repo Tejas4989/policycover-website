@@ -454,13 +454,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--bg-gradient-1);
+    background: linear-gradient(135deg, #62D84E 0%, #00C7B7 100%);
+    min-height: 200px;
 }
 
 .product-image svg {
     position: relative;
     z-index: 1;
     transition: var(--transition);
+    flex-shrink: 0;
 }
 
 .product-card:hover .product-image svg {
@@ -480,56 +482,56 @@ body {
 
 /* Individual Product Gradients */
 .product-image-travel {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
 }
 
 .product-image-dental {
-    background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+    background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%) !important;
 }
 
 .product-image-business {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%) !important;
 }
 
 .product-image-visitors {
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%) !important;
 }
 
 .product-image-supervisa {
-    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%) !important;
 }
 
 .product-image-critical {
-    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%) !important;
 }
 
 .product-image-life {
-    background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+    background: linear-gradient(135deg, #30cfd0 0%, #330867 100%) !important;
 }
 
 .product-image-disability {
-    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%) !important;
 }
 
 .product-image-accident {
-    background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
+    background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%) !important;
 }
 
 /* Investment Product Gradients */
 .product-image-tfsa {
-    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%) !important;
 }
 
 .product-image-rrsp {
-    background: linear-gradient(135deg, #ee9ca7 0%, #ffdde1 100%);
+    background: linear-gradient(135deg, #ee9ca7 0%, #ffdde1 100%) !important;
 }
 
 .product-image-resp {
-    background: linear-gradient(135deg, #2193b0 0%, #6dd5ed 100%);
+    background: linear-gradient(135deg, #2193b0 0%, #6dd5ed 100%) !important;
 }
 
 .product-image-fhsa {
-    background: linear-gradient(135deg, #fc4a1a 0%, #f7b733 100%);
+    background: linear-gradient(135deg, #fc4a1a 0%, #f7b733 100%) !important;
 }
 
 .product-content {
