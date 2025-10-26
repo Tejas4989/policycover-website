@@ -1,36 +1,16 @@
-# Cloudflare Pages Custom Headers
-
-# Security headers for all pages
 /*
-  X-Frame-Options: DENY
-  X-Content-Type-Options: nosniff
-  X-XSS-Protection: 1; mode=block
-  Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  Cache-Control: public, max-age=0, must-revalidate
 
-# Cache control for static assets
 /*.css
   Cache-Control: public, max-age=31536000, immutable
 
 /*.js
   Cache-Control: public, max-age=31536000, immutable
 
-/*.png
-  Cache-Control: public, max-age=31536000, immutable
-
-/*.jpg
-  Cache-Control: public, max-age=31536000, immutable
-
-/*.jpeg
-  Cache-Control: public, max-age=31536000, immutable
-
 /*.svg
   Cache-Control: public, max-age=31536000, immutable
+  Content-Type: image/svg+xml
 
-/*.webp
-  Cache-Control: public, max-age=31536000, immutable
-
-# HTML files - shorter cache
-/*.html
-  Cache-Control: public, max-age=0, must-revalidate
-
+/styles.css
+  Cache-Control: no-cache, no-store, must-revalidate
+  X-Content-Type-Options: nosniff
