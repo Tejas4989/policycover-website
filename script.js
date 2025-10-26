@@ -94,7 +94,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observe elements for scroll animations
-const animateOnScroll = document.querySelectorAll('.service-card, .why-item, .testimonial-card, .value-item');
+const animateOnScroll = document.querySelectorAll('.product-card, .service-card, .why-item, .testimonial-card, .value-item');
 animateOnScroll.forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
@@ -277,8 +277,19 @@ window.addEventListener('load', () => {
 });
 
 // ===========================
-// Service Cards Interaction
+// Product & Service Cards Interaction
 // ===========================
+const productCards = document.querySelectorAll('.product-card');
+productCards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.style.borderColor = 'var(--primary-color)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        this.style.borderColor = 'var(--border-color)';
+    });
+});
+
 const serviceCards = document.querySelectorAll('.service-card');
 serviceCards.forEach(card => {
     card.addEventListener('mouseenter', function() {
@@ -334,9 +345,9 @@ if (window.history.replaceState) {
 // ===========================
 // Console Welcome Message
 // ===========================
-console.log('%c👋 Welcome to PolicyCover!', 'font-size: 20px; color: #00D4AA; font-weight: bold;');
+console.log('%c👋 Welcome to PolicyCover!', 'font-size: 20px; color: #62D84E; font-weight: bold;');
 console.log('%cProtect What Matters Most', 'font-size: 14px; color: #6B7280;');
-console.log('%c━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', 'color: #00D4AA;');
+console.log('%c━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', 'color: #62D84E;');
 
 // ===========================
 // Performance Optimization
@@ -358,7 +369,7 @@ if ('loading' in HTMLImageElement.prototype) {
 // Accessibility Enhancements
 // ===========================
 // Add keyboard navigation for cards
-const interactiveCards = document.querySelectorAll('.service-card, .why-item, .testimonial-card');
+const interactiveCards = document.querySelectorAll('.product-card, .service-card, .why-item, .testimonial-card');
 interactiveCards.forEach(card => {
     card.setAttribute('tabindex', '0');
     

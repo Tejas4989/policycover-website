@@ -407,13 +407,185 @@ body {
 }
 
 /* ===========================
-   Services Section
+   Services Section (Products)
    =========================== */
 .services {
     padding: 6rem 0;
     background: var(--bg-light);
 }
 
+/* ===========================
+   Investment Products Section
+   =========================== */
+.investments {
+    padding: 6rem 0;
+    background: var(--bg-white);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background: var(--bg-white);
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: var(--transition);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+    border-color: var(--primary-color);
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-gradient-1);
+}
+
+.product-image svg {
+    position: relative;
+    z-index: 1;
+    transition: var(--transition);
+}
+
+.product-card:hover .product-image svg {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.08);
+}
+
+/* Individual Product Gradients */
+.product-image-travel {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.product-image-dental {
+    background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+}
+
+.product-image-business {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.product-image-visitors {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.product-image-supervisa {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+.product-image-critical {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+.product-image-life {
+    background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+}
+
+.product-image-disability {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+}
+
+.product-image-accident {
+    background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
+}
+
+/* Investment Product Gradients */
+.product-image-tfsa {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+.product-image-rrsp {
+    background: linear-gradient(135deg, #ee9ca7 0%, #ffdde1 100%);
+}
+
+.product-image-resp {
+    background: linear-gradient(135deg, #2193b0 0%, #6dd5ed 100%);
+}
+
+.product-image-fhsa {
+    background: linear-gradient(135deg, #fc4a1a 0%, #f7b733 100%);
+}
+
+.product-content {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-content h3 {
+    font-size: 1.35rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-dark);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+}
+
+.product-subtitle {
+    color: var(--text-lighter);
+    font-size: 0.85rem;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.product-tagline {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.product-button {
+    background: var(--text-dark);
+    color: var(--text-white);
+    border: none;
+    padding: 0.85rem 1.75rem;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.95rem;
+    width: 100%;
+    letter-spacing: 0.3px;
+}
+
+.product-button:hover {
+    background: var(--primary-color);
+    color: var(--text-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(98, 216, 78, 0.3);
+}
+
+/* Legacy service card styles for backward compatibility */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -784,6 +956,71 @@ body {
 }
 
 /* ===========================
+   CTA Banner Section
+   =========================== */
+.cta-banner {
+    background: var(--bg-gradient-1);
+    padding: 4rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-banner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.cta-banner-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-text h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
+}
+
+.cta-text p {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    opacity: 0.85;
+}
+
+.cta-banner-button {
+    background: var(--text-dark);
+    color: var(--text-white);
+    border: none;
+    padding: 1.2rem 3rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+}
+
+.cta-banner-button:hover {
+    background: var(--text-white);
+    color: var(--text-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* ===========================
    Footer
    =========================== */
 .footer {
@@ -981,6 +1218,10 @@ body {
         font-size: 2rem;
     }
     
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
     .services-grid {
         grid-template-columns: 1fr;
     }
@@ -995,6 +1236,23 @@ body {
     
     .contact-form {
         grid-template-columns: 1fr;
+    }
+    
+    .cta-banner-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .cta-text h2 {
+        font-size: 1.85rem;
+    }
+    
+    .cta-text p {
+        font-size: 1rem;
+    }
+    
+    .cta-banner-button {
+        width: 100%;
     }
     
     .footer-content {
