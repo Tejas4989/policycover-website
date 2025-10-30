@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Simple heart with family protection -->
+  <path d="M100 170c-2 0-60-40-60-80 0-20 16-36 36-36 11 0 21 5 24 12 3-7 13-12 24-12 20 0 36 16 36 36 0 40-58 80-60 80z" fill="white" stroke="white" stroke-width="4"/>
+  <!-- Family figures inside heart -->
+  <circle cx="85" cy="100" r="8" fill="rgba(48, 207, 208, 0.6)"/>
+  <circle cx="100" cy="95" r="10" fill="rgba(48, 207, 208, 0.8)"/>
+  <circle cx="115" cy="100" r="8" fill="rgba(48, 207, 208, 0.6)"/>
+</svg>

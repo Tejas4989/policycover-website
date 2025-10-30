@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Piggy bank body -->
+  <ellipse cx="100" cy="115" rx="50" ry="40" fill="white" stroke="white" stroke-width="3"/>
+  <!-- Pig ear -->
+  <ellipse cx="65" cy="100" rx="10" ry="15" fill="white"/>
+  <!-- Pig nose -->
+  <ellipse cx="130" cy="110" rx="12" ry="10" fill="rgba(98, 216, 78, 0.3)"/>
+  <circle cx="124" cy="108" r="2.5" fill="#62D84E"/>
+  <circle cx="136" cy="108" r="2.5" fill="#62D84E"/>
+  <!-- Coin slot -->
+  <rect x="90" y="85" width="20" height="5" rx="2" fill="#62D84E"/>
+  <!-- Legs -->
+  <rect x="72" y="150" width="10" height="20" rx="5" fill="white"/>
+  <rect x="90" y="150" width="10" height="20" rx="5" fill="white"/>
+  <rect x="108" y="150" width="10" height="20" rx="5" fill="white"/>
+  <rect x="126" y="150" width="10" height="20" rx="5" fill="white"/>
+  <!-- Money symbol -->
+  <text x="94" y="60" font-size="30" font-weight="bold" fill="#62D84E">$</text>
+</svg>

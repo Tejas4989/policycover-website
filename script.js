@@ -14,9 +14,44 @@ hamburger.addEventListener('click', () => {
 
 // Close mobile menu when clicking on a nav link
 navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        // Don't close menu if clicking on dropdown parent
+        if (!link.parentElement.classList.contains('nav-dropdown')) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
+    });
+});
+
+// Handle dropdown toggles on mobile
+const dropdownItems = document.querySelectorAll('.nav-dropdown');
+dropdownItems.forEach(dropdown => {
+    const dropdownLink = dropdown.querySelector('.nav-link');
+    
+    dropdownLink.addEventListener('click', (e) => {
+        // Only prevent default and toggle on mobile
+        if (window.innerWidth <= 768) {
+            e.preventDefault();
+            dropdown.classList.toggle('active');
+            
+            // Close other dropdowns
+            dropdownItems.forEach(otherDropdown => {
+                if (otherDropdown !== dropdown) {
+                    otherDropdown.classList.remove('active');
+                }
+            });
+        }
+    });
+});
+
+// Close dropdowns when clicking dropdown links (mobile)
+document.querySelectorAll('.dropdown-link').forEach(link => {
     link.addEventListener('click', () => {
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
+        dropdownItems.forEach(dropdown => {
+            dropdown.classList.remove('active');
+        });
     });
 });
 
@@ -399,4 +434,3 @@ window.addEventListener('beforeprint', () => {
 window.addEventListener('afterprint', () => {
     document.body.classList.remove('printing');
 });
-

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Tooth -->
+  <path d="M85 70c-15 0-25 10-25 25v30c0 15 8 25 15 35 4 6 6 10 6 15v5h16v-5c0-5 2-9 6-15 7-10 15-20 15-35v-30c0-15-10-25-25-25h-8z" fill="white" stroke="white" stroke-width="3"/>
+  <!-- Smile/Plus symbol for health -->
+  <path d="M85 95c4 6 10 10 17 10 7 0 13-4 17-10" stroke="#00c6ff" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <circle cx="90" cy="85" r="3" fill="#00c6ff"/>
+  <circle cx="110" cy="85" r="3" fill="#00c6ff"/>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Growth chart bars -->
+  <rect x="50" y="120" width="20" height="40" fill="white" opacity="0.7"/>
+  <rect x="80" y="100" width="20" height="60" fill="white" opacity="0.8"/>
+  <rect x="110" y="75" width="20" height="85" fill="white" opacity="0.9"/>
+  <rect x="140" y="50" width="20" height="110" fill="white"/>
+  <!-- Upward arrow -->
+  <path d="M165 50l-15-20-15 20" stroke="#ff9ecd" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <line x1="150" y1="30" x2="150" y2="70" stroke="#ff9ecd" stroke-width="4" stroke-linecap="round"/>
+  <!-- Dollar signs -->
+  <text x="48" y="115" font-size="18" font-weight="bold" fill="#ff9ecd">$</text>
+  <text x="78" y="95" font-size="18" font-weight="bold" fill="#ff9ecd">$</text>
+  <text x="108" y="70" font-size="18" font-weight="bold" fill="#ff9ecd">$</text>
+</svg>

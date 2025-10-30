@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <circle cx="100" cy="100" r="90" fill="white" opacity="0.15"/>
+  <!-- Person with support -->
+  <circle cx="100" cy="65" r="18" fill="white"/>
+  <path d="M100 88c-20 0-32 12-32 28v20h64v-20c0-16-12-28-32-28z" fill="white"/>
+  
+  <!-- Helping hands on sides -->
+  <path d="M50 95c0 0 8-5 15-2l-5 15c-3 0-10-5-10-13z" fill="white" opacity="0.9"/>
+  <path d="M150 95c0 0-8-5-15-2l5 15c3 0 10-5 10-13z" fill="white" opacity="0.9"/>
+  
+  <!-- Protective circle around person -->
+  <circle cx="100" cy="95" r="45" stroke="white" stroke-width="3" fill="none" stroke-dasharray="8 6" opacity="0.6"/>
+  
+  <!-- Shield at bottom -->
+  <path d="M100 140l-20 10v18c0 12 10 18 20 20 10-2 20-8 20-20v-18l-20-10z" fill="white"/>
+  <path d="M100 140l-20 10v18c0 12 10 18 20 20 10-2 20-8 20-20v-18l-20-10z" stroke="white" stroke-width="2"/>
+  
+  <!-- Checkmark in shield -->
+  <path d="M90 160l7 7 13-12" stroke="#a8edea" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Dollar sign for income protection -->
+  <text x="95" y="75" font-size="20" font-weight="bold" fill="#fed6e3" opacity="0.8">$</text>
+  
+  <!-- Support bracket -->
+  <path d="M60 110c-5 0-8 3-8 8v10c0 5 3 8 8 8M140 110c5 0 8 3 8 8v10c0 5-3 8-8 8" stroke="white" stroke-width="2.5" fill="none" opacity="0.7"/>
+</svg>

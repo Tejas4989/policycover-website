@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Passport -->
+  <rect x="55" y="65" width="90" height="100" rx="6" fill="white" stroke="white" stroke-width="3"/>
+  <!-- Maple leaf (Canada) -->
+  <path d="M100 90l-5 12-12-3 7 10-10 5 12 3-3 12 9-9 9 9-3-12 12-3-10-5 7-10-12 3-5-12z" fill="#f093fb"/>
+  <!-- Airplane -->
+  <path d="M75 120l8-5 15 0-5 8 10 0-10 15-8-8-8 8-10-15 10 0-5-8 15 0 8 5z" fill="#f093fb" opacity="0.7" transform="scale(0.5) translate(150, 180)"/>
+  <!-- "VISA" text -->
+  <text x="65" y="150" font-size="12" font-weight="bold" fill="white" opacity="0.8">SUPER VISA</text>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <circle cx="100" cy="100" r="90" fill="white" opacity="0.15"/>
+  <!-- First aid kit -->
+  <rect x="60" y="80" width="80" height="60" rx="6" fill="white"/>
+  <rect x="65" y="85" width="70" height="50" rx="4" fill="white" stroke="white" stroke-width="2"/>
+  
+  <!-- Medical cross (large) -->
+  <rect x="95" y="95" width="10" height="30" rx="2" fill="#ffa4a4"/>
+  <rect x="85" y="105" width="30" height="10" rx="2" fill="#ffa4a4"/>
+  
+  <!-- Handle -->
+  <path d="M85 80c0-3 2-5 5-5h20c3 0 5 2 5 5v5H85v-5z" fill="white" stroke="white" stroke-width="2"/>
+  
+  <!-- Emergency symbols around the kit -->
+  <circle cx="50" cy="70" r="15" stroke="white" stroke-width="3" fill="none"/>
+  <path d="M50 60v20m-10-10h20" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  
+  <circle cx="150" cy="70" r="15" stroke="white" stroke-width="3" fill="none"/>
+  <path d="M150 60v20m-10-10h20" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Pulse/heartbeat line -->
+  <path d="M50 155h25l8-20 12 40 12-40 8 20h25" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Bandage -->
+  <rect x="140" y="95" width="30" height="12" rx="3" fill="white" opacity="0.8"/>
+  <circle cx="150" cy="101" r="1.5" fill="#ffa4a4"/>
+  <circle cx="155" cy="101" r="1.5" fill="#ffa4a4"/>
+  <circle cx="160" cy="101" r="1.5" fill="#ffa4a4"/>
+  
+  <!-- Alert triangle -->
+  <path d="M45 145l8-15 8 15h-16z" fill="white" opacity="0.7"/>
+  <path d="M53 140v-5m0 8v1" stroke="#ffa4a4" stroke-width="2" stroke-linecap="round"/>
+</svg>

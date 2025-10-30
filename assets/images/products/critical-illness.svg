@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Shield -->
+  <path d="M100 50l-40 20v35c0 25 20 40 40 45 20-5 40-20 40-45V70l-40-20z" fill="white" stroke="white" stroke-width="3"/>
+  <!-- Medical cross -->
+  <rect x="95" y="80" width="10" height="50" rx="2" fill="#ff6e7f"/>
+  <rect x="75" y="100" width="50" height="10" rx="2" fill="#ff6e7f"/>
+  <!-- Heartbeat line -->
+  <path d="M50 160h25l8-15 12 30 12-30 8 15h25" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
