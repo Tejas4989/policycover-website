@@ -728,7 +728,7 @@ body {
     position: relative;
     padding: 4rem 0;
     margin-top: 2rem;
-    background: rgba(98, 216, 78, 0.02);
+    background: linear-gradient(135deg, #FAFFFE 0%, #F5FCFF 100%);
     border-top: 1px solid rgba(98, 216, 78, 0.1);
 }
 
@@ -855,7 +855,8 @@ body {
    =========================== */
 .about {
     padding: 6rem 0;
-    background: var(--bg-white);
+    background: linear-gradient(135deg, #FAFFFE 0%, #F5FCFF 100%);
+    border-top: 1px solid rgba(98, 216, 78, 0.1);
 }
 
 .about-content {
@@ -918,7 +919,8 @@ body {
    =========================== */
 .services {
     padding: 6rem 0;
-    background: var(--bg-light);
+    background: linear-gradient(135deg, #FAFFFE 0%, #F5FCFF 100%);
+    border-top: 1px solid rgba(98, 216, 78, 0.1);
 }
 
 /* ===========================
@@ -926,7 +928,8 @@ body {
    =========================== */
 .investments {
     padding: 6rem 0;
-    background: var(--bg-white);
+    background: linear-gradient(135deg, #FAFFFE 0%, #F5FCFF 100%);
+    border-top: 1px solid rgba(98, 216, 78, 0.1);
 }
 
 .products-grid {
@@ -1208,7 +1211,8 @@ body {
    =========================== */
 .why-us {
     padding: 6rem 0;
-    background: var(--bg-white);
+    background: linear-gradient(135deg, #FAFFFE 0%, #F5FCFF 100%);
+    border-top: 1px solid rgba(98, 216, 78, 0.1);
 }
 
 .why-us-grid {
@@ -1262,7 +1266,8 @@ body {
    =========================== */
 .partners-section {
     padding: 5rem 0;
-    background: linear-gradient(135deg, #F9FAFB 0%, #FFFFFF 100%);
+    background: linear-gradient(135deg, #FAFFFE 0%, #F5FCFF 100%);
+    border-top: 1px solid rgba(98, 216, 78, 0.1);
     overflow: hidden;
 }
 
@@ -1380,7 +1385,8 @@ body {
    =========================== */
 .testimonials {
     padding: 6rem 0;
-    background: var(--bg-light);
+    background: linear-gradient(135deg, #FAFFFE 0%, #F5FCFF 100%);
+    border-top: 1px solid rgba(98, 216, 78, 0.1);
 }
 
 .testimonials-grid {
@@ -1458,7 +1464,8 @@ body {
    =========================== */
 .contact {
     padding: 6rem 0;
-    background: var(--bg-white);
+    background: linear-gradient(135deg, #FAFFFE 0%, #F5FCFF 100%);
+    border-top: 1px solid rgba(98, 216, 78, 0.1);
 }
 
 .contact-content {
