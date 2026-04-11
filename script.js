@@ -357,6 +357,9 @@ const phoneInput = document.getElementById('phone');
 if (phoneInput) {
     phoneInput.addEventListener('input', (e) => {
         let value = e.target.value.replace(/\D/g, '');
+        // Strip the leading country code "1" that gets re-read from the "+1 (" prefix
+        if (value.startsWith('1')) value = value.slice(1);
+        value = value.slice(0, 10); // max 10 digits
         if (value.length > 0) {
             if (value.length <= 3) {
                 value = `+1 (${value}`;
@@ -687,6 +690,9 @@ document.addEventListener('input', (e) => {
 document.addEventListener('input', (e) => {
     if (!e.target.classList.contains('modal-phone')) return;
     let value = e.target.value.replace(/\D/g, '');
+    // Strip the leading country code "1" that gets re-read from the "+1 (" prefix
+    if (value.startsWith('1')) value = value.slice(1);
+    value = value.slice(0, 10); // max 10 digits
     if (value.length > 0) {
         if (value.length <= 3) {
             value = `+1 (${value}`;
