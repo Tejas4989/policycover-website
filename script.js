@@ -168,29 +168,24 @@ contactForm.addEventListener('submit', async (e) => {
         return;
     }
     
-    // Simulate form submission (in production, this would send to a server)
     try {
-        // Disable submit button
         const submitButton = contactForm.querySelector('.submit-button');
         submitButton.disabled = true;
         submitButton.textContent = 'Sending...';
-        
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        
-        // Show success message
+
+        const payload = Object.assign({ form_type: 'contact', submitted_at: new Date().toISOString() }, formData);
+        const response = await fetch(QUOTE_WEBHOOK_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+        if (!response.ok) throw new Error('Server returned ' + response.status);
+
         showMessage('Thank you for your message! We\'ll get back to you within 24 hours.', 'success');
-        
-        // Reset form
         contactForm.reset();
-        
-        // Re-enable submit button
         submitButton.disabled = false;
         submitButton.textContent = 'Send Message';
-        
-        // Log form data (in production, this would be sent to a server)
-        console.log('Form submitted:', formData);
-        
+
     } catch (error) {
         showMessage('Something went wrong. Please try again later.', 'error');
         const submitButton = contactForm.querySelector('.submit-button');
@@ -384,9 +379,8 @@ if (window.history.replaceState) {
 // Quote Modal System
 // ===========================
 
-// Set your n8n (or any webhook) URL here to receive form submissions.
-// Leave empty to log to console only (useful for testing).
-const QUOTE_WEBHOOK_URL = '';
+// n8n webhook — receives all quote and contact form submissions as JSON.
+const QUOTE_WEBHOOK_URL = 'https://n8n.01genius.io/webhook/insurance-form';
 
 function openQuoteModal(type) {
     const modal = document.getElementById('quoteModal-' + type);
@@ -568,8 +562,8 @@ document.addEventListener('click', (e) => {
             submitBtn.textContent = 'Submitting...';
         }
 
-        // Collect all form data
-        const data = { form_type: type + '_insurance_quote' };
+        // Collect all form data as JSON
+        const data = { form_type: type, submitted_at: new Date().toISOString() };
         new FormData(form).forEach((val, key) => { data[key] = val; });
 
         try {
