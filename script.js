@@ -378,6 +378,292 @@ if (window.history.replaceState) {
 }
 
 // ===========================
+// Quote Modal System
+// ===========================
+
+// Set your n8n (or any webhook) URL here to receive form submissions.
+// Leave empty to log to console only (useful for testing).
+const QUOTE_WEBHOOK_URL = '';
+
+function openQuoteModal(type) {
+    const modal = document.getElementById('quoteModal-' + type);
+    if (!modal) return;
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    // Focus first input for accessibility
+    setTimeout(() => {
+        const firstInput = modal.querySelector('input, select, textarea');
+        if (firstInput) firstInput.focus();
+    }, 100);
+}
+
+function closeQuoteModal(type) {
+    const modal = document.getElementById('quoteModal-' + type);
+    if (!modal) return;
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+    // Reset form state
+    resetQuoteModal(type);
+}
+
+function resetQuoteModal(type) {
+    const form = document.getElementById('quoteForm-' + type);
+    const success = document.getElementById('qSuccess-' + type);
+    if (form) {
+        form.reset();
+        form.style.display = '';
+        // Return to step 1
+        form.querySelectorAll('.quote-step-panel').forEach((panel, i) => {
+            panel.classList.toggle('active', i === 0);
+        });
+    }
+    if (success) success.style.display = 'none';
+    // Reset stepper visibility and state
+    const stepper = document.getElementById('quoteStepper-' + type);
+    if (stepper) stepper.style.display = '';
+    if (stepper) {
+        stepper.querySelectorAll('.stepper-step').forEach((step, i) => {
+            step.classList.toggle('active', i === 0);
+            step.classList.remove('done');
+        });
+        stepper.querySelectorAll('.stepper-line').forEach(line => line.classList.remove('done'));
+    }
+    const errEl = document.getElementById('qError-' + type);
+    if (errEl) errEl.textContent = '';
+}
+
+function goToQuoteStep(type, toStep) {
+    const form = document.getElementById('quoteForm-' + type);
+    if (!form) return;
+
+    form.querySelectorAll('.quote-step-panel').forEach(panel => {
+        panel.classList.toggle('active', parseInt(panel.dataset.panel) === toStep);
+    });
+
+    // Update stepper
+    const stepper = document.getElementById('quoteStepper-' + type);
+    if (stepper) {
+        stepper.querySelectorAll('.stepper-step').forEach(step => {
+            const s = parseInt(step.dataset.step);
+            step.classList.toggle('active', s === toStep);
+            step.classList.toggle('done', s < toStep);
+        });
+        stepper.querySelectorAll('.stepper-line').forEach((line, i) => {
+            line.classList.toggle('done', i < toStep - 1);
+        });
+    }
+}
+
+function validateQuoteStep(type, step) {
+    const form = document.getElementById('quoteForm-' + type);
+    if (!form) return true;
+    const panel = form.querySelector(`.quote-step-panel[data-panel="${step}"]`);
+    if (!panel) return true;
+
+    let valid = true;
+    const errEl = document.getElementById('qError-' + type);
+    if (errEl) errEl.textContent = '';
+
+    panel.querySelectorAll('[required]').forEach(field => {
+        field.style.borderColor = '';
+        if (!field.value.trim()) {
+            field.style.borderColor = '#e53935';
+            valid = false;
+        }
+    });
+
+    // Email check
+    const emailField = panel.querySelector('input[type="email"]');
+    if (emailField && emailField.value.trim()) {
+        const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value.trim());
+        if (!emailOk) {
+            emailField.style.borderColor = '#e53935';
+            valid = false;
+        }
+    }
+
+    if (!valid && errEl) {
+        errEl.textContent = 'Please fill in all required fields correctly.';
+    }
+    return valid;
+}
+
+// ===========================
+// Dynamic Vehicle / Driver Count Pills
+// ===========================
+document.addEventListener('click', (e) => {
+    const pill = e.target.closest('.qcount-pill');
+    if (!pill) return;
+
+    const target = pill.dataset.target;  // 'vehicle' or 'driver'
+    const count = parseInt(pill.dataset.count);
+
+    // Update active pill
+    pill.closest('.qcount-pills').querySelectorAll('.qcount-pill').forEach(p => p.classList.remove('active'));
+    pill.classList.add('active');
+
+    // Update hidden input
+    const hiddenInputMap = { vehicle: 'numVehicles', driver: 'numDrivers', homeowner: 'numHomeowners', traveler: 'numTravelers' };
+    const hiddenInput = document.getElementById(hiddenInputMap[target] || ('num' + target));
+    if (hiddenInput) hiddenInput.value = count;
+
+    // Show/hide blocks based on count
+    const maxBlocksMap = { vehicle: 3, driver: 4, homeowner: 3, traveler: 2 };
+    const maxBlocks = maxBlocksMap[target] || 4;
+    for (let i = 1; i <= maxBlocks; i++) {
+        const block = document.getElementById(target + '-block-' + i);
+        if (block) {
+            const show = i <= count;
+            block.style.display = show ? '' : 'none';
+            // Clear required on hidden blocks so form can submit
+            block.querySelectorAll('[required]').forEach(f => {
+                if (show) {
+                    f.setAttribute('required', '');
+                } else {
+                    f.removeAttribute('required');
+                    f.value = '';
+                }
+            });
+        }
+    }
+});
+
+// ===========================
+// Attach next/prev handlers
+// ===========================
+document.addEventListener('click', (e) => {
+    const nextBtn = e.target.closest('.btn-qnext');
+    if (nextBtn) {
+        const type = nextBtn.dataset.modal;
+        const fromStep = parseInt(nextBtn.dataset.from);
+        if (validateQuoteStep(type, fromStep)) {
+            goToQuoteStep(type, fromStep + 1);
+        }
+        return;
+    }
+    const prevBtn = e.target.closest('.btn-qprev');
+    if (prevBtn) {
+        const type = prevBtn.dataset.modal;
+        const fromStep = parseInt(prevBtn.dataset.from);
+        goToQuoteStep(type, fromStep - 1);
+    }
+});
+
+// Attach form submit handlers
+['auto', 'home', 'commercial', 'supervisa'].forEach(type => {
+    const form = document.getElementById('quoteForm-' + type);
+    if (!form) return;
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const lastStep = form.querySelectorAll('.quote-step-panel').length;
+        if (!validateQuoteStep(type, lastStep)) return;
+
+        const submitBtn = form.querySelector('.btn-qsubmit');
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+        }
+
+        // Collect all form data
+        const data = { form_type: type + '_insurance_quote' };
+        new FormData(form).forEach((val, key) => { data[key] = val; });
+
+        try {
+            if (QUOTE_WEBHOOK_URL) {
+                const response = await fetch(QUOTE_WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                if (!response.ok) throw new Error('Webhook returned ' + response.status);
+            } else {
+                // No webhook configured — simulate a delay
+                await new Promise(r => setTimeout(r, 1200));
+                console.log('Quote form submitted (no webhook configured):', data);
+            }
+
+            // Show success
+            form.style.display = 'none';
+            const stepper = document.getElementById('quoteStepper-' + type);
+            if (stepper) stepper.style.display = 'none';
+            const successEl = document.getElementById('qSuccess-' + type);
+            if (successEl) successEl.style.display = 'block';
+
+        } catch (err) {
+            console.error('Quote submission error:', err);
+            const errEl = document.getElementById('qError-' + type);
+            if (errEl) errEl.textContent = 'Something went wrong. Please try again or call us directly.';
+        } finally {
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Get My Quote →';
+            }
+        }
+    });
+});
+
+// Close on Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        ['auto', 'home', 'commercial', 'supervisa'].forEach(type => {
+            const modal = document.getElementById('quoteModal-' + type);
+            if (modal && modal.classList.contains('open')) closeQuoteModal(type);
+        });
+    }
+});
+
+// ===========================
+// Populate year dropdowns for G-date selects
+// ===========================
+(function populateGdateYears() {
+    const currentYear = new Date().getFullYear();
+    const options = ['<option value="">Year</option>'];
+    for (let y = currentYear; y >= 1970; y--) {
+        options.push(`<option value="${y}">${y}</option>`);
+    }
+    document.querySelectorAll('.gdate-year').forEach(sel => {
+        sel.innerHTML = options.join('');
+    });
+})();
+
+// ===========================
+// Ontario Driver License Auto-Format  (XXXXX-XXXXX-XXXXX)
+// ===========================
+document.addEventListener('input', (e) => {
+    if (!e.target.classList.contains('dl-format')) return;
+    const input = e.target;
+    // Strip everything except alphanumeric, uppercase
+    let raw = input.value.replace(/[^A-Za-z0-9]/g, '').toUpperCase().slice(0, 15);
+    // Insert hyphens at positions 5 and 10
+    let formatted = raw;
+    if (raw.length > 10) {
+        formatted = raw.slice(0, 5) + '-' + raw.slice(5, 10) + '-' + raw.slice(10);
+    } else if (raw.length > 5) {
+        formatted = raw.slice(0, 5) + '-' + raw.slice(5);
+    }
+    input.value = formatted;
+});
+
+// ===========================
+// Phone formatting for modal phone fields
+// ===========================
+document.addEventListener('input', (e) => {
+    if (!e.target.classList.contains('modal-phone')) return;
+    let value = e.target.value.replace(/\D/g, '');
+    if (value.length > 0) {
+        if (value.length <= 3) {
+            value = `+1 (${value}`;
+        } else if (value.length <= 6) {
+            value = `+1 (${value.slice(0, 3)}) ${value.slice(3)}`;
+        } else {
+            value = `+1 (${value.slice(0, 3)}) ${value.slice(3, 6)}-${value.slice(6, 10)}`;
+        }
+    }
+    e.target.value = value;
+});
+
+// ===========================
 // Console Welcome Message
 // ===========================
 console.log('%c👋 Welcome to PolicyCover!', 'font-size: 20px; color: #62D84E; font-weight: bold;');

@@ -97,6 +97,9 @@
                 <li class="nav-dropdown">
                     <a href="#services" class="nav-link">Insurance <span class="dropdown-arrow">▾</span></a>
                     <ul class="dropdown-menu">
+                        <li><a href="#auto-insurance" class="dropdown-link">Auto Insurance</a></li>
+                        <li><a href="#home-insurance" class="dropdown-link">Home Insurance</a></li>
+                        <li><a href="#commercial-property" class="dropdown-link">Commercial Property</a></li>
                         <li><a href="#life-insurance" class="dropdown-link">Life Insurance</a></li>
                         <li><a href="#super-visa" class="dropdown-link">Super Visa Insurance</a></li>
                         <li><a href="#travel-insurance" class="dropdown-link">Travel Insurance</a></li>
@@ -278,6 +281,42 @@
                 <p class="section-subtitle">Comprehensive Coverage Solutions to Protect What Matters Most</p>
             </div>
             <div class="products-grid">
+                <!-- Auto Insurance -->
+                <div class="product-card" id="auto-insurance">
+                    <div class="product-image product-image-auto">
+                        <img src="assets/images/products/auto.svg" alt="Auto Insurance Icon" width="80" height="80">
+                    </div>
+                    <div class="product-content">
+                        <h3>Auto Insurance</h3>
+                        <p class="product-tagline">Drive with confidence, covered for every road.</p>
+                        <button class="product-button" onclick="openQuoteModal('auto')">Get a Quote</button>
+                    </div>
+                </div>
+
+                <!-- Home Insurance -->
+                <div class="product-card" id="home-insurance">
+                    <div class="product-image product-image-home">
+                        <img src="assets/images/products/home.svg" alt="Home Insurance Icon" width="80" height="80">
+                    </div>
+                    <div class="product-content">
+                        <h3>Home Insurance</h3>
+                        <p class="product-tagline">Your home, your sanctuary — always protected.</p>
+                        <button class="product-button" onclick="openQuoteModal('home')">Get a Quote</button>
+                    </div>
+                </div>
+
+                <!-- Commercial Property Insurance -->
+                <div class="product-card" id="commercial-property">
+                    <div class="product-image product-image-commercial">
+                        <img src="assets/images/products/commercial.svg" alt="Commercial Property Insurance Icon" width="80" height="80">
+                    </div>
+                    <div class="product-content">
+                        <h3>Commercial Property</h3>
+                        <p class="product-tagline">Protect your business assets and premises.</p>
+                        <button class="product-button" onclick="openQuoteModal('commercial')">Get a Quote</button>
+                    </div>
+                </div>
+
                 <!-- Life Insurance -->
                 <div class="product-card" id="life-insurance">
                     <div class="product-image product-image-life">
@@ -298,10 +337,10 @@
                     <div class="product-content">
                         <h3>Super Visa Insurance</h3>
                         <p class="product-tagline">Coverage that keeps families closer.</p>
-                        <button class="product-button" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Get a Quote</button>
+                        <button class="product-button" onclick="openQuoteModal('supervisa')">Get a Quote</button>
                     </div>
                 </div>
-                
+
                 <!-- Travel Insurance -->
                 <div class="product-card" id="travel-insurance">
                     <div class="product-image product-image-travel">
@@ -778,6 +817,9 @@
                         <select id="service" name="service">
                             <option value="">Select a product...</option>
                             <optgroup label="Insurance Products">
+                                <option value="auto">Auto Insurance</option>
+                                <option value="home">Home Insurance</option>
+                                <option value="commercial">Commercial Property Insurance</option>
                             <option value="life">Life Insurance</option>
                                 <option value="supervisa">Super Visa Insurance</option>
                                 <option value="travel">Travel Insurance</option>
@@ -875,6 +917,584 @@
             </div>
         </div>
     </footer>
+
+    <!-- ============================================
+         QUOTE MODALS — Auto, Home, Commercial Property
+         ============================================ -->
+
+    <!-- AUTO INSURANCE MODAL -->
+    <div class="quote-modal" id="quoteModal-auto" role="dialog" aria-modal="true" aria-labelledby="quoteTitle-auto">
+        <div class="quote-modal-backdrop" onclick="closeQuoteModal('auto')"></div>
+        <div class="quote-modal-dialog">
+            <button class="modal-close-btn" onclick="closeQuoteModal('auto')" aria-label="Close modal">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <div class="modal-header-row">
+                <div class="modal-type-icon modal-icon-auto">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="9" width="22" height="11" rx="2"/><path d="M5 9L7.5 4h9L19 9"/><circle cx="7" cy="20" r="1"/><circle cx="17" cy="20" r="1"/></svg>
+                </div>
+                <div>
+                    <h2 id="quoteTitle-auto">Auto Insurance Quote</h2>
+                    <p>Get your personalized quote in just 3 quick steps</p>
+                </div>
+            </div>
+            <!-- Step Indicator -->
+            <div class="quote-stepper" id="quoteStepper-auto">
+                <div class="stepper-step active" data-modal="auto" data-step="1"><div class="step-bubble">1</div><span>Personal Info</span></div>
+                <div class="stepper-line"></div>
+                <div class="stepper-step" data-modal="auto" data-step="2"><div class="step-bubble">2</div><span>Vehicles</span></div>
+                <div class="stepper-line"></div>
+                <div class="stepper-step" data-modal="auto" data-step="3"><div class="step-bubble">3</div><span>Drivers</span></div>
+            </div>
+            <form id="quoteForm-auto" novalidate>
+
+                <!-- Step 1: Personal Info -->
+                <div class="quote-step-panel active" data-panel="1">
+                    <div class="qform-grid">
+                        <div class="form-group"><label>First Name <span class="req">*</span></label><input type="text" name="first_name" required placeholder="Jane"></div>
+                        <div class="form-group"><label>Last Name <span class="req">*</span></label><input type="text" name="last_name" required placeholder="Smith"></div>
+                        <div class="form-group qfull"><label>Street Address <span class="req">*</span></label><input type="text" name="street_address" required placeholder="123 Main Street"></div>
+                        <div class="form-group"><label>City / Town <span class="req">*</span></label><input type="text" name="city" required placeholder="Windsor"></div>
+                        <div class="form-group"><label>Province</label><select name="province"><option value="ON">Ontario (ON)</option><option value="AB">Alberta (AB)</option><option value="BC">British Columbia (BC)</option><option value="MB">Manitoba (MB)</option><option value="NB">New Brunswick (NB)</option><option value="NS">Nova Scotia (NS)</option><option value="SK">Saskatchewan (SK)</option></select></div>
+                        <div class="form-group"><label>Postal Code <span class="req">*</span></label><input type="text" name="postal_code" required placeholder="N9A 1A1" maxlength="7"></div>
+                        <div class="form-group"><label>Cell Number <span class="req">*</span></label><input type="tel" name="phone" required placeholder="+1 (519) 555-1234" class="modal-phone"></div>
+                        <div class="form-group"><label>Email Address <span class="req">*</span></label><input type="email" name="email" required placeholder="jane@example.com"></div>
+                    </div>
+                    <div class="qform-nav"><span></span><button type="button" class="btn-qnext" data-modal="auto" data-from="1">Next: Vehicle Details →</button></div>
+                </div>
+
+                <!-- Step 2: Vehicles -->
+                <div class="quote-step-panel" data-panel="2">
+                    <div class="qform-count-row">
+                        <label>How many vehicles? <span class="req">*</span></label>
+                        <div class="qcount-pills" id="vehicleCountPills">
+                            <button type="button" class="qcount-pill active" data-target="vehicle" data-count="1">1</button>
+                            <button type="button" class="qcount-pill" data-target="vehicle" data-count="2">2</button>
+                            <button type="button" class="qcount-pill" data-target="vehicle" data-count="3">3</button>
+                        </div>
+                        <input type="hidden" name="num_vehicles" id="numVehicles" value="1">
+                    </div>
+
+                    <!-- Vehicle 1 -->
+                    <div class="qdynamic-block" id="vehicle-block-1">
+                        <div class="qdynamic-label">Vehicle 1</div>
+                        <div class="qform-grid">
+                            <div class="form-group qfull"><label>Year, Make and Model <span class="req">*</span></label><input type="text" name="vehicle_1_ymm" required placeholder="e.g. 2020 Toyota Camry"></div>
+                            <div class="form-group"><label>Purchase Date</label><input type="date" name="vehicle_1_purchase_date"></div>
+                            <div class="form-group"><label>Annual KMs</label><input type="number" name="vehicle_1_annual_km" min="0" placeholder="e.g. 15000"></div>
+                            <div class="form-group"><label>One-Way KM to Work</label><input type="number" name="vehicle_1_oneway_km" min="0" placeholder="e.g. 12"></div>
+                            <div class="form-group"><label>Ownership <span class="req">*</span></label>
+                                <div class="qradio-group">
+                                    <label class="qradio"><input type="radio" name="vehicle_1_ownership" value="Finance" required> Finance</label>
+                                    <label class="qradio"><input type="radio" name="vehicle_1_ownership" value="Lease"> Lease</label>
+                                    <label class="qradio"><input type="radio" name="vehicle_1_ownership" value="Owned"> Owned</label>
+                                </div>
+                            </div>
+                            <div class="form-group"><label>Winter Tires?</label>
+                                <div class="qradio-group">
+                                    <label class="qradio"><input type="radio" name="vehicle_1_winter_tires" value="Yes"> Yes</label>
+                                    <label class="qradio"><input type="radio" name="vehicle_1_winter_tires" value="No"> No</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vehicle 2 (hidden by default) -->
+                    <div class="qdynamic-block" id="vehicle-block-2" style="display:none">
+                        <div class="qdynamic-label">Vehicle 2</div>
+                        <div class="qform-grid">
+                            <div class="form-group qfull"><label>Year, Make and Model</label><input type="text" name="vehicle_2_ymm" placeholder="e.g. 2018 Honda Civic"></div>
+                            <div class="form-group"><label>Purchase Date</label><input type="date" name="vehicle_2_purchase_date"></div>
+                            <div class="form-group"><label>Annual KMs</label><input type="number" name="vehicle_2_annual_km" min="0" placeholder="e.g. 10000"></div>
+                            <div class="form-group"><label>One-Way KM to Work</label><input type="number" name="vehicle_2_oneway_km" min="0" placeholder="e.g. 8"></div>
+                            <div class="form-group"><label>Ownership</label>
+                                <div class="qradio-group">
+                                    <label class="qradio"><input type="radio" name="vehicle_2_ownership" value="Finance"> Finance</label>
+                                    <label class="qradio"><input type="radio" name="vehicle_2_ownership" value="Lease"> Lease</label>
+                                    <label class="qradio"><input type="radio" name="vehicle_2_ownership" value="Owned"> Owned</label>
+                                </div>
+                            </div>
+                            <div class="form-group"><label>Winter Tires?</label>
+                                <div class="qradio-group">
+                                    <label class="qradio"><input type="radio" name="vehicle_2_winter_tires" value="Yes"> Yes</label>
+                                    <label class="qradio"><input type="radio" name="vehicle_2_winter_tires" value="No"> No</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vehicle 3 (hidden by default) -->
+                    <div class="qdynamic-block" id="vehicle-block-3" style="display:none">
+                        <div class="qdynamic-label">Vehicle 3</div>
+                        <div class="qform-grid">
+                            <div class="form-group qfull"><label>Year, Make and Model</label><input type="text" name="vehicle_3_ymm" placeholder="e.g. 2015 Ford F-150"></div>
+                            <div class="form-group"><label>Purchase Date</label><input type="date" name="vehicle_3_purchase_date"></div>
+                            <div class="form-group"><label>Annual KMs</label><input type="number" name="vehicle_3_annual_km" min="0" placeholder="e.g. 20000"></div>
+                            <div class="form-group"><label>One-Way KM to Work</label><input type="number" name="vehicle_3_oneway_km" min="0" placeholder="e.g. 20"></div>
+                            <div class="form-group"><label>Ownership</label>
+                                <div class="qradio-group">
+                                    <label class="qradio"><input type="radio" name="vehicle_3_ownership" value="Finance"> Finance</label>
+                                    <label class="qradio"><input type="radio" name="vehicle_3_ownership" value="Lease"> Lease</label>
+                                    <label class="qradio"><input type="radio" name="vehicle_3_ownership" value="Owned"> Owned</label>
+                                </div>
+                            </div>
+                            <div class="form-group"><label>Winter Tires?</label>
+                                <div class="qradio-group">
+                                    <label class="qradio"><input type="radio" name="vehicle_3_winter_tires" value="Yes"> Yes</label>
+                                    <label class="qradio"><input type="radio" name="vehicle_3_winter_tires" value="No"> No</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qform-nav"><button type="button" class="btn-qprev" data-modal="auto" data-from="2">← Back</button><button type="button" class="btn-qnext" data-modal="auto" data-from="2">Next: Driver Details →</button></div>
+                </div>
+
+                <!-- Step 3: Drivers -->
+                <div class="quote-step-panel" data-panel="3">
+                    <div class="qform-count-row">
+                        <label>How many drivers? <span class="req">*</span></label>
+                        <div class="qcount-pills" id="driverCountPills">
+                            <button type="button" class="qcount-pill active" data-target="driver" data-count="1">1</button>
+                            <button type="button" class="qcount-pill" data-target="driver" data-count="2">2</button>
+                            <button type="button" class="qcount-pill" data-target="driver" data-count="3">3</button>
+                            <button type="button" class="qcount-pill" data-target="driver" data-count="4">4</button>
+                        </div>
+                        <input type="hidden" name="num_drivers" id="numDrivers" value="1">
+                    </div>
+
+                    <!-- Driver 1 -->
+                    <div class="qdynamic-block" id="driver-block-1">
+                        <div class="qdynamic-label">Driver 1 <span class="qdynamic-required">(Primary Driver)</span></div>
+                        <div class="qform-grid">
+                            <div class="form-group qfull">
+                                <label>Driver License Number <span class="req">*</span></label>
+                                <input type="text" name="driver_1_license" required placeholder="ABCDE-12345-67890" class="dl-format" maxlength="17" autocomplete="off">
+                                <span class="field-hint">Ontario format — auto-formatted as you type</span>
+                            </div>
+                        </div>
+                        <div class="gdates-section">
+                            <div class="gdates-heading">License Stage Dates <span class="gdates-optional">— optional, fill what you know</span></div>
+                            <div class="gdate-row"><span class="gdate-badge">G1</span><select name="driver_1_g1_month" class="gdate-sel"><option value="">Month</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option></select><select name="driver_1_g1_year" class="gdate-sel gdate-year"><option value="">Year</option></select></div>
+                            <div class="gdate-row"><span class="gdate-badge">G2</span><select name="driver_1_g2_month" class="gdate-sel"><option value="">Month</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option></select><select name="driver_1_g2_year" class="gdate-sel gdate-year"><option value="">Year</option></select></div>
+                            <div class="gdate-row"><span class="gdate-badge gdate-badge-g">G</span><select name="driver_1_g_month" class="gdate-sel"><option value="">Month</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option></select><select name="driver_1_g_year" class="gdate-sel gdate-year"><option value="">Year</option></select></div>
+                        </div>
+                    </div>
+
+                    <!-- Driver 2 (hidden by default) -->
+                    <div class="qdynamic-block" id="driver-block-2" style="display:none">
+                        <div class="qdynamic-label">Driver 2</div>
+                        <div class="qform-grid">
+                            <div class="form-group qfull">
+                                <label>Driver License Number</label>
+                                <input type="text" name="driver_2_license" placeholder="ABCDE-12345-67890" class="dl-format" maxlength="17" autocomplete="off">
+                                <span class="field-hint">Ontario format — auto-formatted as you type</span>
+                            </div>
+                        </div>
+                        <div class="gdates-section">
+                            <div class="gdates-heading">License Stage Dates <span class="gdates-optional">— optional, fill what you know</span></div>
+                            <div class="gdate-row"><span class="gdate-badge">G1</span><select name="driver_2_g1_month" class="gdate-sel"><option value="">Month</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option></select><select name="driver_2_g1_year" class="gdate-sel gdate-year"><option value="">Year</option></select></div>
+                            <div class="gdate-row"><span class="gdate-badge">G2</span><select name="driver_2_g2_month" class="gdate-sel"><option value="">Month</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option></select><select name="driver_2_g2_year" class="gdate-sel gdate-year"><option value="">Year</option></select></div>
+                            <div class="gdate-row"><span class="gdate-badge gdate-badge-g">G</span><select name="driver_2_g_month" class="gdate-sel"><option value="">Month</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option></select><select name="driver_2_g_year" class="gdate-sel gdate-year"><option value="">Year</option></select></div>
+                        </div>
+                    </div>
+
+                    <!-- Driver 3 (hidden by default) -->
+                    <div class="qdynamic-block" id="driver-block-3" style="display:none">
+                        <div class="qdynamic-label">Driver 3</div>
+                        <div class="qform-grid">
+                            <div class="form-group qfull">
+                                <label>Driver License Number</label>
+                                <input type="text" name="driver_3_license" placeholder="ABCDE-12345-67890" class="dl-format" maxlength="17" autocomplete="off">
+                                <span class="field-hint">Ontario format — auto-formatted as you type</span>
+                            </div>
+                        </div>
+                        <div class="gdates-section">
+                            <div class="gdates-heading">License Stage Dates <span class="gdates-optional">— optional, fill what you know</span></div>
+                            <div class="gdate-row"><span class="gdate-badge">G1</span><select name="driver_3_g1_month" class="gdate-sel"><option value="">Month</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option></select><select name="driver_3_g1_year" class="gdate-sel gdate-year"><option value="">Year</option></select></div>
+                            <div class="gdate-row"><span class="gdate-badge">G2</span><select name="driver_3_g2_month" class="gdate-sel"><option value="">Month</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option></select><select name="driver_3_g2_year" class="gdate-sel gdate-year"><option value="">Year</option></select></div>
+                            <div class="gdate-row"><span class="gdate-badge gdate-badge-g">G</span><select name="driver_3_g_month" class="gdate-sel"><option value="">Month</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option></select><select name="driver_3_g_year" class="gdate-sel gdate-year"><option value="">Year</option></select></div>
+                        </div>
+                    </div>
+
+                    <!-- Driver 4 (hidden by default) -->
+                    <div class="qdynamic-block" id="driver-block-4" style="display:none">
+                        <div class="qdynamic-label">Driver 4</div>
+                        <div class="qform-grid">
+                            <div class="form-group qfull">
+                                <label>Driver License Number</label>
+                                <input type="text" name="driver_4_license" placeholder="ABCDE-12345-67890" class="dl-format" maxlength="17" autocomplete="off">
+                                <span class="field-hint">Ontario format — auto-formatted as you type</span>
+                            </div>
+                        </div>
+                        <div class="gdates-section">
+                            <div class="gdates-heading">License Stage Dates <span class="gdates-optional">— optional, fill what you know</span></div>
+                            <div class="gdate-row"><span class="gdate-badge">G1</span><select name="driver_4_g1_month" class="gdate-sel"><option value="">Month</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option></select><select name="driver_4_g1_year" class="gdate-sel gdate-year"><option value="">Year</option></select></div>
+                            <div class="gdate-row"><span class="gdate-badge">G2</span><select name="driver_4_g2_month" class="gdate-sel"><option value="">Month</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option></select><select name="driver_4_g2_year" class="gdate-sel gdate-year"><option value="">Year</option></select></div>
+                            <div class="gdate-row"><span class="gdate-badge gdate-badge-g">G</span><select name="driver_4_g_month" class="gdate-sel"><option value="">Month</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option></select><select name="driver_4_g_year" class="gdate-sel gdate-year"><option value="">Year</option></select></div>
+                        </div>
+                    </div>
+
+                    <div class="qform-nav"><button type="button" class="btn-qprev" data-modal="auto" data-from="3">← Back</button><button type="submit" class="btn-qsubmit">Submit Quote Request →</button></div>
+                </div>
+
+                <div class="qform-error" id="qError-auto"></div>
+            </form>
+            <div class="quote-success" id="qSuccess-auto" style="display:none">
+                <div class="qsuccess-icon"><svg width="56" height="56" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" stroke="#62D84E" stroke-width="2"/><path d="M7 12.5L10.5 16L17 9" stroke="#62D84E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <h3>Quote Request Submitted!</h3>
+                <p>Thank you! We'll review your auto insurance details and reach out within 24 hours with a personalized quote.</p>
+                <button class="btn-close-success" onclick="closeQuoteModal('auto')">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- HOME INSURANCE MODAL -->
+    <div class="quote-modal" id="quoteModal-home" role="dialog" aria-modal="true" aria-labelledby="quoteTitle-home">
+        <div class="quote-modal-backdrop" onclick="closeQuoteModal('home')"></div>
+        <div class="quote-modal-dialog">
+            <button class="modal-close-btn" onclick="closeQuoteModal('home')" aria-label="Close modal">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <div class="modal-header-row">
+                <div class="modal-type-icon modal-icon-home">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9.5L12 3L21 9.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg>
+                </div>
+                <div>
+                    <h2 id="quoteTitle-home">Home Insurance Quote</h2>
+                    <p>Get your personalized quote in just 3 quick steps</p>
+                </div>
+            </div>
+            <div class="quote-stepper" id="quoteStepper-home">
+                <div class="stepper-step active" data-modal="home" data-step="1"><div class="step-bubble">1</div><span>Contact</span></div>
+                <div class="stepper-line"></div>
+                <div class="stepper-step" data-modal="home" data-step="2"><div class="step-bubble">2</div><span>Owners</span></div>
+                <div class="stepper-line"></div>
+                <div class="stepper-step" data-modal="home" data-step="3"><div class="step-bubble">3</div><span>Property</span></div>
+            </div>
+            <form id="quoteForm-home" novalidate>
+
+                <!-- Step 1: Contact & Address -->
+                <div class="quote-step-panel active" data-panel="1">
+                    <div class="qform-grid">
+                        <div class="form-group"><label>Email Address <span class="req">*</span></label><input type="email" name="email" required placeholder="jane@example.com"></div>
+                        <div class="form-group"><label>Cell Number <span class="req">*</span></label><input type="tel" name="phone" required placeholder="+1 (519) 555-1234" class="modal-phone"></div>
+                        <div class="form-group qfull"><label>Home Address – Street <span class="req">*</span></label><input type="text" name="street_address" required placeholder="123 Maple Street"></div>
+                        <div class="form-group"><label>City <span class="req">*</span></label><input type="text" name="city" required placeholder="Windsor"></div>
+                        <div class="form-group"><label>Province <span class="req">*</span></label><select name="province" required><option value="ON">Ontario (ON)</option><option value="AB">Alberta (AB)</option><option value="BC">British Columbia (BC)</option><option value="MB">Manitoba (MB)</option><option value="NB">New Brunswick (NB)</option><option value="NS">Nova Scotia (NS)</option><option value="SK">Saskatchewan (SK)</option></select></div>
+                        <div class="form-group"><label>Postal Code <span class="req">*</span></label><input type="text" name="postal_code" required placeholder="N9A 1A1" maxlength="7"></div>
+                        <div class="form-group"><label>Date of Moving In <span class="req">*</span></label><input type="date" name="move_in_date" required></div>
+                    </div>
+                    <div class="qform-nav"><span></span><button type="button" class="btn-qnext" data-modal="home" data-from="1">Next: Owner Details →</button></div>
+                </div>
+
+                <!-- Step 2: Owners (dynamic) -->
+                <div class="quote-step-panel" data-panel="2">
+                    <div class="qform-count-row">
+                        <label>How many owners on title? <span class="req">*</span></label>
+                        <div class="qcount-pills">
+                            <button type="button" class="qcount-pill active" data-target="homeowner" data-count="1">1</button>
+                            <button type="button" class="qcount-pill" data-target="homeowner" data-count="2">2</button>
+                            <button type="button" class="qcount-pill" data-target="homeowner" data-count="3">3</button>
+                        </div>
+                        <input type="hidden" name="num_owners" id="numHomeowners" value="1">
+                    </div>
+
+                    <!-- Owner 1 -->
+                    <div class="qdynamic-block" id="homeowner-block-1">
+                        <div class="qdynamic-label">Owner 1 <span class="qdynamic-required">(Primary)</span></div>
+                        <div class="qform-grid">
+                            <div class="form-group"><label>First Name <span class="req">*</span></label><input type="text" name="owner_1_first_name" required placeholder="Jane"></div>
+                            <div class="form-group"><label>Last Name <span class="req">*</span></label><input type="text" name="owner_1_last_name" required placeholder="Smith"></div>
+                            <div class="form-group"><label>Date of Birth <span class="req">*</span></label><input type="date" name="owner_1_dob" required></div>
+                        </div>
+                    </div>
+
+                    <!-- Owner 2 (hidden by default) -->
+                    <div class="qdynamic-block" id="homeowner-block-2" style="display:none">
+                        <div class="qdynamic-label">Owner 2</div>
+                        <div class="qform-grid">
+                            <div class="form-group"><label>First Name</label><input type="text" name="owner_2_first_name" placeholder="John"></div>
+                            <div class="form-group"><label>Last Name</label><input type="text" name="owner_2_last_name" placeholder="Smith"></div>
+                            <div class="form-group"><label>Date of Birth</label><input type="date" name="owner_2_dob"></div>
+                        </div>
+                    </div>
+
+                    <!-- Owner 3 (hidden by default) -->
+                    <div class="qdynamic-block" id="homeowner-block-3" style="display:none">
+                        <div class="qdynamic-label">Owner 3</div>
+                        <div class="qform-grid">
+                            <div class="form-group"><label>First Name</label><input type="text" name="owner_3_first_name" placeholder="Alex"></div>
+                            <div class="form-group"><label>Last Name</label><input type="text" name="owner_3_last_name" placeholder="Smith"></div>
+                            <div class="form-group"><label>Date of Birth</label><input type="date" name="owner_3_dob"></div>
+                        </div>
+                    </div>
+
+                    <div class="qform-nav"><button type="button" class="btn-qprev" data-modal="home" data-from="2">← Back</button><button type="button" class="btn-qnext" data-modal="home" data-from="2">Next: Property Details →</button></div>
+                </div>
+
+                <!-- Step 3: Property Details -->
+                <div class="quote-step-panel" data-panel="3">
+                    <div class="qform-grid">
+                        <div class="form-group qfull">
+                            <label>House Type <span class="req">*</span></label>
+                            <div class="qradio-group">
+                                <label class="qradio"><input type="radio" name="house_type" value="Detached" required> Detached</label>
+                                <label class="qradio"><input type="radio" name="house_type" value="Free-Hold Townhouse"> Free-Hold Townhouse</label>
+                                <label class="qradio"><input type="radio" name="house_type" value="Condo Townhouse"> Condo Townhouse</label>
+                                <label class="qradio"><input type="radio" name="house_type" value="Semidetached"> Semidetached</label>
+                                <label class="qradio"><input type="radio" name="house_type" value="Condo or Apartment"> Condo / Apartment</label>
+                                <label class="qradio"><input type="radio" name="house_type" value="Bungalow 1 Story"> Bungalow (1 Story)</label>
+                            </div>
+                        </div>
+                        <div class="form-group"><label>Sq Ft of House <span class="req">*</span></label><input type="number" name="sqft" required min="100" placeholder="e.g. 1800"></div>
+                        <div class="form-group"><label>Year Built <span class="req">*</span></label><input type="number" name="year_built" required min="1800" max="2026" placeholder="e.g. 1998"></div>
+                        <div class="form-group"><label>Number of Bedrooms <span class="req">*</span></label><input type="number" name="num_bedrooms" required min="1" placeholder="e.g. 3"></div>
+                        <div class="form-group"><label>Number of Washrooms <span class="req">*</span></label><input type="number" name="num_washrooms" required min="1" placeholder="e.g. 2"></div>
+                        <div class="form-group"><label>Roof Update Year <span class="req">*</span></label><input type="number" name="roof_update_year" required min="1900" max="2026" placeholder="e.g. 2018"></div>
+                        <div class="form-group">
+                            <label>Basement Finished? <span class="req">*</span></label>
+                            <div class="qradio-group">
+                                <label class="qradio"><input type="radio" name="basement_finished" value="Finished" required> Finished</label>
+                                <label class="qradio"><input type="radio" name="basement_finished" value="Not Finished"> Not Finished</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Basement Rented Out? <span class="req">*</span></label>
+                            <div class="qradio-group">
+                                <label class="qradio"><input type="radio" name="basement_rented" value="Rented" required> Rented</label>
+                                <label class="qradio"><input type="radio" name="basement_rented" value="Not Rented"> Not Rented</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Basement Type <span class="req">*</span></label>
+                            <div class="qradio-group">
+                                <label class="qradio"><input type="radio" name="basement_type" value="Walkout" required> Walkout</label>
+                                <label class="qradio"><input type="radio" name="basement_type" value="Below Grade"> Below Grade</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="qform-nav"><button type="button" class="btn-qprev" data-modal="home" data-from="3">← Back</button><button type="submit" class="btn-qsubmit">Submit Quote Request →</button></div>
+                </div>
+
+                <div class="qform-error" id="qError-home"></div>
+            </form>
+            <div class="quote-success" id="qSuccess-home" style="display:none">
+                <div class="qsuccess-icon"><svg width="56" height="56" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" stroke="#62D84E" stroke-width="2"/><path d="M7 12.5L10.5 16L17 9" stroke="#62D84E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <h3>Quote Request Submitted!</h3>
+                <p>Thank you! We'll review your home insurance details and reach out within 24 hours with a personalized quote.</p>
+                <button class="btn-close-success" onclick="closeQuoteModal('home')">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- COMMERCIAL PROPERTY INSURANCE MODAL -->
+    <div class="quote-modal" id="quoteModal-commercial" role="dialog" aria-modal="true" aria-labelledby="quoteTitle-commercial">
+        <div class="quote-modal-backdrop" onclick="closeQuoteModal('commercial')"></div>
+        <div class="quote-modal-dialog">
+            <button class="modal-close-btn" onclick="closeQuoteModal('commercial')" aria-label="Close modal">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <div class="modal-header-row">
+                <div class="modal-type-icon modal-icon-commercial">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+                </div>
+                <div>
+                    <h2 id="quoteTitle-commercial">Commercial Property Quote</h2>
+                    <p>Get your personalized quote in just 3 quick steps</p>
+                </div>
+            </div>
+            <div class="quote-stepper" id="quoteStepper-commercial">
+                <div class="stepper-step active" data-modal="commercial" data-step="1"><div class="step-bubble">1</div><span>Business &amp; Contact</span></div>
+                <div class="stepper-line"></div>
+                <div class="stepper-step" data-modal="commercial" data-step="2"><div class="step-bubble">2</div><span>Property</span></div>
+                <div class="stepper-line"></div>
+                <div class="stepper-step" data-modal="commercial" data-step="3"><div class="step-bubble">3</div><span>Assets &amp; Insurance</span></div>
+            </div>
+            <form id="quoteForm-commercial" novalidate>
+
+                <!-- Step 1: Business & Contact -->
+                <div class="quote-step-panel active" data-panel="1">
+                    <div class="qform-grid">
+                        <div class="form-group"><label>Incorporation Name</label><input type="text" name="incorporation_name" placeholder="e.g. 1234567 Ontario Inc."></div>
+                        <div class="form-group"><label>Business / Store Name</label><input type="text" name="business_name" placeholder="e.g. Joe's Grocery"></div>
+                        <div class="form-group"><label>Incorporation Owner Name</label><input type="text" name="owner_name" placeholder="e.g. John Smith"></div>
+                        <div class="form-group"><label>Owner Date of Birth</label><input type="date" name="owner_dob"></div>
+                        <div class="form-group"><label>Email Address <span class="req">*</span></label><input type="email" name="email" required placeholder="john@example.com"></div>
+                        <div class="form-group"><label>Cell Number <span class="req">*</span></label><input type="tel" name="phone" required placeholder="+1 (519) 555-1234" class="modal-phone"></div>
+                        <div class="form-group qfull"><label>Home Address <span class="req">*</span></label><input type="text" name="home_address" required placeholder="123 Main St, Windsor, ON N9A 1A1"></div>
+                    </div>
+                    <div class="qform-nav"><span></span><button type="button" class="btn-qnext" data-modal="commercial" data-from="1">Next: Property Details →</button></div>
+                </div>
+
+                <!-- Step 2: Property Details -->
+                <div class="quote-step-panel" data-panel="2">
+                    <div class="qform-grid">
+                        <div class="form-group qfull"><label>Business / Store Address <span class="req">*</span></label><input type="text" name="business_address" required placeholder="456 Commerce Ave, Windsor, ON N8X 1B2"></div>
+                        <div class="form-group"><label>Sq ft of Store</label><input type="number" name="sqft" min="0" placeholder="e.g. 2500"></div>
+                        <div class="form-group"><label>Year Built</label><input type="number" name="year_built" min="1800" max="2026" placeholder="e.g. 2005"></div>
+                        <div class="form-group"><label>Number of Storeys</label><input type="number" name="num_storeys" min="1" max="200" placeholder="e.g. 2"></div>
+                        <div class="form-group qfull"><label>Unit / Store Upgrades</label><input type="text" name="upgrades" placeholder="e.g. New roof 2022, electrical updated 2020, plumbing 2019"></div>
+                    </div>
+                    <div class="qform-nav"><button type="button" class="btn-qprev" data-modal="commercial" data-from="2">← Back</button><button type="button" class="btn-qnext" data-modal="commercial" data-from="2">Next: Assets &amp; Insurance →</button></div>
+                </div>
+
+                <!-- Step 3: Assets & Insurance -->
+                <div class="quote-step-panel" data-panel="3">
+                    <div class="qform-grid">
+                        <div class="form-group"><label>Yearly Revenue</label><input type="text" name="yearly_revenue" placeholder="e.g. $500,000"></div>
+                        <div class="form-group"><label>Contents, Stock &amp; Inventory Value</label><input type="text" name="contents_value" placeholder="e.g. $150,000"></div>
+                        <div class="form-group"><label>Equipment Value</label><input type="text" name="equipment_value" placeholder="e.g. $75,000"></div>
+                        <div class="form-group"><label>Current Insurance Company &amp; Policy Expiry</label><input type="text" name="current_insurer_expiry" placeholder="e.g. Aviva — expires June 2025"></div>
+                    </div>
+                    <div class="qform-nav"><button type="button" class="btn-qprev" data-modal="commercial" data-from="3">← Back</button><button type="submit" class="btn-qsubmit">Submit Quote Request →</button></div>
+                </div>
+
+                <div class="qform-error" id="qError-commercial"></div>
+            </form>
+            <div class="quote-success" id="qSuccess-commercial" style="display:none">
+                <div class="qsuccess-icon"><svg width="56" height="56" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" stroke="#62D84E" stroke-width="2"/><path d="M7 12.5L10.5 16L17 9" stroke="#62D84E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <h3>Quote Request Submitted!</h3>
+                <p>Thank you! We'll review your commercial property details and reach out within 24 hours with a personalized quote.</p>
+                <button class="btn-close-success" onclick="closeQuoteModal('commercial')">Close</button>
+            </div>
+        </div>
+    </div>
+    <!-- SUPER VISA INSURANCE MODAL -->
+    <div class="quote-modal" id="quoteModal-supervisa" role="dialog" aria-modal="true" aria-labelledby="quoteTitle-supervisa">
+        <div class="quote-modal-backdrop" onclick="closeQuoteModal('supervisa')"></div>
+        <div class="quote-modal-dialog">
+            <button class="modal-close-btn" onclick="closeQuoteModal('supervisa')" aria-label="Close modal">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <div class="modal-header-row">
+                <div class="modal-type-icon modal-icon-supervisa">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 15h4M14 15h4"/></svg>
+                </div>
+                <div>
+                    <h2 id="quoteTitle-supervisa">Super Visa Insurance Quote</h2>
+                    <p>Get your personalized quote in just 3 quick steps</p>
+                </div>
+            </div>
+
+            <!-- Stepper -->
+            <div class="quote-stepper" id="quoteStepper-supervisa">
+                <div class="stepper-step active" data-modal="supervisa" data-step="1"><div class="step-bubble">1</div><span>Visa &amp; Coverage</span></div>
+                <div class="stepper-line"></div>
+                <div class="stepper-step" data-modal="supervisa" data-step="2"><div class="step-bubble">2</div><span>Travelers</span></div>
+                <div class="stepper-line"></div>
+                <div class="stepper-step" data-modal="supervisa" data-step="3"><div class="step-bubble">3</div><span>Canadian Contact</span></div>
+            </div>
+
+            <form id="quoteForm-supervisa" novalidate>
+
+                <!-- Step 1: Visa & Coverage -->
+                <div class="quote-step-panel active" data-panel="1">
+                    <div class="qform-grid">
+                        <div class="form-group qfull">
+                            <label>Visa Type <span class="req">*</span></label>
+                            <div class="qradio-group">
+                                <label class="qradio"><input type="radio" name="visa_type" value="SuperVisa" required> Super Visa</label>
+                                <label class="qradio"><input type="radio" name="visa_type" value="VisitorVisa"> Visitor Visa</label>
+                            </div>
+                        </div>
+                        <div class="form-group"><label>Coverage Start Date <span class="req">*</span></label><input type="date" name="coverage_start" required></div>
+                        <div class="form-group"><label>Coverage End Date</label><input type="date" name="coverage_end"></div>
+                        <div class="form-group"><label>Sponsor Legal Name</label><input type="text" name="sponsor_name" placeholder="e.g. Raj Patel"></div>
+                        <div class="form-group"><label>Relationship to Sponsor</label><input type="text" name="relationship" placeholder="e.g. Mother, Father, Parent"></div>
+                    </div>
+                    <div class="qform-nav"><span></span><button type="button" class="btn-qnext" data-modal="supervisa" data-from="1">Next: Traveler Details →</button></div>
+                </div>
+
+                <!-- Step 2: Travelers (dynamic) -->
+                <div class="quote-step-panel" data-panel="2">
+                    <div class="qform-count-row">
+                        <label>How many travelers? <span class="req">*</span></label>
+                        <div class="qcount-pills">
+                            <button type="button" class="qcount-pill active" data-target="traveler" data-count="1">1</button>
+                            <button type="button" class="qcount-pill" data-target="traveler" data-count="2">2</button>
+                        </div>
+                        <input type="hidden" name="num_travelers" id="numTravelers" value="1">
+                    </div>
+
+                    <!-- Traveler 1 -->
+                    <div class="qdynamic-block" id="traveler-block-1">
+                        <div class="qdynamic-label">Traveler 1 <span class="qdynamic-required">(Primary)</span></div>
+                        <div class="qform-grid">
+                            <div class="form-group"><label>First Name <span class="req">*</span></label><input type="text" name="traveler_1_first_name" required placeholder="Raj"></div>
+                            <div class="form-group"><label>Last Name <span class="req">*</span></label><input type="text" name="traveler_1_last_name" required placeholder="Patel"></div>
+                            <div class="form-group"><label>Date of Birth <span class="req">*</span></label><input type="date" name="traveler_1_dob" required></div>
+                            <div class="form-group">
+                                <label>Gender <span class="req">*</span></label>
+                                <div class="qradio-group">
+                                    <label class="qradio"><input type="radio" name="traveler_1_gender" value="Male" required> Male</label>
+                                    <label class="qradio"><input type="radio" name="traveler_1_gender" value="Female"> Female</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Pre-existing Conditions? <span class="req">*</span></label>
+                                <div class="qradio-group">
+                                    <label class="qradio"><input type="radio" name="traveler_1_preexisting" value="Yes" required> Yes</label>
+                                    <label class="qradio"><input type="radio" name="traveler_1_preexisting" value="No"> No</label>
+                                </div>
+                            </div>
+                            <div class="form-group qfull"><label>Current Medications <span class="gdates-optional">— optional</span></label><input type="text" name="traveler_1_medications" placeholder="e.g. Metformin, Lisinopril"></div>
+                        </div>
+                    </div>
+
+                    <!-- Traveler 2 (hidden by default) -->
+                    <div class="qdynamic-block" id="traveler-block-2" style="display:none">
+                        <div class="qdynamic-label">Traveler 2</div>
+                        <div class="qform-grid">
+                            <div class="form-group"><label>First Name</label><input type="text" name="traveler_2_first_name" placeholder="Priya"></div>
+                            <div class="form-group"><label>Last Name</label><input type="text" name="traveler_2_last_name" placeholder="Patel"></div>
+                            <div class="form-group"><label>Date of Birth</label><input type="date" name="traveler_2_dob"></div>
+                            <div class="form-group">
+                                <label>Gender</label>
+                                <div class="qradio-group">
+                                    <label class="qradio"><input type="radio" name="traveler_2_gender" value="Male"> Male</label>
+                                    <label class="qradio"><input type="radio" name="traveler_2_gender" value="Female"> Female</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Pre-existing Conditions?</label>
+                                <div class="qradio-group">
+                                    <label class="qradio"><input type="radio" name="traveler_2_preexisting" value="Yes"> Yes</label>
+                                    <label class="qradio"><input type="radio" name="traveler_2_preexisting" value="No"> No</label>
+                                </div>
+                            </div>
+                            <div class="form-group qfull"><label>Current Medications <span class="gdates-optional">— optional</span></label><input type="text" name="traveler_2_medications" placeholder="e.g. Atorvastatin"></div>
+                        </div>
+                    </div>
+
+                    <div class="qform-nav"><button type="button" class="btn-qprev" data-modal="supervisa" data-from="2">← Back</button><button type="button" class="btn-qnext" data-modal="supervisa" data-from="2">Next: Canadian Contact →</button></div>
+                </div>
+
+                <!-- Step 3: Canadian Contact -->
+                <div class="quote-step-panel" data-panel="3">
+                    <div class="qform-grid">
+                        <div class="form-group"><label>Email Address <span class="req">*</span></label><input type="email" name="email" required placeholder="sponsor@example.com"></div>
+                        <div class="form-group"><label>Cell Number (Canada) <span class="req">*</span></label><input type="tel" name="phone" required placeholder="+1 (519) 555-1234" class="modal-phone"></div>
+                        <div class="form-group qfull"><label>Street Address in Canada <span class="req">*</span></label><input type="text" name="street_address" required placeholder="123 Maple Street"></div>
+                        <div class="form-group"><label>City <span class="req">*</span></label><input type="text" name="city" required placeholder="Windsor"></div>
+                        <div class="form-group"><label>Province <span class="req">*</span></label><select name="province" required><option value="ON">Ontario (ON)</option><option value="AB">Alberta (AB)</option><option value="BC">British Columbia (BC)</option><option value="MB">Manitoba (MB)</option><option value="NB">New Brunswick (NB)</option><option value="NS">Nova Scotia (NS)</option><option value="SK">Saskatchewan (SK)</option></select></div>
+                        <div class="form-group"><label>Postal Code <span class="req">*</span></label><input type="text" name="postal_code" required placeholder="N9A 1A1" maxlength="7"></div>
+                    </div>
+                    <div class="qform-nav"><button type="button" class="btn-qprev" data-modal="supervisa" data-from="3">← Back</button><button type="submit" class="btn-qsubmit">Submit Quote Request →</button></div>
+                </div>
+
+                <div class="qform-error" id="qError-supervisa"></div>
+            </form>
+
+            <div class="quote-success" id="qSuccess-supervisa" style="display:none">
+                <div class="qsuccess-icon"><svg width="56" height="56" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" stroke="#62D84E" stroke-width="2"/><path d="M7 12.5L10.5 16L17 9" stroke="#62D84E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <h3>Quote Request Submitted!</h3>
+                <p>Thank you! We'll review the traveler details and reach out within 24 hours with your personalized Super Visa insurance quote.</p>
+                <button class="btn-close-success" onclick="closeQuoteModal('supervisa')">Close</button>
+            </div>
+        </div>
+    </div>
+    <!-- END QUOTE MODALS -->
 
     <script src="script.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />

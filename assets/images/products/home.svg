@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- House roof -->
+  <path d="M100 35L25 95H45V165H155V95H175L100 35Z" fill="white"/>
+  <!-- Door -->
+  <rect x="82" y="125" width="36" height="40" rx="4" fill="rgba(100,200,150,0.6)"/>
+  <!-- Door knob -->
+  <circle cx="114" cy="148" r="3" fill="white" opacity="0.9"/>
+  <!-- Left window -->
+  <rect x="50" y="105" width="30" height="28" rx="3" fill="rgba(150,220,255,0.65)"/>
+  <line x1="65" y1="105" x2="65" y2="133" stroke="white" stroke-width="2" opacity="0.6"/>
+  <line x1="50" y1="119" x2="80" y2="119" stroke="white" stroke-width="2" opacity="0.6"/>
+  <!-- Right window -->
+  <rect x="120" y="105" width="30" height="28" rx="3" fill="rgba(150,220,255,0.65)"/>
+  <line x1="135" y1="105" x2="135" y2="133" stroke="white" stroke-width="2" opacity="0.6"/>
+  <line x1="120" y1="119" x2="150" y2="119" stroke="white" stroke-width="2" opacity="0.6"/>
+  <!-- Chimney -->
+  <rect x="130" y="50" width="16" height="32" rx="2" fill="white" opacity="0.8"/>
+  <!-- Shield protection symbol overlay -->
+  <path d="M100 155L88 148V138C88 133 100 128 100 128C100 128 112 133 112 138V148L100 155Z" fill="rgba(100,200,150,0.5)" stroke="white" stroke-width="1.5"/>
+</svg>
