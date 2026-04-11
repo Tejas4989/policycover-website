@@ -1,18 +1,34 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
-  <!-- Car body -->
-  <rect x="25" y="100" width="150" height="55" rx="12" fill="white"/>
-  <!-- Car roof/cabin -->
-  <path d="M60 100L80 68H120L140 100Z" fill="white"/>
-  <!-- Windshield -->
-  <path d="M83 100L96 74H115L128 100Z" fill="rgba(100,200,255,0.5)"/>
-  <!-- Wheels -->
-  <circle cx="65" cy="155" r="20" fill="rgba(255,255,255,0.3)"/>
-  <circle cx="135" cy="155" r="20" fill="rgba(255,255,255,0.3)"/>
-  <circle cx="65" cy="155" r="10" fill="rgba(255,255,255,0.7)"/>
-  <circle cx="135" cy="155" r="10" fill="rgba(255,255,255,0.7)"/>
-  <!-- Headlights -->
-  <rect x="148" y="108" width="16" height="10" rx="3" fill="rgba(255,240,100,0.8)"/>
-  <rect x="36" y="108" width="16" height="10" rx="3" fill="rgba(255,240,100,0.8)"/>
-  <!-- Door line -->
-  <line x1="100" y1="102" x2="100" y2="152" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+  <!-- Car body lower -->
+  <path d="M22 118 L22 130 Q22 135 27 135 L173 135 Q178 135 178 130 L178 118 Z" fill="white" opacity="0.9"/>
+  <!-- Car upper body/cabin -->
+  <path d="M38 118 L55 90 Q58 86 64 85 L136 85 Q142 86 145 90 L162 118 Z" fill="white" opacity="0.85"/>
+  <!-- Cabin roof -->
+  <path d="M65 110 L75 88 L125 88 L135 110 Z" fill="white" opacity="0.5"/>
+  <!-- Windshield (slightly transparent) -->
+  <path d="M76 108 L83 90 L125 90 L132 108 Z" fill="white" opacity="0.2"/>
+  <!-- Side window left -->
+  <path d="M67 108 L73 92 L80 92 L80 108 Z" fill="white" opacity="0.2"/>
+  <!-- Headlight front -->
+  <rect x="162" y="110" width="12" height="7" rx="3" fill="white" opacity="1"/>
+  <!-- Taillight rear -->
+  <rect x="26" y="110" width="10" height="7" rx="3" fill="white" opacity="0.9"/>
+  <!-- Front wheel -->
+  <circle cx="145" cy="135" r="19" fill="none" stroke="white" stroke-width="3" opacity="0.9"/>
+  <circle cx="145" cy="135" r="10" fill="white" opacity="0.4"/>
+  <circle cx="145" cy="135" r="4" fill="white" opacity="0.9"/>
+  <line x1="145" y1="116" x2="145" y2="154" stroke="white" stroke-width="1.5" opacity="0.6"/>
+  <line x1="126" y1="135" x2="164" y2="135" stroke="white" stroke-width="1.5" opacity="0.6"/>
+  <!-- Rear wheel -->
+  <circle cx="58" cy="135" r="19" fill="none" stroke="white" stroke-width="3" opacity="0.9"/>
+  <circle cx="58" cy="135" r="10" fill="white" opacity="0.4"/>
+  <circle cx="58" cy="135" r="4" fill="white" opacity="0.9"/>
+  <line x1="58" y1="116" x2="58" y2="154" stroke="white" stroke-width="1.5" opacity="0.6"/>
+  <line x1="39" y1="135" x2="77" y2="135" stroke="white" stroke-width="1.5" opacity="0.6"/>
+  <!-- Door divider -->
+  <line x1="103" y1="88" x2="103" y2="118" stroke="white" stroke-width="1.5" opacity="0.35"/>
+  <!-- Door handle front -->
+  <rect x="108" y="104" width="12" height="3" rx="1.5" fill="white" opacity="0.7"/>
+  <!-- Door handle rear -->
+  <rect x="78" y="104" width="12" height="3" rx="1.5" fill="white" opacity="0.7"/>
 </svg>

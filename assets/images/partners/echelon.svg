@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" fill="none">
+  <!-- Stepped echelon bars accent -->
+  <rect x="18" y="44" width="12" height="16" rx="2" fill="#1B3564"/>
+  <rect x="33" y="34" width="12" height="26" rx="2" fill="#1B3564"/>
+  <rect x="48" y="24" width="12" height="36" rx="2" fill="#1B3564"/>
+  <!-- Wordmark -->
+  <text x="150" y="42" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1B3564" text-anchor="middle" letter-spacing="0.5">Echelon</text>
+  <text x="150" y="60" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#555" text-anchor="middle" letter-spacing="1">INSURANCE</text>
+</svg>

@@ -1,10 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
-  <!-- Passport -->
-  <rect x="55" y="65" width="90" height="100" rx="6" fill="white" stroke="white" stroke-width="3"/>
-  <!-- Maple leaf (Canada) -->
-  <path d="M100 90l-5 12-12-3 7 10-10 5 12 3-3 12 9-9 9 9-3-12 12-3-10-5 7-10-12 3-5-12z" fill="#f093fb"/>
-  <!-- Airplane -->
-  <path d="M75 120l8-5 15 0-5 8 10 0-10 15-8-8-8 8-10-15 10 0-5-8 15 0 8 5z" fill="#f093fb" opacity="0.7" transform="scale(0.5) translate(150, 180)"/>
-  <!-- "VISA" text -->
-  <text x="65" y="150" font-size="12" font-weight="bold" fill="white" opacity="0.8">SUPER VISA</text>
+  <!-- Passport booklet back cover (slightly offset) -->
+  <rect x="62" y="42" width="84" height="112" rx="6" fill="white" opacity="0.4"/>
+  <!-- Passport booklet front cover -->
+  <rect x="54" y="46" width="84" height="112" rx="6" fill="white" opacity="0.9"/>
+  <!-- Spine fold line -->
+  <line x1="85" y1="46" x2="85" y2="158" stroke="white" stroke-width="2" opacity="0.5"/>
+  <!-- Cover border -->
+  <rect x="58" y="50" width="76" height="104" rx="4" fill="none" stroke="white" stroke-width="1.5" opacity="0.5"/>
+  <!-- Maple leaf centered on cover -->
+  <path d="M96 78 L93 86 L85 84 L89 90 L83 93 L91 95 L89 103 L96 97 L103 103 L101 95 L109 93 L103 90 L107 84 L99 86 Z" fill="white" opacity="0.6"/>
+  <!-- Maple leaf stem -->
+  <line x1="96" y1="103" x2="96" y2="108" stroke="white" stroke-width="2" opacity="0.6"/>
+  <!-- Page lines (suggesting open pages on right) -->
+  <line x1="90" y1="118" x2="126" y2="118" stroke="white" stroke-width="1.5" opacity="0.4"/>
+  <line x1="90" y1="126" x2="126" y2="126" stroke="white" stroke-width="1.5" opacity="0.4"/>
+  <line x1="90" y1="134" x2="120" y2="134" stroke="white" stroke-width="1.5" opacity="0.4"/>
+  <!-- Globe/star detail at bottom -->
+  <circle cx="96" cy="148" r="6" fill="none" stroke="white" stroke-width="1.5" opacity="0.6"/>
+  <line x1="90" y1="148" x2="102" y2="148" stroke="white" stroke-width="1" opacity="0.5"/>
+  <line x1="96" y1="142" x2="96" y2="154" stroke="white" stroke-width="1" opacity="0.5"/>
 </svg>

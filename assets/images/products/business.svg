@@ -1,15 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
-  <!-- Building -->
-  <rect x="60" y="70" width="80" height="100" rx="4" fill="white" stroke="white" stroke-width="3"/>
-  <!-- Windows grid -->
-  <rect x="70" y="85" width="15" height="15" fill="#f77062" opacity="0.8"/>
-  <rect x="92" y="85" width="15" height="15" fill="#f77062" opacity="0.8"/>
-  <rect x="115" y="85" width="15" height="15" fill="#f77062" opacity="0.8"/>
-  <rect x="70" y="110" width="15" height="15" fill="#fe5196" opacity="0.8"/>
-  <rect x="92" y="110" width="15" height="15" fill="#fe5196" opacity="0.8"/>
-  <rect x="115" y="110" width="15" height="15" fill="#fe5196" opacity="0.8"/>
-  <rect x="70" y="135" width="15" height="15" fill="#f77062" opacity="0.8"/>
-  <rect x="115" y="135" width="15" height="15" fill="#f77062" opacity="0.8"/>
-  <!-- Door -->
-  <rect x="92" y="135" width="15" height="35" fill="#fe5196"/>
+  <!-- Handle arch -->
+  <path d="M74 82 Q74 62 100 62 Q126 62 126 82" stroke="white" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.9"/>
+  <!-- Briefcase body -->
+  <rect x="38" y="82" width="124" height="86" rx="8" fill="white" opacity="0.9"/>
+  <!-- Horizontal center clasp line -->
+  <line x1="38" y1="122" x2="162" y2="122" stroke="white" stroke-width="3" opacity="0.45"/>
+  <!-- Center clasp buckle -->
+  <rect x="86" y="115" width="28" height="14" rx="4" fill="white" opacity="0.6"/>
+  <rect x="92" y="118" width="16" height="8" rx="2" fill="white" opacity="0.8"/>
+  <!-- Left clasp -->
+  <rect x="52" y="117" width="16" height="10" rx="3" fill="white" opacity="0.55"/>
+  <!-- Right clasp -->
+  <rect x="132" y="117" width="16" height="10" rx="3" fill="white" opacity="0.55"/>
+  <!-- Corner reinforcements -->
+  <path d="M38 90 L38 82 Q38 82 46 82 L46 90" stroke="white" stroke-width="2" opacity="0.5" fill="none"/>
+  <path d="M162 90 L162 82 Q162 82 154 82 L154 90" stroke="white" stroke-width="2" opacity="0.5" fill="none"/>
+  <path d="M38 160 L38 168 Q38 168 46 168 L46 160" stroke="white" stroke-width="2" opacity="0.5" fill="none"/>
+  <path d="M162 160 L162 168 Q162 168 154 168 L154 160" stroke="white" stroke-width="2" opacity="0.5" fill="none"/>
 </svg>

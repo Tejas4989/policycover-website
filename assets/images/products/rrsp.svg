@@ -1,14 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
-  <!-- Growth chart bars -->
-  <rect x="50" y="120" width="20" height="40" fill="white" opacity="0.7"/>
-  <rect x="80" y="100" width="20" height="60" fill="white" opacity="0.8"/>
-  <rect x="110" y="75" width="20" height="85" fill="white" opacity="0.9"/>
-  <rect x="140" y="50" width="20" height="110" fill="white"/>
-  <!-- Upward arrow -->
-  <path d="M165 50l-15-20-15 20" stroke="#ff9ecd" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  <line x1="150" y1="30" x2="150" y2="70" stroke="#ff9ecd" stroke-width="4" stroke-linecap="round"/>
-  <!-- Dollar signs -->
-  <text x="48" y="115" font-size="18" font-weight="bold" fill="#ff9ecd">$</text>
-  <text x="78" y="95" font-size="18" font-weight="bold" fill="#ff9ecd">$</text>
-  <text x="108" y="70" font-size="18" font-weight="bold" fill="#ff9ecd">$</text>
+  <!-- Bar chart — three ascending bars -->
+  <rect x="35" y="130" width="36" height="50" rx="4" fill="white" opacity="0.7"/>
+  <rect x="82" y="100" width="36" height="80" rx="4" fill="white" opacity="0.82"/>
+  <rect x="129" y="64" width="36" height="116" rx="4" fill="white" opacity="0.9"/>
+  <!-- Baseline -->
+  <line x1="30" y1="180" x2="170" y2="180" stroke="white" stroke-width="2.5" opacity="0.5"/>
+  <!-- Clock in top-left corner -->
+  <circle cx="52" cy="52" r="26" stroke="white" stroke-width="4" fill="white" opacity="0.1"/>
+  <circle cx="52" cy="52" r="26" stroke="white" stroke-width="3" fill="none" opacity="0.9"/>
+  <!-- Clock hands -->
+  <line x1="52" y1="52" x2="52" y2="36" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.9"/>
+  <line x1="52" y1="52" x2="64" y2="56" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.9"/>
+  <!-- Clock center dot -->
+  <circle cx="52" cy="52" r="3" fill="white" opacity="0.9"/>
+  <!-- Clock tick marks -->
+  <line x1="52" y1="28" x2="52" y2="33" stroke="white" stroke-width="2" opacity="0.7"/>
+  <line x1="52" y1="71" x2="52" y2="76" stroke="white" stroke-width="2" opacity="0.7"/>
+  <line x1="28" y1="52" x2="33" y2="52" stroke="white" stroke-width="2" opacity="0.7"/>
+  <line x1="71" y1="52" x2="76" y2="52" stroke="white" stroke-width="2" opacity="0.7"/>
 </svg>

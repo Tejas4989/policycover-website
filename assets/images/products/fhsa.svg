@@ -1,16 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
-  <!-- House -->
-  <path d="M50 105l50-50 50 50v60H50v-60z" fill="white" stroke="white" stroke-width="4"/>
-  <path d="M50 105l50-50 50 50" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <!-- Windows -->
-  <rect x="65" y="120" width="20" height="20" rx="2" fill="#ffa751" opacity="0.8"/>
-  <rect x="115" y="120" width="20" height="20" rx="2" fill="#ffa751" opacity="0.8"/>
+  <!-- House shape -->
+  <path d="M100 28 L24 88 L42 88 L42 162 L158 162 L158 88 L176 88 Z" fill="white" opacity="0.9"/>
+  <!-- Roof shading -->
+  <path d="M100 28 L24 88 L176 88 Z" fill="white" opacity="0.12"/>
+  <!-- Left window -->
+  <rect x="52" y="102" width="30" height="26" rx="3" fill="white" opacity="0.25"/>
+  <line x1="67" y1="102" x2="67" y2="128" stroke="white" stroke-width="1.5" opacity="0.5"/>
+  <line x1="52" y1="115" x2="82" y2="115" stroke="white" stroke-width="1.5" opacity="0.5"/>
   <!-- Door -->
-  <rect x="88" y="135" width="24" height="30" rx="2" fill="#ff7e5f"/>
-  <!-- Chimney -->
-  <rect x="120" y="75" width="15" height="30" fill="white"/>
-  <!-- Key icon overlay -->
-  <circle cx="145" cy="145" r="18" fill="#feb47b" opacity="0.9"/>
-  <circle cx="145" cy="145" r="7" fill="none" stroke="white" stroke-width="2"/>
-  <rect x="150" y="145" width="12" height="4" rx="2" fill="white"/>
+  <rect x="82" y="120" width="36" height="42" rx="3" fill="white" opacity="0.25"/>
+  <line x1="100" y1="120" x2="100" y2="162" stroke="white" stroke-width="1.5" opacity="0.4"/>
+  <!-- Key overlapping at bottom-right -->
+  <!-- Key head (ring) -->
+  <circle cx="152" cy="145" r="20" stroke="white" stroke-width="5" fill="none" opacity="0.9"/>
+  <circle cx="152" cy="145" r="10" stroke="white" stroke-width="3" fill="none" opacity="0.6"/>
+  <!-- Key shaft -->
+  <line x1="166" y1="159" x2="186" y2="179" stroke="white" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+  <!-- Key teeth -->
+  <line x1="174" y1="167" x2="180" y2="161" stroke="white" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+  <line x1="179" y1="172" x2="185" y2="166" stroke="white" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
 </svg>

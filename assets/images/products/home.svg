@@ -1,20 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
-  <!-- House roof -->
-  <path d="M100 35L25 95H45V165H155V95H175L100 35Z" fill="white"/>
-  <!-- Door -->
-  <rect x="82" y="125" width="36" height="40" rx="4" fill="rgba(100,200,150,0.6)"/>
-  <!-- Door knob -->
-  <circle cx="114" cy="148" r="3" fill="white" opacity="0.9"/>
+  <!-- Chimney (behind roof) -->
+  <rect x="128" y="45" width="16" height="36" rx="2" fill="white" opacity="0.9"/>
+  <!-- Roof -->
+  <path d="M100 30 L22 90 L40 90 L40 170 L160 170 L160 90 L178 90 Z" fill="white" opacity="0.9"/>
+  <!-- Roof overhang (slightly darker shade via opacity) -->
+  <path d="M100 30 L22 90 L178 90 Z" fill="white" opacity="0.15"/>
   <!-- Left window -->
-  <rect x="50" y="105" width="30" height="28" rx="3" fill="rgba(150,220,255,0.65)"/>
-  <line x1="65" y1="105" x2="65" y2="133" stroke="white" stroke-width="2" opacity="0.6"/>
-  <line x1="50" y1="119" x2="80" y2="119" stroke="white" stroke-width="2" opacity="0.6"/>
+  <rect x="48" y="105" width="34" height="30" rx="3" fill="white" opacity="0.25"/>
+  <line x1="65" y1="105" x2="65" y2="135" stroke="white" stroke-width="2" opacity="0.7"/>
+  <line x1="48" y1="120" x2="82" y2="120" stroke="white" stroke-width="2" opacity="0.7"/>
   <!-- Right window -->
-  <rect x="120" y="105" width="30" height="28" rx="3" fill="rgba(150,220,255,0.65)"/>
-  <line x1="135" y1="105" x2="135" y2="133" stroke="white" stroke-width="2" opacity="0.6"/>
-  <line x1="120" y1="119" x2="150" y2="119" stroke="white" stroke-width="2" opacity="0.6"/>
-  <!-- Chimney -->
-  <rect x="130" y="50" width="16" height="32" rx="2" fill="white" opacity="0.8"/>
-  <!-- Shield protection symbol overlay -->
-  <path d="M100 155L88 148V138C88 133 100 128 100 128C100 128 112 133 112 138V148L100 155Z" fill="rgba(100,200,150,0.5)" stroke="white" stroke-width="1.5"/>
+  <rect x="118" y="105" width="34" height="30" rx="3" fill="white" opacity="0.25"/>
+  <line x1="135" y1="105" x2="135" y2="135" stroke="white" stroke-width="2" opacity="0.7"/>
+  <line x1="118" y1="120" x2="152" y2="120" stroke="white" stroke-width="2" opacity="0.7"/>
+  <!-- Door -->
+  <rect x="83" y="128" width="34" height="42" rx="4" fill="white" opacity="0.3"/>
+  <!-- Door arch top -->
+  <path d="M83 140 Q83 128 100 128 Q117 128 117 140" fill="white" opacity="0.15"/>
+  <!-- Door knob -->
+  <circle cx="112" cy="150" r="3" fill="white" opacity="0.9"/>
+  <!-- Door center line -->
+  <line x1="100" y1="128" x2="100" y2="170" stroke="white" stroke-width="1.5" opacity="0.4"/>
 </svg>

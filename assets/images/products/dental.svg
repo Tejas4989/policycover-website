@@ -1,8 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
-  <!-- Tooth -->
-  <path d="M85 70c-15 0-25 10-25 25v30c0 15 8 25 15 35 4 6 6 10 6 15v5h16v-5c0-5 2-9 6-15 7-10 15-20 15-35v-30c0-15-10-25-25-25h-8z" fill="white" stroke="white" stroke-width="3"/>
-  <!-- Smile/Plus symbol for health -->
-  <path d="M85 95c4 6 10 10 17 10 7 0 13-4 17-10" stroke="#00c6ff" stroke-width="3" stroke-linecap="round" fill="none"/>
-  <circle cx="90" cy="85" r="3" fill="#00c6ff"/>
-  <circle cx="110" cy="85" r="3" fill="#00c6ff"/>
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 200 200">
+  <!-- Molar tooth body -->
+  <path d="M68 55 Q58 55 55 68 L55 115 Q55 138 63 155 Q68 165 72 170 Q76 175 78 170 Q82 160 86 148 Q90 136 100 136 Q110 136 114 148 Q118 160 122 170 Q124 175 128 170 Q132 165 137 155 Q145 138 145 115 L145 68 Q142 55 132 55 Q122 55 116 62 Q110 68 100 68 Q90 68 84 62 Q78 55 68 55 Z" fill="white" opacity="0.9"/>
+  <!-- Cusp dividers top -->
+  <path d="M84 62 Q90 75 100 68 Q110 75 116 62" stroke="white" stroke-width="2" opacity="0.4"/>
+  <!-- Root divider -->
+  <line x1="100" y1="136" x2="100" y2="170" stroke="white" stroke-width="1.5" opacity="0.35"/>
+  <!-- Red cross badge top-right -->
+  <circle cx="148" cy="58" r="18" fill="rgba(200,30,30,0.85)"/>
+  <rect x="144" y="48" width="8" height="20" rx="2" fill="white"/>
+  <rect x="138" y="54" width="20" height="8" rx="2" fill="white"/>
 </svg>

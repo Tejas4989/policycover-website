@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" fill="none">
+  <!-- Green maple leaf accent -->
+  <path d="M38 22 L42 30 L50 28 L44 36 L48 44 L38 40 L28 44 L32 36 L26 28 L34 30 Z" fill="#006838"/>
+  <!-- Stem -->
+  <rect x="36" y="44" width="4" height="12" rx="1" fill="#006838"/>
+  <!-- Wordmark -->
+  <text x="148" y="38" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#006838" text-anchor="middle" letter-spacing="1">SGI</text>
+  <text x="148" y="58" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="500" fill="#333" text-anchor="middle" letter-spacing="0.5">CANADA</text>
+</svg>

@@ -1,8 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
-  <!-- Simple heart with family protection -->
-  <path d="M100 170c-2 0-60-40-60-80 0-20 16-36 36-36 11 0 21 5 24 12 3-7 13-12 24-12 20 0 36 16 36 36 0 40-58 80-60 80z" fill="white" stroke="white" stroke-width="4"/>
-  <!-- Family figures inside heart -->
-  <circle cx="85" cy="100" r="8" fill="rgba(48, 207, 208, 0.6)"/>
-  <circle cx="100" cy="95" r="10" fill="rgba(48, 207, 208, 0.8)"/>
-  <circle cx="115" cy="100" r="8" fill="rgba(48, 207, 208, 0.6)"/>
+  <!-- Bold heart shape -->
+  <path d="M100 168 C96 165 30 122 30 82 C30 60 47 44 68 44 C80 44 91 50 100 60 C109 50 120 44 132 44 C153 44 170 60 170 82 C170 122 104 165 100 168 Z" fill="white" opacity="0.9"/>
+  <!-- Adult figure left -->
+  <circle cx="82" cy="98" r="7" fill="white" opacity="0.35"/>
+  <path d="M75 118 Q75 108 82 108 Q89 108 89 118 L89 128 L75 128 Z" fill="white" opacity="0.35"/>
+  <!-- Adult figure right -->
+  <circle cx="118" cy="98" r="7" fill="white" opacity="0.35"/>
+  <path d="M111 118 Q111 108 118 108 Q125 108 125 118 L125 128 L111 128 Z" fill="white" opacity="0.35"/>
+  <!-- Child figure center -->
+  <circle cx="100" cy="103" r="5" fill="white" opacity="0.35"/>
+  <path d="M95 118 Q95 110 100 110 Q105 110 105 118 L105 125 L95 125 Z" fill="white" opacity="0.35"/>
 </svg>

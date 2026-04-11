@@ -1,9 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
-  <!-- Airplane -->
-  <path d="M100 50l-45 35 25 0-15 30 35-20 35 20-15-30 25 0-45-35z" fill="white" stroke="white" stroke-width="3"/>
-  <!-- Globe -->
-  <circle cx="100" cy="140" r="35" stroke="white" stroke-width="4" fill="none"/>
-  <ellipse cx="100" cy="140" rx="15" ry="35" stroke="white" stroke-width="3" fill="none"/>
-  <line x1="65" y1="140" x2="135" y2="140" stroke="white" stroke-width="3"/>
-  <line x1="100" y1="105" x2="100" y2="175" stroke="white" stroke-width="3"/>
+  <!-- Airplane fuselage -->
+  <path d="M28 100 Q40 92 80 96 L158 100 Q168 100 172 104 Q168 108 158 108 L80 112 Q40 116 28 108 Z" fill="white" opacity="0.9"/>
+  <!-- Nose -->
+  <path d="M158 100 Q178 100 182 104 Q178 108 158 108 Z" fill="white" opacity="0.9"/>
+  <!-- Main wing -->
+  <path d="M90 96 L130 65 L140 68 L110 104 Z" fill="white" opacity="0.85"/>
+  <path d="M90 112 L130 143 L140 140 L110 104 Z" fill="white" opacity="0.85"/>
+  <!-- Tail fin vertical -->
+  <path d="M40 96 L50 70 L65 70 L65 96 Z" fill="white" opacity="0.8"/>
+  <!-- Tail fin horizontal left -->
+  <path d="M50 100 L35 85 L40 82 L58 100 Z" fill="white" opacity="0.75"/>
+  <path d="M50 108 L35 123 L40 126 L58 108 Z" fill="white" opacity="0.75"/>
+  <!-- Windows row -->
+  <circle cx="110" cy="100" r="3.5" fill="white" opacity="0.3"/>
+  <circle cx="122" cy="100" r="3.5" fill="white" opacity="0.3"/>
+  <circle cx="134" cy="100" r="3.5" fill="white" opacity="0.3"/>
+  <circle cx="146" cy="100" r="3.5" fill="white" opacity="0.3"/>
+  <!-- Door line -->
+  <line x1="95" y1="97" x2="95" y2="111" stroke="white" stroke-width="1.5" opacity="0.4"/>
+  <!-- Engine under main wing -->
+  <path d="M108 106 L128 106 Q132 106 132 110 Q132 114 128 114 L108 114 Q104 114 104 110 Q104 106 108 106 Z" fill="white" opacity="0.65"/>
 </svg>
