@@ -14,3 +14,7 @@
 /styles.css
   Cache-Control: no-cache, no-store, must-revalidate
   X-Content-Type-Options: nosniff
+
+/script.js
+  Cache-Control: no-cache, no-store, must-revalidate
+  X-Content-Type-Options: nosniff
