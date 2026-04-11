@@ -614,6 +614,42 @@ document.addEventListener('keydown', (e) => {
 });
 
 // ===========================
+// Date input constraints — enforce valid year ranges
+// ===========================
+(function setDateConstraints() {
+    const today = new Date().toISOString().split('T')[0];          // e.g. 2026-04-10
+    const minDOB        = '1900-01-01';
+    const minVehicle    = '1900-01-01';
+    const minCoverage   = today;
+    const maxFuture     = '2030-12-31';
+
+    document.querySelectorAll('input[type="date"]').forEach(input => {
+        const name = input.name || '';
+
+        if (name.includes('dob') || name.includes('birth')) {
+            // Date of birth: 1900 → today
+            input.min = minDOB;
+            input.max = today;
+
+        } else if (name.includes('purchase_date') || name.includes('move_in')) {
+            // Vehicle purchase / move-in: 1900 → today
+            input.min = minVehicle;
+            input.max = today;
+
+        } else if (name.includes('coverage_start') || name.includes('coverage_end')) {
+            // Coverage dates: today → 2030
+            input.min = minCoverage;
+            input.max = maxFuture;
+
+        } else if (name.includes('start_date')) {
+            // Policy start date on other forms: today → 2030
+            input.min = minCoverage;
+            input.max = maxFuture;
+        }
+    });
+})();
+
+// ===========================
 // Populate year dropdowns for G-date selects
 // ===========================
 (function populateGdateYears() {
