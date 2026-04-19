@@ -384,7 +384,7 @@ const QUOTE_WEBHOOK_URL = 'https://n8n.01genius.io/webhook/insurance-form';
 
 // Record tab / block maps shared across count-pill and reset logic
 const RECORD_TABS_MAP = { vehicle: 'vehicleRecordTabs', driver: 'driverRecordTabs', traveler: 'travelerRecordTabs' };
-const MAX_BLOCKS_MAP  = { vehicle: 3, driver: 4, homeowner: 3, traveler: 2 };
+const MAX_BLOCKS_MAP  = { vehicle: 4, driver: 4, homeowner: 3, traveler: 2 };
 
 function openQuoteModal(type) {
     const modal = document.getElementById('quoteModal-' + type);
@@ -435,29 +435,31 @@ function resetQuoteModal(type) {
     // Reset count pills to 1 and record tabs to initial state
     const targets = ['vehicle', 'driver', 'traveler'];
     targets.forEach(target => {
-        // Reset count pills
-        document.querySelectorAll(`.qcount-pill[data-target="${target}"]`).forEach((p, i) => {
-            p.classList.toggle('active', i === 0);
-        });
-        // Reset hidden count input to 1
+        // Reset count pills — no pre-selection
+        document.querySelectorAll(`.qcount-pill[data-target="${target}"]`).forEach(p => p.classList.remove('active'));
+        // Reset hidden count input to empty
         const hiddenInputMap = { vehicle: 'numVehicles', driver: 'numDrivers', traveler: 'numTravelers' };
         const hiddenInput = document.getElementById(hiddenInputMap[target]);
-        if (hiddenInput) hiddenInput.value = '1';
+        if (hiddenInput) hiddenInput.value = '';
 
-        // Reset record tabs: activate tab 1, disable others
+        // Reset record tabs: hide container, activate tab 1, disable others, clear badges
         const tabsContainer = document.getElementById(RECORD_TABS_MAP[target]);
         if (tabsContainer) {
+            tabsContainer.style.display = 'none';
             tabsContainer.querySelectorAll('.qrecord-tab').forEach((tab, i) => {
                 tab.classList.toggle('active', i === 0);
+                tab.classList.remove('pending', 'done');
                 tab.disabled = i > 0;
             });
         }
+        const hint = document.getElementById(target + '-record-hint');
+        if (hint) hint.style.display = 'none';
 
-        // Show block 1, hide the rest
+        // Hide all blocks (show none until count is picked)
         const maxBlocks = MAX_BLOCKS_MAP[target] || 4;
         for (let i = 1; i <= maxBlocks; i++) {
             const block = document.getElementById(target + '-block-' + i);
-            if (block) block.style.display = (i === 1) ? '' : 'none';
+            if (block) block.style.display = 'none';
         }
     });
 }
@@ -521,6 +523,53 @@ function validateQuoteStep(type, step) {
 // ===========================
 // Dynamic Vehicle / Driver Count Pills
 // ===========================
+
+// Primary field to check per target to determine if a tab is "filled"
+const PRIMARY_FIELD_MAP = {
+    vehicle:  n => `vehicle_${n}_ymm`,
+    driver:   n => `driver_${n}_license`,
+    traveler: n => `traveler_${n}_first_name`,
+};
+
+function updateTabBadges(target, count) {
+    const tabsContainer = document.getElementById(RECORD_TABS_MAP[target]);
+    if (!tabsContainer) return;
+
+    let pendingCount = 0;
+    tabsContainer.querySelectorAll('.qrecord-tab').forEach(tab => {
+        const tabNum = parseInt(tab.dataset.block);
+        tab.classList.remove('pending', 'done');
+        if (tab.disabled || tabNum > count || tab.classList.contains('active')) return;
+
+        const fieldName = PRIMARY_FIELD_MAP[target] ? PRIMARY_FIELD_MAP[target](tabNum) : null;
+        const field = fieldName ? document.querySelector(`[name="${fieldName}"]`) : null;
+        if (field && field.value.trim()) {
+            tab.classList.add('done');
+        } else {
+            tab.classList.add('pending');
+            pendingCount++;
+        }
+    });
+
+    // Show / update hint bar
+    const hintId = target + '-record-hint';
+    let hint = document.getElementById(hintId);
+    if (!hint) {
+        hint = document.createElement('p');
+        hint.id = hintId;
+        hint.className = 'qrecord-hint';
+        tabsContainer.insertAdjacentElement('afterend', hint);
+    }
+    if (count > 1 && pendingCount > 0) {
+        const label = target === 'traveler' ? 'traveler' : target;
+        const labels = label + (count > 1 ? 's' : '');
+        hint.innerHTML = `&#9888; Tap each numbered tab above to fill in details for all <strong>${count} ${labels}</strong>.`;
+        hint.style.display = 'flex';
+    } else {
+        hint.style.display = 'none';
+    }
+}
+
 function switchRecordTab(target, blockNum) {
     const tabsContainer = document.getElementById(RECORD_TABS_MAP[target]);
     const maxBlocks = MAX_BLOCKS_MAP[target] || 4;
@@ -537,6 +586,12 @@ function switchRecordTab(target, blockNum) {
         const block = document.getElementById(target + '-block-' + i);
         if (block) block.style.display = (i === blockNum) ? '' : 'none';
     }
+
+    // Refresh badges after switching so previous tab gets its status dot
+    const hiddenInputMap = { vehicle: 'numVehicles', driver: 'numDrivers', traveler: 'numTravelers' };
+    const hiddenInput = document.getElementById(hiddenInputMap[target]);
+    const count = hiddenInput ? parseInt(hiddenInput.value) || 0 : 0;
+    if (count > 1) updateTabBadges(target, count);
 }
 
 document.addEventListener('click', (e) => {
@@ -560,14 +615,17 @@ document.addEventListener('click', (e) => {
     // Enable/disable record tabs based on count; always reset to tab 1
     const tabsContainer = document.getElementById(RECORD_TABS_MAP[target]);
     if (tabsContainer) {
+        tabsContainer.style.display = 'flex'; // reveal on first selection
         tabsContainer.querySelectorAll('.qrecord-tab').forEach(tab => {
             const tabNum = parseInt(tab.dataset.block);
             tab.disabled = tabNum > count;
-            tab.classList.remove('active');
+            tab.classList.remove('active', 'pending', 'done');
         });
         const firstTab = tabsContainer.querySelector('.qrecord-tab:not([disabled])');
         if (firstTab) firstTab.classList.add('active');
     }
+    // Show status badges on non-active enabled tabs
+    if (count > 1) updateTabBadges(target, count);
 
     // Show block 1; clear fields in out-of-range blocks
     for (let i = 1; i <= maxBlocks; i++) {
@@ -590,6 +648,24 @@ document.addEventListener('click', (e) => {
     const tab = e.target.closest('.qrecord-tab');
     if (!tab || tab.disabled) return;
     switchRecordTab(tab.dataset.target, parseInt(tab.dataset.block));
+});
+
+// Refresh tab badges when a primary field is typed into
+document.addEventListener('input', (e) => {
+    const name = e.target.name || '';
+    const primaryPatterns = [
+        { regex: /^vehicle_\d+_ymm$/, target: 'vehicle', hiddenId: 'numVehicles' },
+        { regex: /^driver_\d+_license$/, target: 'driver', hiddenId: 'numDrivers' },
+        { regex: /^traveler_\d+_first_name$/, target: 'traveler', hiddenId: 'numTravelers' },
+    ];
+    for (const { regex, target, hiddenId } of primaryPatterns) {
+        if (regex.test(name)) {
+            const hiddenInput = document.getElementById(hiddenId);
+            const count = hiddenInput ? parseInt(hiddenInput.value) || 0 : 0;
+            if (count > 1) updateTabBadges(target, count);
+            break;
+        }
+    }
 });
 
 // ===========================

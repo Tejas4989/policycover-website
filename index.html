@@ -886,21 +886,23 @@
                     <div class="qform-count-row">
                         <label>How many vehicles? <span class="req">*</span></label>
                         <div class="qcount-pills" id="vehicleCountPills">
-                            <button type="button" class="qcount-pill active" data-target="vehicle" data-count="1">1</button>
+                            <button type="button" class="qcount-pill" data-target="vehicle" data-count="1">1</button>
                             <button type="button" class="qcount-pill" data-target="vehicle" data-count="2">2</button>
                             <button type="button" class="qcount-pill" data-target="vehicle" data-count="3">3</button>
+                            <button type="button" class="qcount-pill" data-target="vehicle" data-count="4">4</button>
                         </div>
-                        <input type="hidden" name="num_vehicles" id="numVehicles" value="1">
+                        <input type="hidden" name="num_vehicles" id="numVehicles" value="">
                     </div>
-                    <div class="qrecord-tabs" id="vehicleRecordTabs">
+                    <div class="qrecord-tabs" id="vehicleRecordTabs" style="display:none">
                         <span class="qrecord-tabs-label">Vehicle:</span>
                         <button type="button" class="qrecord-tab active" data-target="vehicle" data-block="1">1</button>
                         <button type="button" class="qrecord-tab" data-target="vehicle" data-block="2" disabled>2</button>
                         <button type="button" class="qrecord-tab" data-target="vehicle" data-block="3" disabled>3</button>
+                        <button type="button" class="qrecord-tab" data-target="vehicle" data-block="4" disabled>4</button>
                     </div>
 
                     <!-- Vehicle 1 -->
-                    <div class="qdynamic-block" id="vehicle-block-1">
+                    <div class="qdynamic-block" id="vehicle-block-1" style="display:none">
                         <div class="qdynamic-label">Vehicle 1</div>
                         <div class="qform-grid">
                             <div class="form-group qfull"><label>Year, Make and Model <span class="req">*</span></label><input type="text" name="vehicle_1_ymm" required placeholder="e.g. 2020 Toyota Camry"></div>
@@ -971,6 +973,30 @@
                         </div>
                     </div>
 
+                    <!-- Vehicle 4 (hidden by default) -->
+                    <div class="qdynamic-block" id="vehicle-block-4" style="display:none">
+                        <div class="qdynamic-label">Vehicle 4</div>
+                        <div class="qform-grid">
+                            <div class="form-group qfull"><label>Year, Make and Model</label><input type="text" name="vehicle_4_ymm" placeholder="e.g. 2019 Chevrolet Equinox"></div>
+                            <div class="form-group"><label>Purchase Date</label><input type="date" name="vehicle_4_purchase_date"></div>
+                            <div class="form-group"><label>Annual KMs</label><input type="number" name="vehicle_4_annual_km" min="0" placeholder="e.g. 12000"></div>
+                            <div class="form-group"><label>One-Way KM to Work</label><input type="number" name="vehicle_4_oneway_km" min="0" placeholder="e.g. 15"></div>
+                            <div class="form-group"><label>Ownership</label>
+                                <div class="qradio-group">
+                                    <label class="qradio"><input type="radio" name="vehicle_4_ownership" value="Finance"> Finance</label>
+                                    <label class="qradio"><input type="radio" name="vehicle_4_ownership" value="Lease"> Lease</label>
+                                    <label class="qradio"><input type="radio" name="vehicle_4_ownership" value="Owned"> Owned</label>
+                                </div>
+                            </div>
+                            <div class="form-group"><label>Winter Tires?</label>
+                                <div class="qradio-group">
+                                    <label class="qradio"><input type="radio" name="vehicle_4_winter_tires" value="Yes"> Yes</label>
+                                    <label class="qradio"><input type="radio" name="vehicle_4_winter_tires" value="No"> No</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="qform-nav"><button type="button" class="btn-qprev" data-modal="auto" data-from="2">← Back</button><button type="button" class="btn-qnext" data-modal="auto" data-from="2">Next: Driver Details →</button></div>
                 </div>
 
@@ -979,14 +1005,14 @@
                     <div class="qform-count-row">
                         <label>How many drivers? <span class="req">*</span></label>
                         <div class="qcount-pills" id="driverCountPills">
-                            <button type="button" class="qcount-pill active" data-target="driver" data-count="1">1</button>
+                            <button type="button" class="qcount-pill" data-target="driver" data-count="1">1</button>
                             <button type="button" class="qcount-pill" data-target="driver" data-count="2">2</button>
                             <button type="button" class="qcount-pill" data-target="driver" data-count="3">3</button>
                             <button type="button" class="qcount-pill" data-target="driver" data-count="4">4</button>
                         </div>
-                        <input type="hidden" name="num_drivers" id="numDrivers" value="1">
+                        <input type="hidden" name="num_drivers" id="numDrivers" value="">
                     </div>
-                    <div class="qrecord-tabs" id="driverRecordTabs">
+                    <div class="qrecord-tabs" id="driverRecordTabs" style="display:none">
                         <span class="qrecord-tabs-label">Driver:</span>
                         <button type="button" class="qrecord-tab active" data-target="driver" data-block="1">1</button>
                         <button type="button" class="qrecord-tab" data-target="driver" data-block="2" disabled>2</button>
@@ -995,7 +1021,7 @@
                     </div>
 
                     <!-- Driver 1 -->
-                    <div class="qdynamic-block" id="driver-block-1">
+                    <div class="qdynamic-block" id="driver-block-1" style="display:none">
                         <div class="qdynamic-label">Driver 1 <span class="qdynamic-required">(Primary Driver)</span></div>
                         <div class="qform-grid">
                             <div class="form-group qfull">
@@ -1342,19 +1368,19 @@
                     <div class="qform-count-row">
                         <label>How many travelers? <span class="req">*</span></label>
                         <div class="qcount-pills">
-                            <button type="button" class="qcount-pill active" data-target="traveler" data-count="1">1</button>
+                            <button type="button" class="qcount-pill" data-target="traveler" data-count="1">1</button>
                             <button type="button" class="qcount-pill" data-target="traveler" data-count="2">2</button>
                         </div>
-                        <input type="hidden" name="num_travelers" id="numTravelers" value="1">
+                        <input type="hidden" name="num_travelers" id="numTravelers" value="">
                     </div>
-                    <div class="qrecord-tabs" id="travelerRecordTabs">
+                    <div class="qrecord-tabs" id="travelerRecordTabs" style="display:none">
                         <span class="qrecord-tabs-label">Traveler:</span>
                         <button type="button" class="qrecord-tab active" data-target="traveler" data-block="1">1</button>
                         <button type="button" class="qrecord-tab" data-target="traveler" data-block="2" disabled>2</button>
                     </div>
 
                     <!-- Traveler 1 -->
-                    <div class="qdynamic-block" id="traveler-block-1">
+                    <div class="qdynamic-block" id="traveler-block-1" style="display:none">
                         <div class="qdynamic-label">Traveler 1 <span class="qdynamic-required">(Primary)</span></div>
                         <div class="qform-grid">
                             <div class="form-group"><label>First Name <span class="req">*</span></label><input type="text" name="traveler_1_first_name" required placeholder="Raj"></div>
