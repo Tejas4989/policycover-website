@@ -2215,6 +2215,7 @@ body {
 .modal-icon-auto      { background: linear-gradient(135deg, #f7971e, #ffd200); }
 .modal-icon-home      { background: linear-gradient(135deg, #11998e, #38ef7d); }
 .modal-icon-commercial{ background: linear-gradient(135deg, #4776E6, #8E54E9); }
+.modal-icon-business  { background: linear-gradient(135deg, #4776E6, #8E54E9); }
 .modal-icon-supervisa { background: linear-gradient(135deg, #43e97b, #38f9d7); }
 
 /* Step Stepper */
@@ -2477,6 +2478,57 @@ body {
     border-color: var(--primary-color);
     background: var(--primary-color);
     color: #111;
+}
+
+/* Record tab navigation (switch between person/vehicle #) */
+.qform-count-row:has(+ .qrecord-tabs) {
+    margin-bottom: 0.5rem;
+}
+.qrecord-tabs {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin: 0 0 1rem;
+}
+.qrecord-tabs-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #888;
+    margin-right: 0.25rem;
+    white-space: nowrap;
+}
+.qrecord-tab {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    background: #fff;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #aaa;
+    cursor: pointer;
+    transition: all 0.18s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+.qrecord-tab:not(:disabled):hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+.qrecord-tab.active {
+    border-color: var(--primary-color);
+    background: var(--primary-color);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.qrecord-tab:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    background: #f3f4f6;
+    border-color: #e5e7eb;
+    color: #bbb;
 }
 
 /* Dynamic vehicle/driver blocks */

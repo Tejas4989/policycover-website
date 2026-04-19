@@ -382,6 +382,10 @@ if (window.history.replaceState) {
 // n8n webhook — receives all quote and contact form submissions as JSON.
 const QUOTE_WEBHOOK_URL = 'https://n8n.01genius.io/webhook/insurance-form';
 
+// Record tab / block maps shared across count-pill and reset logic
+const RECORD_TABS_MAP = { vehicle: 'vehicleRecordTabs', driver: 'driverRecordTabs', traveler: 'travelerRecordTabs' };
+const MAX_BLOCKS_MAP  = { vehicle: 3, driver: 4, homeowner: 3, traveler: 2 };
+
 function openQuoteModal(type) {
     const modal = document.getElementById('quoteModal-' + type);
     if (!modal) return;
@@ -427,6 +431,35 @@ function resetQuoteModal(type) {
     }
     const errEl = document.getElementById('qError-' + type);
     if (errEl) errEl.textContent = '';
+
+    // Reset count pills to 1 and record tabs to initial state
+    const targets = ['vehicle', 'driver', 'traveler'];
+    targets.forEach(target => {
+        // Reset count pills
+        document.querySelectorAll(`.qcount-pill[data-target="${target}"]`).forEach((p, i) => {
+            p.classList.toggle('active', i === 0);
+        });
+        // Reset hidden count input to 1
+        const hiddenInputMap = { vehicle: 'numVehicles', driver: 'numDrivers', traveler: 'numTravelers' };
+        const hiddenInput = document.getElementById(hiddenInputMap[target]);
+        if (hiddenInput) hiddenInput.value = '1';
+
+        // Reset record tabs: activate tab 1, disable others
+        const tabsContainer = document.getElementById(RECORD_TABS_MAP[target]);
+        if (tabsContainer) {
+            tabsContainer.querySelectorAll('.qrecord-tab').forEach((tab, i) => {
+                tab.classList.toggle('active', i === 0);
+                tab.disabled = i > 0;
+            });
+        }
+
+        // Show block 1, hide the rest
+        const maxBlocks = MAX_BLOCKS_MAP[target] || 4;
+        for (let i = 1; i <= maxBlocks; i++) {
+            const block = document.getElementById(target + '-block-' + i);
+            if (block) block.style.display = (i === 1) ? '' : 'none';
+        }
+    });
 }
 
 function goToQuoteStep(type, toStep) {
@@ -488,11 +521,29 @@ function validateQuoteStep(type, step) {
 // ===========================
 // Dynamic Vehicle / Driver Count Pills
 // ===========================
+function switchRecordTab(target, blockNum) {
+    const tabsContainer = document.getElementById(RECORD_TABS_MAP[target]);
+    const maxBlocks = MAX_BLOCKS_MAP[target] || 4;
+
+    // Update active tab UI
+    if (tabsContainer) {
+        tabsContainer.querySelectorAll('.qrecord-tab').forEach(t => t.classList.remove('active'));
+        const activeTab = tabsContainer.querySelector(`[data-block="${blockNum}"]`);
+        if (activeTab) activeTab.classList.add('active');
+    }
+
+    // Show the selected block, hide all others
+    for (let i = 1; i <= maxBlocks; i++) {
+        const block = document.getElementById(target + '-block-' + i);
+        if (block) block.style.display = (i === blockNum) ? '' : 'none';
+    }
+}
+
 document.addEventListener('click', (e) => {
     const pill = e.target.closest('.qcount-pill');
     if (!pill) return;
 
-    const target = pill.dataset.target;  // 'vehicle' or 'driver'
+    const target = pill.dataset.target;  // 'vehicle', 'driver', 'traveler', etc.
     const count = parseInt(pill.dataset.count);
 
     // Update active pill
@@ -504,25 +555,41 @@ document.addEventListener('click', (e) => {
     const hiddenInput = document.getElementById(hiddenInputMap[target] || ('num' + target));
     if (hiddenInput) hiddenInput.value = count;
 
-    // Show/hide blocks based on count
-    const maxBlocksMap = { vehicle: 3, driver: 4, homeowner: 3, traveler: 2 };
-    const maxBlocks = maxBlocksMap[target] || 4;
+    const maxBlocks = MAX_BLOCKS_MAP[target] || 4;
+
+    // Enable/disable record tabs based on count; always reset to tab 1
+    const tabsContainer = document.getElementById(RECORD_TABS_MAP[target]);
+    if (tabsContainer) {
+        tabsContainer.querySelectorAll('.qrecord-tab').forEach(tab => {
+            const tabNum = parseInt(tab.dataset.block);
+            tab.disabled = tabNum > count;
+            tab.classList.remove('active');
+        });
+        const firstTab = tabsContainer.querySelector('.qrecord-tab:not([disabled])');
+        if (firstTab) firstTab.classList.add('active');
+    }
+
+    // Show block 1; clear fields in out-of-range blocks
     for (let i = 1; i <= maxBlocks; i++) {
         const block = document.getElementById(target + '-block-' + i);
         if (block) {
-            const show = i <= count;
-            block.style.display = show ? '' : 'none';
-            // Clear required on hidden blocks so form can submit
-            block.querySelectorAll('[required]').forEach(f => {
-                if (show) {
-                    f.setAttribute('required', '');
-                } else {
-                    f.removeAttribute('required');
-                    f.value = '';
-                }
-            });
+            block.style.display = (i === 1) ? '' : 'none';
+            if (i > count) {
+                // Clear all field values in disabled blocks
+                block.querySelectorAll('input:not([type="radio"]):not([type="checkbox"]), select, textarea').forEach(f => { f.value = ''; });
+                block.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(f => { f.checked = false; });
+            }
         }
     }
+});
+
+// ===========================
+// Record Tab Navigation
+// ===========================
+document.addEventListener('click', (e) => {
+    const tab = e.target.closest('.qrecord-tab');
+    if (!tab || tab.disabled) return;
+    switchRecordTab(tab.dataset.target, parseInt(tab.dataset.block));
 });
 
 // ===========================
@@ -742,6 +809,44 @@ document.addEventListener('keydown', (e) => {
     if (navMenu.classList.contains('active') && e.key === 'Escape') {
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
+    }
+});
+
+// ===========================
+// Super Visa: auto-calculate coverage end date (1 year from start)
+// ===========================
+function updateSuperVisaEndDate() {
+    const form = document.getElementById('quoteForm-supervisa');
+    if (!form) return;
+    const visaType = form.querySelector('input[name="visa_type"]:checked');
+    const startInput = form.querySelector('input[name="coverage_start"]');
+    const endInput   = form.querySelector('input[name="coverage_end"]');
+    if (!startInput || !endInput) return;
+
+    if (visaType && visaType.value === 'SuperVisa' && startInput.value) {
+        const start = new Date(startInput.value);
+        // Add exactly 1 year
+        start.setFullYear(start.getFullYear() + 1);
+        // Format as YYYY-MM-DD for the date input
+        const yyyy = start.getFullYear();
+        const mm   = String(start.getMonth() + 1).padStart(2, '0');
+        const dd   = String(start.getDate()).padStart(2, '0');
+        endInput.value = `${yyyy}-${mm}-${dd}`;
+        endInput.readOnly = true;
+        endInput.style.background = '#f0f4ff';
+    } else {
+        endInput.readOnly = false;
+        endInput.style.background = '';
+        // Only clear if it was auto-set (Super Visa → Visitor Visa switch)
+        if (visaType && visaType.value !== 'SuperVisa') endInput.value = '';
+    }
+}
+
+document.addEventListener('change', (e) => {
+    const form = document.getElementById('quoteForm-supervisa');
+    if (!form || !form.contains(e.target)) return;
+    if (e.target.name === 'visa_type' || e.target.name === 'coverage_start') {
+        updateSuperVisaEndDate();
     }
 });
 
