@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 60" width="180" height="60">
+  <!-- Humania icon - stylized person/leaf -->
+  <circle cx="20" cy="18" r="7" fill="#F47D20"/>
+  <path d="M10 46 C10 34 30 34 30 46" fill="#F47D20"/>
+  <!-- Text -->
+  <text x="44" y="28" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#3D3D3D">Humania</text>
+  <text x="44" y="43" font-family="Arial, sans-serif" font-size="10" fill="#F47D20">Assurance</text>
+</svg>

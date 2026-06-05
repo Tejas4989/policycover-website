@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 60" width="160" height="60">
+  <!-- GMS cross/health icon -->
+  <rect x="18" y="22" width="8" height="16" rx="2" fill="#007A5E"/>
+  <rect x="12" y="28" width="20" height="8" rx="2" fill="#007A5E"/>
+  <!-- Text -->
+  <text x="44" y="28" font-family="Arial, sans-serif" font-size="18" font-weight="800" fill="#007A5E">GMS</text>
+  <text x="44" y="43" font-family="Arial, sans-serif" font-size="9" fill="#007A5E" letter-spacing="0.5">Health Insurance</text>
+</svg>

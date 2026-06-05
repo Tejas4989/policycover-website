@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 60" width="160" height="60">
+  <!-- BMO Roundel -->
+  <circle cx="22" cy="30" r="18" fill="#E42218"/>
+  <text x="22" y="36" font-family="Arial, sans-serif" font-size="12" font-weight="800" fill="white" text-anchor="middle">BMO</text>
+  <!-- BMO Text -->
+  <text x="48" y="28" font-family="Arial, sans-serif" font-size="16" font-weight="800" fill="#002B5C">BMO</text>
+  <text x="48" y="43" font-family="Arial, sans-serif" font-size="10" fill="#002B5C" letter-spacing="0.5">Insurance</text>
+</svg>

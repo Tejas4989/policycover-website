@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 60" width="160" height="60">
+  <!-- RBC Lion Shield -->
+  <rect x="8" y="10" width="30" height="40" rx="4" fill="#003168"/>
+  <path d="M23 16 C18 16 14 20 14 25 C14 30 18 33 23 35 C28 33 32 30 32 25 C32 20 28 16 23 16Z" fill="#FFCC00"/>
+  <path d="M23 18 C23 18 20 21 20 25 C20 29 23 32 23 32 C23 32 26 29 26 25 C26 21 23 18 23Z" fill="#003168"/>
+  <!-- RBC Text -->
+  <text x="46" y="28" font-family="Arial, sans-serif" font-size="18" font-weight="800" fill="#003168">RBC</text>
+  <text x="46" y="43" font-family="Arial, sans-serif" font-size="10" fill="#003168" letter-spacing="1">Insurance</text>
+</svg>

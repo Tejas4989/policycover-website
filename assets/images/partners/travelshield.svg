@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+  <!-- Shield icon with plane -->
+  <path d="M22 10 C14 10 10 14 10 14 L10 32 C10 40 22 48 22 48 C22 48 34 40 34 32 L34 14 C34 14 30 10 22 10Z" fill="#005B99"/>
+  <!-- Plane -->
+  <path d="M17 30 L20 24 L23 30 L26 26 L23 32 L20 31 Z" fill="white"/>
+  <!-- Text -->
+  <text x="44" y="27" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#005B99">TravelShield</text>
+  <text x="44" y="42" font-family="Arial, sans-serif" font-size="10" fill="#005B99">Insurance</text>
+</svg>

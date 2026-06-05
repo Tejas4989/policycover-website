@@ -12,7 +12,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon.svg">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon.svg">
     
-    <link rel="stylesheet" href="styles.css?v=2024102601">
+    <link rel="stylesheet" href="styles.css?v=2026060502">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -97,8 +97,6 @@
                 <li class="nav-dropdown">
                     <a href="#services" class="nav-link">Insurance <span class="dropdown-arrow">▾</span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#auto-insurance" class="dropdown-link">Auto Insurance</a></li>
-                        <li><a href="#home-insurance" class="dropdown-link">Home Insurance</a></li>
                         <li><a href="#life-insurance" class="dropdown-link">Life Insurance</a></li>
                         <li><a href="#super-visa" class="dropdown-link">Super Visa / Visitor Visa Insurance</a></li>
                         <li><a href="#travel-insurance" class="dropdown-link">Travel Insurance</a></li>
@@ -135,137 +133,197 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-background">
-            <div class="hero-gradient"></div>
+        <!-- Animated background -->
+        <div class="hero-bg">
+            <div class="hero-orb hero-orb-1"></div>
+            <div class="hero-orb hero-orb-2"></div>
+            <div class="hero-orb hero-orb-3"></div>
+            <div class="hero-grid-overlay"></div>
+            <!-- Floating particles -->
+            <div class="hero-particle" style="--x:15%;--y:25%;--d:8s;--s:0.5s"></div>
+            <div class="hero-particle" style="--x:75%;--y:60%;--d:11s;--s:1.2s"></div>
+            <div class="hero-particle" style="--x:85%;--y:20%;--d:9s;--s:2.5s"></div>
+            <div class="hero-particle" style="--x:35%;--y:75%;--d:13s;--s:0.8s"></div>
+            <div class="hero-particle" style="--x:60%;--y:40%;--d:7s;--s:3s"></div>
+            <div class="hero-particle" style="--x:20%;--y:80%;--d:10s;--s:1.5s"></div>
+            <div class="hero-particle" style="--x:90%;--y:50%;--d:12s;--s:4s"></div>
+            <div class="hero-particle" style="--x:50%;--y:15%;--d:8.5s;--s:2s"></div>
         </div>
-        
+
         <div class="container hero-container">
+            <!-- Left: Copy & CTAs -->
             <div class="hero-content">
-                <!-- Hero Badges Container -->
-                <div class="hero-badges-container">
-                    <div class="hero-badge">
-                        <span>🏆 Canada's Most Trusted Insurance Advisor</span>
+                <div class="hero-badges-row">
+                    <div class="hero-pill">
+                        <span class="hero-pill-dot"></span>
+                        Canada's Most Trusted Insurance Advisor
                     </div>
-                    <div class="guarantee-badge">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                            <path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z"/>
+                    <div class="hero-star-badge">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="star-spin">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
                         </svg>
                         <span>Guaranteed Lowest Quote</span>
                     </div>
                 </div>
-                <h1 class="hero-title">Get The Best Insurance Rates in 60 Seconds</h1>
-                <p class="hero-subtitle">Compare quotes from 50+ top insurance providers. Save up to 40% on your insurance premiums with our expert guidance.</p>
-                
+
+                <h1 class="hero-title">
+                    Protect What<br>
+                    <span class="hero-title-accent">Matters Most</span><br>
+                    to You
+                </h1>
+
+                <p class="hero-subtitle">
+                    Compare quotes from Canada's top insurance providers and save up to 40% on your premiums. Life, health, travel, and more — expert guidance at no cost.
+                </p>
+
                 <div class="hero-buttons">
-                    <button class="cta-button primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
-                        Get Free Quote Now
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
+                    <button class="btn-hero-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                        Get Free Quote
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </button>
-                    <button class="cta-button secondary" onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})">
-                        View All Products
+                    <button class="btn-hero-secondary" onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})">
+                        View Products
                     </button>
                 </div>
-                
-                <!-- Trust Indicators -->
+
                 <div class="hero-trust">
-                    <div class="trust-item">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#62D84E" stroke-width="2">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                            <polyline points="22 4 12 14.01 9 11.01"/>
-                        </svg>
-                        <span>No Hidden Fees</span>
+                    <div class="trust-chip">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00D4AA" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                        No Hidden Fees
                     </div>
-                    <div class="trust-item">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#62D84E" stroke-width="2">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                        </svg>
-                        <span>100% Secure</span>
+                    <div class="trust-chip">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00D4AA" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        100% Secure
                     </div>
-                    <div class="trust-item">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#62D84E" stroke-width="2">
-                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-                        </svg>
-                        <span>Instant Quotes</span>
+                    <div class="trust-chip">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00D4AA" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                        Instant Quotes
                     </div>
                 </div>
-                
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <h3>1000+</h3>
-                        <p>Happy Clients</p>
+            </div>
+
+            <!-- Right: Floating Quote Card -->
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <div class="hero-card-header">
+                        <div class="hero-card-title-row">
+                            <div>
+                                <div class="hero-card-eyebrow">Compare &amp; Save</div>
+                                <div class="hero-card-heading">Your Quote Summary</div>
+                            </div>
+                            <div class="hero-card-live">
+                                <span class="live-dot"></span>
+                                Live
+                            </div>
+                        </div>
                     </div>
-                    <div class="stat-item">
-                        <h3>8+</h3>
-                        <p>Years Experience</p>
+
+                    <div class="hero-card-options">
+                        <div class="hero-card-option selected">
+                            <div class="option-icon-wrap option-life">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                            </div>
+                            <div class="option-details">
+                                <div class="option-name">Life Insurance</div>
+                                <div class="option-price">From $15 / month</div>
+                            </div>
+                            <div class="option-check">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+                            </div>
+                        </div>
+
+                        <div class="hero-card-option">
+                            <div class="option-icon-wrap option-health">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="2" width="8" height="4" rx="1"/><rect x="2" y="8" width="4" height="8" rx="1"/><rect x="18" y="8" width="4" height="8" rx="1"/><rect x="8" y="18" width="8" height="4" rx="1"/><rect x="8" y="8" width="8" height="8" rx="1"/></svg>
+                            </div>
+                            <div class="option-details">
+                                <div class="option-name">Health &amp; Dental</div>
+                                <div class="option-price">From $25 / month</div>
+                            </div>
+                            <div class="option-check">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+                            </div>
+                        </div>
+
+                        <div class="hero-card-option">
+                            <div class="option-icon-wrap option-travel">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.86 10.9a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.77 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6.07 6.07l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            </div>
+                            <div class="option-details">
+                                <div class="option-name">Travel Insurance</div>
+                                <div class="option-price">From $8 / month</div>
+                            </div>
+                            <div class="option-check">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+                            </div>
+                        </div>
                     </div>
-                    <div class="stat-item">
-                        <h3>98%</h3>
-                        <p>Satisfaction Rate</p>
+
+                    <div class="hero-card-savings">
+                        <div class="savings-row">
+                            <span class="savings-label">Potential Savings</span>
+                            <span class="savings-value">Up to 40%</span>
+                        </div>
+                        <div class="savings-track">
+                            <div class="savings-fill"></div>
+                        </div>
+                    </div>
+
+                    <button class="hero-card-cta" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                        Compare Quotes Now
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </div>
+
+                <!-- Floating micro-badges -->
+                <div class="hero-float-badge badge-rating">
+                    <div class="float-badge-icon">⭐</div>
+                    <div class="float-badge-text">
+                        <div class="float-badge-num">4.9 / 5</div>
+                        <div class="float-badge-label">Client Rating</div>
+                    </div>
+                </div>
+
+                <div class="hero-float-badge badge-clients">
+                    <div class="float-badge-icon">👥</div>
+                    <div class="float-badge-text">
+                        <div class="float-badge-num">1,000+</div>
+                        <div class="float-badge-label">Happy Clients</div>
+                    </div>
+                </div>
+
+                <div class="hero-float-badge badge-speed">
+                    <div class="float-badge-icon">⚡</div>
+                    <div class="float-badge-text">
+                        <div class="float-badge-num">60 Sec</div>
+                        <div class="float-badge-label">Quote Time</div>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <!-- Quick Product Preview -->
-        <div class="quick-products">
+
+        <!-- Stats bar -->
+        <div class="hero-stats-bar">
             <div class="container">
-                <h3 class="quick-products-title">Popular Products</h3>
-                <div class="quick-products-grid">
-                    <div class="quick-product-card" onclick="document.getElementById('life-insurance').scrollIntoView({behavior: 'smooth'})">
-                        <div class="quick-icon">
-                            <svg width="40" height="40" viewBox="0 0 64 64" fill="none">
-                                <circle cx="32" cy="32" r="30" fill="#FFE8E8"/>
-                                <path d="M32 16C32 16 26 22 26 28C26 34 29 38 32 38C35 38 38 34 38 28C38 22 32 16 32 16Z" fill="#FF6B6B"/>
-                                <path d="M32 38C32 38 40 40 40 45C40 48 37 50 32 50C27 50 24 48 24 45C24 40 32 38 32 38Z" fill="#FF6B6B"/>
-                            </svg>
-                        </div>
-                        <h4>Life Insurance</h4>
-                        <p>Starting from $15/month</p>
-                        <span class="quick-arrow">→</span>
+                <div class="stats-bar-inner">
+                    <div class="stats-bar-item">
+                        <div class="stats-bar-num">12+</div>
+                        <div class="stats-bar-label">Insurance Partners</div>
                     </div>
-                    
-                    <div class="quick-product-card" onclick="document.getElementById('travel-insurance').scrollIntoView({behavior: 'smooth'})">
-                        <div class="quick-icon">
-                            <svg width="40" height="40" viewBox="0 0 64 64" fill="none">
-                                <circle cx="32" cy="32" r="30" fill="#E3F2FD"/>
-                                <path d="M32 12L16 20V32C16 42 22 50 32 54C42 50 48 42 48 32V20L32 12Z" fill="#2196F3"/>
-                                <circle cx="32" cy="32" r="6" fill="white"/>
-                            </svg>
-                        </div>
-                        <h4>Travel Insurance</h4>
-                        <p>Starting from $8/month</p>
-                        <span class="quick-arrow">→</span>
+                    <div class="stats-bar-divider"></div>
+                    <div class="stats-bar-item">
+                        <div class="stats-bar-num">1,000+</div>
+                        <div class="stats-bar-label">Clients Protected</div>
                     </div>
-                    
-                    <div class="quick-product-card" onclick="document.getElementById('business-insurance').scrollIntoView({behavior: 'smooth'})">
-                        <div class="quick-icon">
-                            <svg width="40" height="40" viewBox="0 0 64 64" fill="none">
-                                <circle cx="32" cy="32" r="30" fill="#F3E5F5"/>
-                                <rect x="20" y="28" width="24" height="20" rx="2" fill="#9C27B0"/>
-                                <path d="M24 28V22C24 17.6 27.6 14 32 14C36.4 14 40 17.6 40 22V28" stroke="#9C27B0" stroke-width="3" fill="none"/>
-                                <circle cx="32" cy="38" r="3" fill="white"/>
-                            </svg>
-                        </div>
-                        <h4>Business Insurance</h4>
-                        <p>Custom quotes available</p>
-                        <span class="quick-arrow">→</span>
+                    <div class="stats-bar-divider"></div>
+                    <div class="stats-bar-item">
+                        <div class="stats-bar-num">8+</div>
+                        <div class="stats-bar-label">Years Experience</div>
                     </div>
-                    
-                    <div class="quick-product-card" onclick="document.getElementById('tfsa').scrollIntoView({behavior: 'smooth'})">
-                        <div class="quick-icon">
-                            <svg width="40" height="40" viewBox="0 0 64 64" fill="none">
-                                <circle cx="32" cy="32" r="30" fill="#E8F5E9"/>
-                                <rect x="18" y="36" width="8" height="16" rx="2" fill="#4CAF50"/>
-                                <rect x="28" y="28" width="8" height="24" rx="2" fill="#4CAF50"/>
-                                <rect x="38" y="20" width="8" height="32" rx="2" fill="#4CAF50"/>
-                                <path d="M44 20L48 16L52 20" stroke="#4CAF50" stroke-width="3" stroke-linecap="round"/>
-                            </svg>
-                        </div>
-                        <h4>TFSA / RRSP</h4>
-                        <p>Tax-free savings</p>
-                        <span class="quick-arrow">→</span>
+                    <div class="stats-bar-divider"></div>
+                    <div class="stats-bar-item">
+                        <div class="stats-bar-num">98%</div>
+                        <div class="stats-bar-label">Satisfaction Rate</div>
                     </div>
                 </div>
             </div>
@@ -280,30 +338,6 @@
                 <p class="section-subtitle">Comprehensive Coverage Solutions to Protect What Matters Most</p>
             </div>
             <div class="products-grid">
-                <!-- Auto Insurance -->
-                <div class="product-card" id="auto-insurance">
-                    <div class="product-image product-image-auto">
-                        <img src="assets/images/products/auto.svg" alt="Auto Insurance Icon" width="80" height="80">
-                    </div>
-                    <div class="product-content">
-                        <h3>Auto Insurance</h3>
-                        <p class="product-tagline">Drive with confidence, covered for every road.</p>
-                        <button class="product-button" onclick="openQuoteModal('auto')">Get a Quote</button>
-                    </div>
-                </div>
-
-                <!-- Home Insurance -->
-                <div class="product-card" id="home-insurance">
-                    <div class="product-image product-image-home">
-                        <img src="assets/images/products/home.svg" alt="Home Insurance Icon" width="80" height="80">
-                    </div>
-                    <div class="product-content">
-                        <h3>Home Insurance</h3>
-                        <p class="product-tagline">Your home, your sanctuary — always protected.</p>
-                        <button class="product-button" onclick="openQuoteModal('home')">Get a Quote</button>
-                    </div>
-                </div>
-
                 <!-- Business Insurance -->
                 <div class="product-card" id="business-insurance">
                     <div class="product-image product-image-business">
@@ -461,25 +495,31 @@
             
             <div class="partners-carousel">
                 <div class="partners-track">
-                    <div class="partner-logo"><img src="assets/images/partners/aviva.svg" alt="Aviva Insurance" class="partner-img"></div>
-                    <div class="partner-logo"><img src="assets/images/partners/caa.svg" alt="CAA Insurance" class="partner-img"></div>
-                    <div class="partner-logo"><img src="assets/images/partners/intact.svg" alt="Intact Insurance" class="partner-img"></div>
-                    <div class="partner-logo"><img src="assets/images/partners/pembridge.svg" alt="Pembridge Insurance" class="partner-img"></div>
-                    <div class="partner-logo"><img src="assets/images/partners/economical.svg" alt="Economical Insurance" class="partner-img"></div>
-                    <div class="partner-logo"><img src="assets/images/partners/wawanesa.svg" alt="Wawanesa Insurance" class="partner-img"></div>
-                    <div class="partner-logo"><img src="assets/images/partners/sgi-canada.svg" alt="SGI Canada" class="partner-img"></div>
-                    <div class="partner-logo"><img src="assets/images/partners/gore-mutual.svg" alt="Gore Mutual Insurance" class="partner-img"></div>
-                    <div class="partner-logo"><img src="assets/images/partners/echelon.svg" alt="Echelon Insurance" class="partner-img"></div>
+                    <div class="partner-logo"><img src="assets/images/partners/rbc.svg" alt="RBC Insurance" class="partner-img"></div>
+                    <div class="partner-logo"><img src="assets/images/partners/bmo.svg" alt="BMO Insurance" class="partner-img"></div>
+                    <div class="partner-logo"><img src="assets/images/partners/equitable.svg" alt="Equitable Life" class="partner-img"></div>
+                    <div class="partner-logo"><img src="assets/images/partners/canadalife.svg" alt="Canada Life" class="partner-img"></div>
+                    <div class="partner-logo"><img src="assets/images/partners/sunlife.svg" alt="Sun Life" class="partner-img"></div>
+                    <div class="partner-logo"><img src="assets/images/partners/empire-life.svg" alt="Empire Life" class="partner-img"></div>
+                    <div class="partner-logo"><img src="assets/images/partners/gms.svg" alt="GMS Insurance" class="partner-img"></div>
+                    <div class="partner-logo"><img src="assets/images/partners/hmc.svg" alt="HMC Insurance" class="partner-img"></div>
+                    <div class="partner-logo"><img src="assets/images/partners/humania.svg" alt="Humania Assurance" class="partner-img"></div>
+                    <div class="partner-logo"><img src="assets/images/partners/ia.svg" alt="iA Financial Group" class="partner-img"></div>
+                    <div class="partner-logo"><img src="assets/images/partners/ingle.svg" alt="Ingle International" class="partner-img"></div>
+                    <div class="partner-logo"><img src="assets/images/partners/travelshield.svg" alt="Travel Shield" class="partner-img"></div>
                     <!-- Duplicate for seamless loop -->
-                    <div class="partner-logo"><img src="assets/images/partners/aviva.svg" alt="Aviva Insurance" class="partner-img"></div>
-                    <div class="partner-logo"><img src="assets/images/partners/caa.svg" alt="CAA Insurance" class="partner-img"></div>
-                    <div class="partner-logo"><img src="assets/images/partners/intact.svg" alt="Intact Insurance" class="partner-img"></div>
-                    <div class="partner-logo"><img src="assets/images/partners/pembridge.svg" alt="Pembridge Insurance" class="partner-img"></div>
-                    <div class="partner-logo"><img src="assets/images/partners/economical.svg" alt="Economical Insurance" class="partner-img"></div>
-                    <div class="partner-logo"><img src="assets/images/partners/wawanesa.svg" alt="Wawanesa Insurance" class="partner-img"></div>
-                    <div class="partner-logo"><img src="assets/images/partners/sgi-canada.svg" alt="SGI Canada" class="partner-img"></div>
-                    <div class="partner-logo"><img src="assets/images/partners/gore-mutual.svg" alt="Gore Mutual Insurance" class="partner-img"></div>
-                    <div class="partner-logo"><img src="assets/images/partners/echelon.svg" alt="Echelon Insurance" class="partner-img"></div>
+                    <div class="partner-logo"><img src="assets/images/partners/rbc.svg" alt="RBC Insurance" class="partner-img"></div>
+                    <div class="partner-logo"><img src="assets/images/partners/bmo.svg" alt="BMO Insurance" class="partner-img"></div>
+                    <div class="partner-logo"><img src="assets/images/partners/equitable.svg" alt="Equitable Life" class="partner-img"></div>
+                    <div class="partner-logo"><img src="assets/images/partners/canadalife.svg" alt="Canada Life" class="partner-img"></div>
+                    <div class="partner-logo"><img src="assets/images/partners/sunlife.svg" alt="Sun Life" class="partner-img"></div>
+                    <div class="partner-logo"><img src="assets/images/partners/empire-life.svg" alt="Empire Life" class="partner-img"></div>
+                    <div class="partner-logo"><img src="assets/images/partners/gms.svg" alt="GMS Insurance" class="partner-img"></div>
+                    <div class="partner-logo"><img src="assets/images/partners/hmc.svg" alt="HMC Insurance" class="partner-img"></div>
+                    <div class="partner-logo"><img src="assets/images/partners/humania.svg" alt="Humania Assurance" class="partner-img"></div>
+                    <div class="partner-logo"><img src="assets/images/partners/ia.svg" alt="iA Financial Group" class="partner-img"></div>
+                    <div class="partner-logo"><img src="assets/images/partners/ingle.svg" alt="Ingle International" class="partner-img"></div>
+                    <div class="partner-logo"><img src="assets/images/partners/travelshield.svg" alt="Travel Shield" class="partner-img"></div>
                 </div>
             </div>
         </div>
@@ -736,8 +776,6 @@
                         <select id="service" name="service">
                             <option value="">Select a product...</option>
                             <optgroup label="Insurance Products">
-                                <option value="auto">Auto Insurance</option>
-                                <option value="home">Home Insurance</option>
                             <option value="life">Life Insurance</option>
                                 <option value="supervisa">Super Visa / Visitor Visa Insurance</option>
                                 <option value="travel">Travel Insurance</option>
@@ -837,413 +875,8 @@
     </footer>
 
     <!-- ============================================
-         QUOTE MODALS — Auto, Home, Commercial Property
+         QUOTE MODALS — Commercial Property
          ============================================ -->
-
-    <!-- AUTO INSURANCE MODAL -->
-    <div class="quote-modal" id="quoteModal-auto" role="dialog" aria-modal="true" aria-labelledby="quoteTitle-auto">
-        <div class="quote-modal-backdrop" onclick="closeQuoteModal('auto')"></div>
-        <div class="quote-modal-dialog">
-            <button class="modal-close-btn" onclick="closeQuoteModal('auto')" aria-label="Close modal">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-            </button>
-            <div class="modal-header-row">
-                <div class="modal-type-icon modal-icon-auto">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="9" width="22" height="11" rx="2"/><path d="M5 9L7.5 4h9L19 9"/><circle cx="7" cy="20" r="1"/><circle cx="17" cy="20" r="1"/></svg>
-                </div>
-                <div>
-                    <h2 id="quoteTitle-auto">Auto Insurance Quote</h2>
-                    <p>Get your personalized quote in just 3 quick steps</p>
-                </div>
-            </div>
-            <!-- Step Indicator -->
-            <div class="quote-stepper" id="quoteStepper-auto">
-                <div class="stepper-step active" data-modal="auto" data-step="1"><div class="step-bubble">1</div><span>Personal Info</span></div>
-                <div class="stepper-line"></div>
-                <div class="stepper-step" data-modal="auto" data-step="2"><div class="step-bubble">2</div><span>Vehicles</span></div>
-                <div class="stepper-line"></div>
-                <div class="stepper-step" data-modal="auto" data-step="3"><div class="step-bubble">3</div><span>Drivers</span></div>
-            </div>
-            <form id="quoteForm-auto" novalidate>
-
-                <!-- Step 1: Personal Info -->
-                <div class="quote-step-panel active" data-panel="1">
-                    <div class="qform-grid">
-                        <div class="form-group"><label>First Name <span class="req">*</span></label><input type="text" name="first_name" required placeholder="Jane"></div>
-                        <div class="form-group"><label>Last Name <span class="req">*</span></label><input type="text" name="last_name" required placeholder="Smith"></div>
-                        <div class="form-group qfull"><label>Street Address <span class="req">*</span></label><input type="text" name="street_address" required placeholder="123 Main Street"></div>
-                        <div class="form-group"><label>City / Town <span class="req">*</span></label><input type="text" name="city" required placeholder="Windsor"></div>
-                        <div class="form-group"><label>Province</label><select name="province"><option value="ON">Ontario (ON)</option><option value="AB">Alberta (AB)</option><option value="BC">British Columbia (BC)</option><option value="MB">Manitoba (MB)</option><option value="NB">New Brunswick (NB)</option><option value="NS">Nova Scotia (NS)</option><option value="SK">Saskatchewan (SK)</option></select></div>
-                        <div class="form-group"><label>Postal Code <span class="req">*</span></label><input type="text" name="postal_code" required placeholder="N9A 1A1" maxlength="7"></div>
-                        <div class="form-group"><label>Cell Number <span class="req">*</span></label><input type="tel" name="phone" required placeholder="+1 (519) 555-1234" class="modal-phone"></div>
-                        <div class="form-group"><label>Email Address <span class="req">*</span></label><input type="email" name="email" required placeholder="jane@example.com"></div>
-                    </div>
-                    <div class="qform-nav"><span></span><button type="button" class="btn-qnext" data-modal="auto" data-from="1">Next: Vehicle Details →</button></div>
-                </div>
-
-                <!-- Step 2: Vehicles -->
-                <div class="quote-step-panel" data-panel="2">
-                    <div class="qform-count-row">
-                        <label>How many vehicles? <span class="req">*</span></label>
-                        <div class="qcount-pills" id="vehicleCountPills">
-                            <button type="button" class="qcount-pill" data-target="vehicle" data-count="1">1</button>
-                            <button type="button" class="qcount-pill" data-target="vehicle" data-count="2">2</button>
-                            <button type="button" class="qcount-pill" data-target="vehicle" data-count="3">3</button>
-                            <button type="button" class="qcount-pill" data-target="vehicle" data-count="4">4</button>
-                        </div>
-                        <input type="hidden" name="num_vehicles" id="numVehicles" value="">
-                    </div>
-                    <div class="qrecord-tabs" id="vehicleRecordTabs" style="display:none">
-                        <span class="qrecord-tabs-label">Vehicle:</span>
-                        <button type="button" class="qrecord-tab active" data-target="vehicle" data-block="1">1</button>
-                        <button type="button" class="qrecord-tab" data-target="vehicle" data-block="2" disabled>2</button>
-                        <button type="button" class="qrecord-tab" data-target="vehicle" data-block="3" disabled>3</button>
-                        <button type="button" class="qrecord-tab" data-target="vehicle" data-block="4" disabled>4</button>
-                    </div>
-
-                    <!-- Vehicle 1 -->
-                    <div class="qdynamic-block" id="vehicle-block-1" style="display:none">
-                        <div class="qdynamic-label">Vehicle 1</div>
-                        <div class="qform-grid">
-                            <div class="form-group qfull"><label>Year, Make and Model <span class="req">*</span></label><input type="text" name="vehicle_1_ymm" required placeholder="e.g. 2020 Toyota Camry"></div>
-                            <div class="form-group"><label>Purchase Date</label><input type="date" name="vehicle_1_purchase_date"></div>
-                            <div class="form-group"><label>Annual KMs</label><input type="number" name="vehicle_1_annual_km" min="0" placeholder="e.g. 15000"></div>
-                            <div class="form-group"><label>One-Way KM to Work</label><input type="number" name="vehicle_1_oneway_km" min="0" placeholder="e.g. 12"></div>
-                            <div class="form-group"><label>Ownership <span class="req">*</span></label>
-                                <div class="qradio-group">
-                                    <label class="qradio"><input type="radio" name="vehicle_1_ownership" value="Finance" required> Finance</label>
-                                    <label class="qradio"><input type="radio" name="vehicle_1_ownership" value="Lease"> Lease</label>
-                                    <label class="qradio"><input type="radio" name="vehicle_1_ownership" value="Owned"> Owned</label>
-                                </div>
-                            </div>
-                            <div class="form-group"><label>Winter Tires?</label>
-                                <div class="qradio-group">
-                                    <label class="qradio"><input type="radio" name="vehicle_1_winter_tires" value="Yes"> Yes</label>
-                                    <label class="qradio"><input type="radio" name="vehicle_1_winter_tires" value="No"> No</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Vehicle 2 (hidden by default) -->
-                    <div class="qdynamic-block" id="vehicle-block-2" style="display:none">
-                        <div class="qdynamic-label">Vehicle 2</div>
-                        <div class="qform-grid">
-                            <div class="form-group qfull"><label>Year, Make and Model</label><input type="text" name="vehicle_2_ymm" placeholder="e.g. 2018 Honda Civic"></div>
-                            <div class="form-group"><label>Purchase Date</label><input type="date" name="vehicle_2_purchase_date"></div>
-                            <div class="form-group"><label>Annual KMs</label><input type="number" name="vehicle_2_annual_km" min="0" placeholder="e.g. 10000"></div>
-                            <div class="form-group"><label>One-Way KM to Work</label><input type="number" name="vehicle_2_oneway_km" min="0" placeholder="e.g. 8"></div>
-                            <div class="form-group"><label>Ownership</label>
-                                <div class="qradio-group">
-                                    <label class="qradio"><input type="radio" name="vehicle_2_ownership" value="Finance"> Finance</label>
-                                    <label class="qradio"><input type="radio" name="vehicle_2_ownership" value="Lease"> Lease</label>
-                                    <label class="qradio"><input type="radio" name="vehicle_2_ownership" value="Owned"> Owned</label>
-                                </div>
-                            </div>
-                            <div class="form-group"><label>Winter Tires?</label>
-                                <div class="qradio-group">
-                                    <label class="qradio"><input type="radio" name="vehicle_2_winter_tires" value="Yes"> Yes</label>
-                                    <label class="qradio"><input type="radio" name="vehicle_2_winter_tires" value="No"> No</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Vehicle 3 (hidden by default) -->
-                    <div class="qdynamic-block" id="vehicle-block-3" style="display:none">
-                        <div class="qdynamic-label">Vehicle 3</div>
-                        <div class="qform-grid">
-                            <div class="form-group qfull"><label>Year, Make and Model</label><input type="text" name="vehicle_3_ymm" placeholder="e.g. 2015 Ford F-150"></div>
-                            <div class="form-group"><label>Purchase Date</label><input type="date" name="vehicle_3_purchase_date"></div>
-                            <div class="form-group"><label>Annual KMs</label><input type="number" name="vehicle_3_annual_km" min="0" placeholder="e.g. 20000"></div>
-                            <div class="form-group"><label>One-Way KM to Work</label><input type="number" name="vehicle_3_oneway_km" min="0" placeholder="e.g. 20"></div>
-                            <div class="form-group"><label>Ownership</label>
-                                <div class="qradio-group">
-                                    <label class="qradio"><input type="radio" name="vehicle_3_ownership" value="Finance"> Finance</label>
-                                    <label class="qradio"><input type="radio" name="vehicle_3_ownership" value="Lease"> Lease</label>
-                                    <label class="qradio"><input type="radio" name="vehicle_3_ownership" value="Owned"> Owned</label>
-                                </div>
-                            </div>
-                            <div class="form-group"><label>Winter Tires?</label>
-                                <div class="qradio-group">
-                                    <label class="qradio"><input type="radio" name="vehicle_3_winter_tires" value="Yes"> Yes</label>
-                                    <label class="qradio"><input type="radio" name="vehicle_3_winter_tires" value="No"> No</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Vehicle 4 (hidden by default) -->
-                    <div class="qdynamic-block" id="vehicle-block-4" style="display:none">
-                        <div class="qdynamic-label">Vehicle 4</div>
-                        <div class="qform-grid">
-                            <div class="form-group qfull"><label>Year, Make and Model</label><input type="text" name="vehicle_4_ymm" placeholder="e.g. 2019 Chevrolet Equinox"></div>
-                            <div class="form-group"><label>Purchase Date</label><input type="date" name="vehicle_4_purchase_date"></div>
-                            <div class="form-group"><label>Annual KMs</label><input type="number" name="vehicle_4_annual_km" min="0" placeholder="e.g. 12000"></div>
-                            <div class="form-group"><label>One-Way KM to Work</label><input type="number" name="vehicle_4_oneway_km" min="0" placeholder="e.g. 15"></div>
-                            <div class="form-group"><label>Ownership</label>
-                                <div class="qradio-group">
-                                    <label class="qradio"><input type="radio" name="vehicle_4_ownership" value="Finance"> Finance</label>
-                                    <label class="qradio"><input type="radio" name="vehicle_4_ownership" value="Lease"> Lease</label>
-                                    <label class="qradio"><input type="radio" name="vehicle_4_ownership" value="Owned"> Owned</label>
-                                </div>
-                            </div>
-                            <div class="form-group"><label>Winter Tires?</label>
-                                <div class="qradio-group">
-                                    <label class="qradio"><input type="radio" name="vehicle_4_winter_tires" value="Yes"> Yes</label>
-                                    <label class="qradio"><input type="radio" name="vehicle_4_winter_tires" value="No"> No</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="qform-nav"><button type="button" class="btn-qprev" data-modal="auto" data-from="2">← Back</button><button type="button" class="btn-qnext" data-modal="auto" data-from="2">Next: Driver Details →</button></div>
-                </div>
-
-                <!-- Step 3: Drivers -->
-                <div class="quote-step-panel" data-panel="3">
-                    <div class="qform-count-row">
-                        <label>How many drivers? <span class="req">*</span></label>
-                        <div class="qcount-pills" id="driverCountPills">
-                            <button type="button" class="qcount-pill" data-target="driver" data-count="1">1</button>
-                            <button type="button" class="qcount-pill" data-target="driver" data-count="2">2</button>
-                            <button type="button" class="qcount-pill" data-target="driver" data-count="3">3</button>
-                            <button type="button" class="qcount-pill" data-target="driver" data-count="4">4</button>
-                        </div>
-                        <input type="hidden" name="num_drivers" id="numDrivers" value="">
-                    </div>
-                    <div class="qrecord-tabs" id="driverRecordTabs" style="display:none">
-                        <span class="qrecord-tabs-label">Driver:</span>
-                        <button type="button" class="qrecord-tab active" data-target="driver" data-block="1">1</button>
-                        <button type="button" class="qrecord-tab" data-target="driver" data-block="2" disabled>2</button>
-                        <button type="button" class="qrecord-tab" data-target="driver" data-block="3" disabled>3</button>
-                        <button type="button" class="qrecord-tab" data-target="driver" data-block="4" disabled>4</button>
-                    </div>
-
-                    <!-- Driver 1 -->
-                    <div class="qdynamic-block" id="driver-block-1" style="display:none">
-                        <div class="qdynamic-label">Driver 1 <span class="qdynamic-required">(Primary Driver)</span></div>
-                        <div class="qform-grid">
-                            <div class="form-group qfull">
-                                <label>Driver License Number <span class="req">*</span></label>
-                                <input type="text" name="driver_1_license" required placeholder="ABCDE-12345-67890" class="dl-format" maxlength="17" autocomplete="off">
-                                <span class="field-hint">Ontario format — auto-formatted as you type</span>
-                            </div>
-                        </div>
-                        <div class="gdates-section">
-                            <div class="gdates-heading">License Stage Dates <span class="gdates-optional">— optional, fill what you know</span></div>
-                            <div class="gdate-row"><span class="gdate-badge">G1</span><select name="driver_1_g1_month" class="gdate-sel"><option value="">Month</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option></select><select name="driver_1_g1_year" class="gdate-sel gdate-year"><option value="">Year</option></select></div>
-                            <div class="gdate-row"><span class="gdate-badge">G2</span><select name="driver_1_g2_month" class="gdate-sel"><option value="">Month</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option></select><select name="driver_1_g2_year" class="gdate-sel gdate-year"><option value="">Year</option></select></div>
-                            <div class="gdate-row"><span class="gdate-badge gdate-badge-g">G</span><select name="driver_1_g_month" class="gdate-sel"><option value="">Month</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option></select><select name="driver_1_g_year" class="gdate-sel gdate-year"><option value="">Year</option></select></div>
-                        </div>
-                    </div>
-
-                    <!-- Driver 2 (hidden by default) -->
-                    <div class="qdynamic-block" id="driver-block-2" style="display:none">
-                        <div class="qdynamic-label">Driver 2</div>
-                        <div class="qform-grid">
-                            <div class="form-group qfull">
-                                <label>Driver License Number</label>
-                                <input type="text" name="driver_2_license" placeholder="ABCDE-12345-67890" class="dl-format" maxlength="17" autocomplete="off">
-                                <span class="field-hint">Ontario format — auto-formatted as you type</span>
-                            </div>
-                        </div>
-                        <div class="gdates-section">
-                            <div class="gdates-heading">License Stage Dates <span class="gdates-optional">— optional, fill what you know</span></div>
-                            <div class="gdate-row"><span class="gdate-badge">G1</span><select name="driver_2_g1_month" class="gdate-sel"><option value="">Month</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option></select><select name="driver_2_g1_year" class="gdate-sel gdate-year"><option value="">Year</option></select></div>
-                            <div class="gdate-row"><span class="gdate-badge">G2</span><select name="driver_2_g2_month" class="gdate-sel"><option value="">Month</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option></select><select name="driver_2_g2_year" class="gdate-sel gdate-year"><option value="">Year</option></select></div>
-                            <div class="gdate-row"><span class="gdate-badge gdate-badge-g">G</span><select name="driver_2_g_month" class="gdate-sel"><option value="">Month</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option></select><select name="driver_2_g_year" class="gdate-sel gdate-year"><option value="">Year</option></select></div>
-                        </div>
-                    </div>
-
-                    <!-- Driver 3 (hidden by default) -->
-                    <div class="qdynamic-block" id="driver-block-3" style="display:none">
-                        <div class="qdynamic-label">Driver 3</div>
-                        <div class="qform-grid">
-                            <div class="form-group qfull">
-                                <label>Driver License Number</label>
-                                <input type="text" name="driver_3_license" placeholder="ABCDE-12345-67890" class="dl-format" maxlength="17" autocomplete="off">
-                                <span class="field-hint">Ontario format — auto-formatted as you type</span>
-                            </div>
-                        </div>
-                        <div class="gdates-section">
-                            <div class="gdates-heading">License Stage Dates <span class="gdates-optional">— optional, fill what you know</span></div>
-                            <div class="gdate-row"><span class="gdate-badge">G1</span><select name="driver_3_g1_month" class="gdate-sel"><option value="">Month</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option></select><select name="driver_3_g1_year" class="gdate-sel gdate-year"><option value="">Year</option></select></div>
-                            <div class="gdate-row"><span class="gdate-badge">G2</span><select name="driver_3_g2_month" class="gdate-sel"><option value="">Month</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option></select><select name="driver_3_g2_year" class="gdate-sel gdate-year"><option value="">Year</option></select></div>
-                            <div class="gdate-row"><span class="gdate-badge gdate-badge-g">G</span><select name="driver_3_g_month" class="gdate-sel"><option value="">Month</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option></select><select name="driver_3_g_year" class="gdate-sel gdate-year"><option value="">Year</option></select></div>
-                        </div>
-                    </div>
-
-                    <!-- Driver 4 (hidden by default) -->
-                    <div class="qdynamic-block" id="driver-block-4" style="display:none">
-                        <div class="qdynamic-label">Driver 4</div>
-                        <div class="qform-grid">
-                            <div class="form-group qfull">
-                                <label>Driver License Number</label>
-                                <input type="text" name="driver_4_license" placeholder="ABCDE-12345-67890" class="dl-format" maxlength="17" autocomplete="off">
-                                <span class="field-hint">Ontario format — auto-formatted as you type</span>
-                            </div>
-                        </div>
-                        <div class="gdates-section">
-                            <div class="gdates-heading">License Stage Dates <span class="gdates-optional">— optional, fill what you know</span></div>
-                            <div class="gdate-row"><span class="gdate-badge">G1</span><select name="driver_4_g1_month" class="gdate-sel"><option value="">Month</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option></select><select name="driver_4_g1_year" class="gdate-sel gdate-year"><option value="">Year</option></select></div>
-                            <div class="gdate-row"><span class="gdate-badge">G2</span><select name="driver_4_g2_month" class="gdate-sel"><option value="">Month</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option></select><select name="driver_4_g2_year" class="gdate-sel gdate-year"><option value="">Year</option></select></div>
-                            <div class="gdate-row"><span class="gdate-badge gdate-badge-g">G</span><select name="driver_4_g_month" class="gdate-sel"><option value="">Month</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option></select><select name="driver_4_g_year" class="gdate-sel gdate-year"><option value="">Year</option></select></div>
-                        </div>
-                    </div>
-
-                    <div class="qform-nav"><button type="button" class="btn-qprev" data-modal="auto" data-from="3">← Back</button><button type="submit" class="btn-qsubmit">Submit Quote Request →</button></div>
-                </div>
-
-                <div class="qform-error" id="qError-auto"></div>
-            </form>
-            <div class="quote-success" id="qSuccess-auto" style="display:none">
-                <div class="qsuccess-icon"><svg width="56" height="56" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" stroke="#62D84E" stroke-width="2"/><path d="M7 12.5L10.5 16L17 9" stroke="#62D84E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-                <h3>Quote Request Submitted!</h3>
-                <p>Thank you! We'll review your auto insurance details and reach out within 24 hours with a personalized quote.</p>
-                <button class="btn-close-success" onclick="closeQuoteModal('auto')">Close</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- HOME INSURANCE MODAL -->
-    <div class="quote-modal" id="quoteModal-home" role="dialog" aria-modal="true" aria-labelledby="quoteTitle-home">
-        <div class="quote-modal-backdrop" onclick="closeQuoteModal('home')"></div>
-        <div class="quote-modal-dialog">
-            <button class="modal-close-btn" onclick="closeQuoteModal('home')" aria-label="Close modal">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-            </button>
-            <div class="modal-header-row">
-                <div class="modal-type-icon modal-icon-home">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9.5L12 3L21 9.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg>
-                </div>
-                <div>
-                    <h2 id="quoteTitle-home">Home Insurance Quote</h2>
-                    <p>Get your personalized quote in just 3 quick steps</p>
-                </div>
-            </div>
-            <div class="quote-stepper" id="quoteStepper-home">
-                <div class="stepper-step active" data-modal="home" data-step="1"><div class="step-bubble">1</div><span>Contact</span></div>
-                <div class="stepper-line"></div>
-                <div class="stepper-step" data-modal="home" data-step="2"><div class="step-bubble">2</div><span>Owners</span></div>
-                <div class="stepper-line"></div>
-                <div class="stepper-step" data-modal="home" data-step="3"><div class="step-bubble">3</div><span>Property</span></div>
-            </div>
-            <form id="quoteForm-home" novalidate>
-
-                <!-- Step 1: Contact & Address -->
-                <div class="quote-step-panel active" data-panel="1">
-                    <div class="qform-grid">
-                        <div class="form-group"><label>Email Address <span class="req">*</span></label><input type="email" name="email" required placeholder="jane@example.com"></div>
-                        <div class="form-group"><label>Cell Number <span class="req">*</span></label><input type="tel" name="phone" required placeholder="+1 (519) 555-1234" class="modal-phone"></div>
-                        <div class="form-group qfull"><label>Home Address – Street <span class="req">*</span></label><input type="text" name="street_address" required placeholder="123 Maple Street"></div>
-                        <div class="form-group"><label>City <span class="req">*</span></label><input type="text" name="city" required placeholder="Windsor"></div>
-                        <div class="form-group"><label>Province <span class="req">*</span></label><select name="province" required><option value="ON">Ontario (ON)</option><option value="AB">Alberta (AB)</option><option value="BC">British Columbia (BC)</option><option value="MB">Manitoba (MB)</option><option value="NB">New Brunswick (NB)</option><option value="NS">Nova Scotia (NS)</option><option value="SK">Saskatchewan (SK)</option></select></div>
-                        <div class="form-group"><label>Postal Code <span class="req">*</span></label><input type="text" name="postal_code" required placeholder="N9A 1A1" maxlength="7"></div>
-                        <div class="form-group"><label>Date of Moving In <span class="req">*</span></label><input type="date" name="move_in_date" required></div>
-                    </div>
-                    <div class="qform-nav"><span></span><button type="button" class="btn-qnext" data-modal="home" data-from="1">Next: Owner Details →</button></div>
-                </div>
-
-                <!-- Step 2: Owners (dynamic) -->
-                <div class="quote-step-panel" data-panel="2">
-                    <div class="qform-count-row">
-                        <label>How many owners on title? <span class="req">*</span></label>
-                        <div class="qcount-pills">
-                            <button type="button" class="qcount-pill active" data-target="homeowner" data-count="1">1</button>
-                            <button type="button" class="qcount-pill" data-target="homeowner" data-count="2">2</button>
-                            <button type="button" class="qcount-pill" data-target="homeowner" data-count="3">3</button>
-                        </div>
-                        <input type="hidden" name="num_owners" id="numHomeowners" value="1">
-                    </div>
-
-                    <!-- Owner 1 -->
-                    <div class="qdynamic-block" id="homeowner-block-1">
-                        <div class="qdynamic-label">Owner 1 <span class="qdynamic-required">(Primary)</span></div>
-                        <div class="qform-grid">
-                            <div class="form-group"><label>First Name <span class="req">*</span></label><input type="text" name="owner_1_first_name" required placeholder="Jane"></div>
-                            <div class="form-group"><label>Last Name <span class="req">*</span></label><input type="text" name="owner_1_last_name" required placeholder="Smith"></div>
-                            <div class="form-group"><label>Date of Birth <span class="req">*</span></label><input type="date" name="owner_1_dob" required></div>
-                        </div>
-                    </div>
-
-                    <!-- Owner 2 (hidden by default) -->
-                    <div class="qdynamic-block" id="homeowner-block-2" style="display:none">
-                        <div class="qdynamic-label">Owner 2</div>
-                        <div class="qform-grid">
-                            <div class="form-group"><label>First Name</label><input type="text" name="owner_2_first_name" placeholder="John"></div>
-                            <div class="form-group"><label>Last Name</label><input type="text" name="owner_2_last_name" placeholder="Smith"></div>
-                            <div class="form-group"><label>Date of Birth</label><input type="date" name="owner_2_dob"></div>
-                        </div>
-                    </div>
-
-                    <!-- Owner 3 (hidden by default) -->
-                    <div class="qdynamic-block" id="homeowner-block-3" style="display:none">
-                        <div class="qdynamic-label">Owner 3</div>
-                        <div class="qform-grid">
-                            <div class="form-group"><label>First Name</label><input type="text" name="owner_3_first_name" placeholder="Alex"></div>
-                            <div class="form-group"><label>Last Name</label><input type="text" name="owner_3_last_name" placeholder="Smith"></div>
-                            <div class="form-group"><label>Date of Birth</label><input type="date" name="owner_3_dob"></div>
-                        </div>
-                    </div>
-
-                    <div class="qform-nav"><button type="button" class="btn-qprev" data-modal="home" data-from="2">← Back</button><button type="button" class="btn-qnext" data-modal="home" data-from="2">Next: Property Details →</button></div>
-                </div>
-
-                <!-- Step 3: Property Details -->
-                <div class="quote-step-panel" data-panel="3">
-                    <div class="qform-grid">
-                        <div class="form-group qfull">
-                            <label>House Type <span class="req">*</span></label>
-                            <div class="qradio-group">
-                                <label class="qradio"><input type="radio" name="house_type" value="Detached" required> Detached</label>
-                                <label class="qradio"><input type="radio" name="house_type" value="Free-Hold Townhouse"> Free-Hold Townhouse</label>
-                                <label class="qradio"><input type="radio" name="house_type" value="Condo Townhouse"> Condo Townhouse</label>
-                                <label class="qradio"><input type="radio" name="house_type" value="Semidetached"> Semidetached</label>
-                                <label class="qradio"><input type="radio" name="house_type" value="Condo or Apartment"> Condo / Apartment</label>
-                                <label class="qradio"><input type="radio" name="house_type" value="Bungalow 1 Story"> Bungalow (1 Story)</label>
-                            </div>
-                        </div>
-                        <div class="form-group"><label>Sq Ft of House <span class="req">*</span></label><input type="number" name="sqft" required min="100" placeholder="e.g. 1800"></div>
-                        <div class="form-group"><label>Year Built <span class="req">*</span></label><input type="number" name="year_built" required min="1800" max="2026" placeholder="e.g. 1998"></div>
-                        <div class="form-group"><label>Number of Bedrooms <span class="req">*</span></label><input type="number" name="num_bedrooms" required min="1" placeholder="e.g. 3"></div>
-                        <div class="form-group"><label>Number of Washrooms <span class="req">*</span></label><input type="number" name="num_washrooms" required min="1" placeholder="e.g. 2"></div>
-                        <div class="form-group"><label>Roof Update Year <span class="req">*</span></label><input type="number" name="roof_update_year" required min="1900" max="2026" placeholder="e.g. 2018"></div>
-                        <div class="form-group">
-                            <label>Basement Finished? <span class="req">*</span></label>
-                            <div class="qradio-group">
-                                <label class="qradio"><input type="radio" name="basement_finished" value="Finished" required> Finished</label>
-                                <label class="qradio"><input type="radio" name="basement_finished" value="Not Finished"> Not Finished</label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label>Basement Rented Out? <span class="req">*</span></label>
-                            <div class="qradio-group">
-                                <label class="qradio"><input type="radio" name="basement_rented" value="Rented" required> Rented</label>
-                                <label class="qradio"><input type="radio" name="basement_rented" value="Not Rented"> Not Rented</label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label>Basement Type <span class="req">*</span></label>
-                            <div class="qradio-group">
-                                <label class="qradio"><input type="radio" name="basement_type" value="Walkout" required> Walkout</label>
-                                <label class="qradio"><input type="radio" name="basement_type" value="Below Grade"> Below Grade</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="qform-nav"><button type="button" class="btn-qprev" data-modal="home" data-from="3">← Back</button><button type="submit" class="btn-qsubmit">Submit Quote Request →</button></div>
-                </div>
-
-                <div class="qform-error" id="qError-home"></div>
-            </form>
-            <div class="quote-success" id="qSuccess-home" style="display:none">
-                <div class="qsuccess-icon"><svg width="56" height="56" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" stroke="#62D84E" stroke-width="2"/><path d="M7 12.5L10.5 16L17 9" stroke="#62D84E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-                <h3>Quote Request Submitted!</h3>
-                <p>Thank you! We'll review your home insurance details and reach out within 24 hours with a personalized quote.</p>
-                <button class="btn-close-success" onclick="closeQuoteModal('home')">Close</button>
-            </div>
-        </div>
-    </div>
 
     <!-- COMMERCIAL PROPERTY INSURANCE MODAL -->
     <div class="quote-modal" id="quoteModal-business" role="dialog" aria-modal="true" aria-labelledby="quoteTitle-business">

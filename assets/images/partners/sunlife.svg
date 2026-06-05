@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 60" width="180" height="60">
+  <!-- Sun rays -->
+  <circle cx="22" cy="30" r="10" fill="#F7A200"/>
+  <line x1="22" y1="12" x2="22" y2="16" stroke="#F7A200" stroke-width="3" stroke-linecap="round"/>
+  <line x1="22" y1="44" x2="22" y2="48" stroke="#F7A200" stroke-width="3" stroke-linecap="round"/>
+  <line x1="4" y1="30" x2="8" y2="30" stroke="#F7A200" stroke-width="3" stroke-linecap="round"/>
+  <line x1="36" y1="30" x2="40" y2="30" stroke="#F7A200" stroke-width="3" stroke-linecap="round"/>
+  <line x1="8.5" y1="16.5" x2="11.3" y2="19.3" stroke="#F7A200" stroke-width="3" stroke-linecap="round"/>
+  <line x1="32.7" y1="40.7" x2="35.5" y2="43.5" stroke="#F7A200" stroke-width="3" stroke-linecap="round"/>
+  <line x1="35.5" y1="16.5" x2="32.7" y2="19.3" stroke="#F7A200" stroke-width="3" stroke-linecap="round"/>
+  <line x1="11.3" y1="40.7" x2="8.5" y2="43.5" stroke="#F7A200" stroke-width="3" stroke-linecap="round"/>
+  <!-- Text -->
+  <text x="50" y="27" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#003087">Sun Life</text>
+  <text x="50" y="42" font-family="Arial, sans-serif" font-size="10" fill="#003087">Financial</text>
+</svg>

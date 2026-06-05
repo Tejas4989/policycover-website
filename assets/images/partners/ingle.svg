@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 60" width="180" height="60">
+  <!-- Ingle icon - globe/world for international -->
+  <circle cx="22" cy="30" r="16" fill="none" stroke="#0066CC" stroke-width="2.5"/>
+  <ellipse cx="22" cy="30" rx="7" ry="16" fill="none" stroke="#0066CC" stroke-width="1.5"/>
+  <line x1="6" y1="30" x2="38" y2="30" stroke="#0066CC" stroke-width="1.5"/>
+  <line x1="8" y1="21" x2="36" y2="21" stroke="#0066CC" stroke-width="1"/>
+  <line x1="8" y1="39" x2="36" y2="39" stroke="#0066CC" stroke-width="1"/>
+  <!-- Text -->
+  <text x="46" y="27" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#0066CC">Ingle</text>
+  <text x="46" y="42" font-family="Arial, sans-serif" font-size="10" fill="#0066CC">International</text>
+</svg>
